@@ -1,3 +1,6 @@
+/// <reference path="typings/index.d.ts" />
+
+
 document.addEventListener("DOMContentLoaded", function() {
   var tooltipped = document.querySelectorAll(".tooltipped");
   M.Tooltip.init(tooltipped, {});
