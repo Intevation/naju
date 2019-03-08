@@ -1,0 +1,23 @@
+html,
+body,
+#map {
+    height: 100%;
+}
+
+.tap-target {
+    color: white;
+}
+
+div.material-tooltip:nth-child(8) {
+    background-color: #4CAF50;
+}
+
+.myDivIcon {
+    color: white;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    padding: 0 6px;
+    vertical-align: middle;
+}
