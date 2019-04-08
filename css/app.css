@@ -12,6 +12,14 @@ div.material-tooltip:nth-child(8) {
     background-color: #4CAF50;
 }
 
+div.material-tooltip:nth-child(9) {
+    background-color: #ffeb3b;
+}
+
+div.material-tooltip:nth-child(10) {
+    background-color: #ff9800;
+}
+
 .myDivIcon {
     color: white;
     border-radius: 50%;

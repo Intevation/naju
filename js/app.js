@@ -13,6 +13,40 @@ document.addEventListener("DOMContentLoaded", function() {
   instances[0].open();
 });
 
+var groups = L.geoJson(null, {
+  pointToLayer: function(feature, latlng) {
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        html: '<i class="material-icons yellow groups myDivIcon">group</i>',
+        className: "myDivIcon"
+      })
+    });
+  },
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(String("<b>" + feature.properties["NAJU"] + "</b>"), {
+      offset: [30, 10],
+      direction: "right"
+    });
+  }
+});
+
+var dates = L.geoJson(null, {
+  pointToLayer: function(feature, latlng) {
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        html: '<i class="material-icons orange myDivIcon">date_range</i>',
+        className: "myDivIcon"
+      })
+    });
+  },
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(String("<b>" + feature.properties["Veranstaltung"] + "</b>"), {
+      offset: [30, 10],
+      direction: "right"
+    });
+  }
+});
+
 var adressen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
@@ -29,6 +63,9 @@ var adressen = L.geoJson(null, {
     });
   }
 });
+
+adressen.on("click",function(){console.log("click")});
+
 fetch("data/adressen.geojson") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
@@ -39,6 +76,30 @@ fetch("data/adressen.geojson") // Call the fetch function passing the url of the
   .catch(function(error) {
     console.log(error.message);
     M.toast({ html: "Fehler beim Laden der Adressen!" });
+  });
+
+fetch("data/termine.geojson") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    dates.addData(json);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Termine!" });
+  });
+
+  fetch("data/kindergruppen.geojson") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    groups.addData(json);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Kindergruppen!" });
   });
 
 var map = L.map("map", {
@@ -100,8 +161,98 @@ function handleLvs(e) {
   }
 }
 
+function handleDates(e) {
+  console.log(e);
+  var menu = document.querySelector(
+    "body > div.fixed-action-btn.direction-top > ul > li:nth-child(4) > a"
+  );
+  console.log(menu)
+  switch (e.type) {
+    case "mouseover":
+      if (!menu.className.includes("clicked")) {
+        if (!map.hasLayer(dates)) {
+          dates.addTo(map);
+          menu.classList.remove("grey");
+          menu.classList.add("orange");
+        }
+      }
+      break;
+    case "mouseout":
+      if (!menu.className.includes("clicked")) {
+        if (map.hasLayer(dates)) {
+          map.removeLayer(dates);
+          menu.classList.remove("orange");
+          menu.classList.add("grey");
+        }
+      }
+      break;
+    case "click":
+      menu.classList.toggle("clicked");
+      if (!menu.className.includes("clicked")) {
+        map.removeLayer(dates);
+        menu.classList.remove("orange");
+        menu.classList.add("grey");
+      } else {
+        dates.addTo(map);
+        menu.classList.remove("grey");
+        menu.classList.add("orange");
+      }
+      break;
+  }
+}
+
+function handleGroups(e) {
+  console.log(e);
+  var menu = document.querySelector(
+    "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
+  );
+  console.log(menu)
+  switch (e.type) {
+    case "mouseover":
+      if (!menu.className.includes("clicked")) {
+        if (!map.hasLayer(groups)) {
+          groups.addTo(map);
+          menu.classList.remove("grey");
+          menu.classList.add("yellow");
+        }
+      }
+      break;
+    case "mouseout":
+      if (!menu.className.includes("clicked")) {
+        if (map.hasLayer(groups)) {
+          map.removeLayer(groups);
+          menu.classList.remove("yellow");
+          menu.classList.add("grey");
+        }
+      }
+      break;
+    case "click":
+      menu.classList.toggle("clicked");
+      if (!menu.className.includes("clicked")) {
+        map.removeLayer(groups);
+        menu.classList.remove("yellow");
+        menu.classList.add("grey");
+      } else {
+        groups.addTo(map);
+        menu.classList.remove("grey");
+        menu.classList.add("yellow");
+      }
+      break;
+  }
+}
+
 // Add event listener to table
 var lvs = document.getElementById("lvs");
 lvs.addEventListener("click", handleLvs, false);
 lvs.addEventListener("mouseover", handleLvs, false);
 lvs.addEventListener("mouseout", handleLvs, false);
+
+var termine = document.getElementById("termine");
+termine.addEventListener("click", handleDates, false);
+termine.addEventListener("mouseover", handleDates, false);
+termine.addEventListener("mouseout", handleDates, false);
+
+var gruppen = document.getElementById("gruppen");
+gruppen.addEventListener("click", handleGroups, false);
+gruppen.addEventListener("mouseover", handleGroups, false);
+gruppen.addEventListener("mouseout", handleGroups, false);
