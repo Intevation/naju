@@ -107,7 +107,8 @@ var map = L.map("map", {
   center: [50.15, 10.66],
   zoom: 5,
   maxZoom: 18,
-  minZoom: 5
+  minZoom: 5,
+  maxBounds: [[ 42, -46], [ 58, 67]]
 });
 
 L.tileLayer(
