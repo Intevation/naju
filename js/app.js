@@ -261,3 +261,29 @@ var gruppen = document.getElementById("gruppen");
 gruppen.addEventListener("click", handleGroups, false);
 gruppen.addEventListener("mouseover", handleGroups, false);
 gruppen.addEventListener("mouseout", handleGroups, false);
+
+function updateUrl(){
+  var center=map.getCenter();
+  var lat=center.lat.toFixed(4);
+  var lon=center.lng.toFixed(4);
+  var zoom=map.getZoom();
+  var view = "map="+zoom+"/"+lat + "/"+lon;
+  document.location.hash=view;
+}
+
+map.on("move",updateUrl);
+map.on("zoom",updateUrl);
+
+
+function setViewFromUrl(){
+  var hash=document.location.hash;
+  if (hash.length!==0){
+    var splitHash=hash.split("/");
+    var zoom=splitHash[0].substring(5);
+    var lat=splitHash[1];
+    var lon=splitHash[2];
+    map.setView([lat,lon],zoom);
+  }
+}
+
+setViewFromUrl();
