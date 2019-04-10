@@ -108,8 +108,12 @@ var map = L.map("map", {
   zoom: 5,
   maxZoom: 18,
   minZoom: 5,
-  maxBounds: [[ 42, -46], [ 58, 67]]
+  maxBounds: [[ 42, -46], [ 58, 67]],
+  fadeAnimation: false,
+  zoomControl: false
 });
+
+L.control.zoom({zoomInTitle:"hineinzoomen",zoomOutTitle:"hinauszoomen"}).addTo(map)
 
 L.tileLayer(
   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
