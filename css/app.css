@@ -21,11 +21,19 @@ div.material-tooltip:nth-child(10) {
 }
 
 .myDivIcon {
+    pointer-events:none;
     color: white;
     border-radius: 50%;
-    height: 36px;
-    width: 36px;
     line-height: 36px;
-    padding: 0 6px;
-    vertical-align: middle;
+    padding: 0 0 0 5px;
+    display: block;
+}
+
+.myDivIconHighlight {
+    color: white;
+    border-radius: 50%;
+    line-height: 54px;
+    display: block;
+    padding: 0 0 0 10px;
+    font-size: xx-large;
 }

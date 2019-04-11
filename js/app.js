@@ -13,56 +13,100 @@ document.addEventListener("DOMContentLoaded", function() {
   instances[0].open();
 });
 
+var groupsIcon =  L.divIcon({
+    html: '<i class="material-icons yellow myDivIcon">group</i>',
+    iconSize: [36,36],
+    className: ''
+});
+
+var groupsIconHighlight =L.divIcon({
+    html: '<i class="material-icons yellow myDivIconHighlight">group</i>',
+    iconSize: [54,54],
+    className: ''
+})
+
 var groups = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: L.divIcon({
-        html: '<i class="material-icons yellow groups myDivIcon">group</i>',
-        className: "myDivIcon"
-      })
-    });
+      icon: groupsIcon});
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["NAJU"] + "</b>"), {
-      offset: [30, 10],
+      offset: [18, 0],
       direction: "right"
     });
+  layer.on("mouseover",function(e){
+    e.target.setIcon(groupsIconHighlight)
+  })
+  layer.on("mouseout",function(e){
+    e.target.setIcon(groupsIcon)
+  })
   }
 });
+
+var datesIcon =L.divIcon({
+    html: '<i class="material-icons orange myDivIcon">date_range</i>',
+    iconSize: [36,36],
+    className: ''
+})
+
+var datesIconHighlight =L.divIcon({
+    html: '<i class="material-icons orange myDivIconHighlight">date_range</i>',
+    iconSize: [54,54],
+    className: ''
+})
 
 var dates = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: L.divIcon({
-        html: '<i class="material-icons orange myDivIcon">date_range</i>',
-        className: "myDivIcon"
-      })
+      icon: datesIcon
     });
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["Veranstaltung"] + "</b>"), {
-      offset: [30, 10],
+      offset: [18, 0],
       direction: "right"
     });
+  layer.on("mouseover",function(e){
+    e.target.setIcon(datesIconHighlight)
+  })
+  layer.on("mouseout",function(e){
+    e.target.setIcon(datesIcon)
+  })
   }
 });
+
+var adressenIcon =L.divIcon({
+        html: '<i class="material-icons green myDivIcon">stars</i>',
+        iconSize: [36,36],
+        className: ''
+      })
+
+var adressenIconHighlight =L.divIcon({
+    html: '<i class="material-icons green myDivIconHighlight">stars</i>',
+    iconSize: [54,54],
+    className: ''
+})
 
 var adressen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: L.divIcon({
-        html: '<i class="material-icons green myDivIcon">stars</i>',
-        className: "myDivIcon"
-      })
-    });
+      icon: adressenIcon });
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["LV"] + "</b>"), {
-      offset: [30, 10],
+      offset: [18, 0],
       direction: "right"
     });
+  layer.on("mouseover",function(e){
+    e.target.setIcon(adressenIconHighlight)
+  })
+  layer.on("mouseout",function(e){
+    e.target.setIcon(adressenIcon)
+  })
   }
 });
+
 
 adressen.on("click",function(){console.log("click")});
 
@@ -123,7 +167,8 @@ L.tileLayer(
     maxZoom: 18,
     id: "mapbox.streets",
     accessToken:
-      "pk.eyJ1IjoiYmpvZXJuc2NoaWxiZXJnIiwiYSI6InRzOVZKeWsifQ.y20mr9o3MolFOUdTQekhUA"
+      "pk.eyJ1IjoiYmpvZXJuc2NoaWxiZXJnIiwiYSI6InRzOVZKeWsifQ.y20mr9o3MolFOUdTQekhUA",
+    noWrap: true
   }
 ).addTo(map);
 
