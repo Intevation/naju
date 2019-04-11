@@ -20,7 +20,7 @@ var groupsIcon =  L.divIcon({
 });
 
 var groupsIconHighlight =L.divIcon({
-    html: '<i class="material-icons yellow myDivIconHighlight">group</i>',
+    html: '<i class="material-icons yellow darken-1 pulse myDivIconHighlight">group</i>',
     iconSize: [54,54],
     className: ''
 })
@@ -28,7 +28,9 @@ var groupsIconHighlight =L.divIcon({
 var groups = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: groupsIcon});
+      icon: groupsIcon,
+      riseOnHover:true
+    });
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["NAJU"] + "</b>"), {
@@ -51,7 +53,7 @@ var datesIcon =L.divIcon({
 })
 
 var datesIconHighlight =L.divIcon({
-    html: '<i class="material-icons orange myDivIconHighlight">date_range</i>',
+    html: '<i class="material-icons orange darken-1 pulse myDivIconHighlight">date_range</i>',
     iconSize: [54,54],
     className: ''
 })
@@ -59,7 +61,8 @@ var datesIconHighlight =L.divIcon({
 var dates = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: datesIcon
+      icon: datesIcon,
+      riseOnHover:true
     });
   },
   onEachFeature: function(feature, layer) {
@@ -83,7 +86,7 @@ var adressenIcon =L.divIcon({
       })
 
 var adressenIconHighlight =L.divIcon({
-    html: '<i class="material-icons green myDivIconHighlight">stars</i>',
+    html: '<i class="material-icons green darken-1 pulse myDivIconHighlight">stars</i>',
     iconSize: [54,54],
     className: ''
 })
@@ -91,7 +94,9 @@ var adressenIconHighlight =L.divIcon({
 var adressen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: adressenIcon });
+      icon: adressenIcon,
+      riseOnHover:true
+    });
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["LV"] + "</b>"), {
@@ -157,7 +162,10 @@ var map = L.map("map", {
   zoomControl: false
 });
 
+if (!L.Browser.mobile) {
 L.control.zoom({zoomInTitle:"hineinzoomen",zoomOutTitle:"hinauszoomen"}).addTo(map)
+}
+
 
 L.tileLayer(
   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
