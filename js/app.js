@@ -12,6 +12,61 @@ document.addEventListener("DOMContentLoaded", function() {
   instances[0].open();
 });
 
+var map = L.map("map", {
+  attributionControl: false,
+  center: [50.15, 10.66],
+  zoom: 5,
+  maxZoom: 18,
+  minZoom: 5,
+  maxBounds: [[42, -46], [58, 67]],
+  fadeAnimation: false,
+  zoomControl: false
+});
+
+if (!L.Browser.mobile) {
+  L.control
+    .zoom({ zoomInTitle: "hineinzoomen", zoomOutTitle: "hinauszoomen" })
+    .addTo(map);
+}
+
+L.tileLayer(
+  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
+  {
+    attribution:
+      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: "mapbox.streets",
+    accessToken:
+      "pk.eyJ1IjoiYmpvZXJuc2NoaWxiZXJnIiwiYSI6InRzOVZKeWsifQ.y20mr9o3MolFOUdTQekhUA",
+    noWrap: true
+  }
+).addTo(map);
+
+function updateUrl() {
+  var center = map.getCenter();
+  var lat = center.lat.toFixed(4);
+  var lon = center.lng.toFixed(4);
+  var zoom = map.getZoom();
+  var view = "map=" + zoom + "/" + lat + "/" + lon;
+  document.location.hash = view;
+}
+
+map.on("move", updateUrl);
+map.on("zoom", updateUrl);
+
+function setViewFromUrl() {
+  var hash = document.location.hash;
+  if (hash.length !== 0) {
+    var splitHash = hash.split("/");
+    var zoom = splitHash[0].substring(5);
+    var lat = splitHash[1];
+    var lon = splitHash[2];
+    map.setView([lat, lon], zoom);
+  }
+}
+
+setViewFromUrl();
+
 var groupsIcon = L.divIcon({
   html: '<i class="material-icons yellow myDivIcon">group</i>',
   iconSize: [36, 36],
@@ -153,44 +208,16 @@ fetch("data/kindergruppen.geojson") // Call the fetch function passing the url o
     M.toast({ html: "Fehler beim Laden der Kindergruppen!" });
   });
 
-var map = L.map("map", {
-  attributionControl: false,
-  center: [50.15, 10.66],
-  zoom: 5,
-  maxZoom: 18,
-  minZoom: 5,
-  maxBounds: [[42, -46], [58, 67]],
-  fadeAnimation: false,
-  zoomControl: false
-});
-
-if (!L.Browser.mobile) {
-  L.control
-    .zoom({ zoomInTitle: "hineinzoomen", zoomOutTitle: "hinauszoomen" })
-    .addTo(map);
-}
-
-L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-  {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: "mapbox.streets",
-    accessToken:
-      "pk.eyJ1IjoiYmpvZXJuc2NoaWxiZXJnIiwiYSI6InRzOVZKeWsifQ.y20mr9o3MolFOUdTQekhUA",
-    noWrap: true
-  }
-).addTo(map);
-
-function handleClosure(typ, color) {
+// Closure
+function handleMenuEvent(typ, color) {
+  // Anonymous function
   return function(e) {
-    console.log(e);
+    // console.log(e);
     // var menu = document.querySelector(
     //   "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
     // );
     var menu = e.path[1];
-    console.log(menu);
+    // console.log(menu);
     switch (e.type) {
       case "mouseover":
         if (!menu.className.includes("clicked")) {
@@ -228,41 +255,16 @@ function handleClosure(typ, color) {
 
 // Add event listener to table
 var lvs = document.getElementById("lvs");
-lvs.addEventListener("click", handleClosure(adressen, "green"), false);
-lvs.addEventListener("mouseover", handleClosure(adressen, "green"), false);
-lvs.addEventListener("mouseout", handleClosure(adressen, "green"), false);
+lvs.addEventListener("click", handleMenuEvent(adressen, "green"), false);
+lvs.addEventListener("mouseover", handleMenuEvent(adressen, "green"), false);
+lvs.addEventListener("mouseout", handleMenuEvent(adressen, "green"), false);
 
 var termine = document.getElementById("termine");
-termine.addEventListener("click", handleClosure(dates, "orange"), false);
-termine.addEventListener("mouseover", handleClosure(dates, "orange"), false);
-termine.addEventListener("mouseout", handleClosure(dates, "orange"), false);
+termine.addEventListener("click", handleMenuEvent(dates, "orange"), false);
+termine.addEventListener("mouseover", handleMenuEvent(dates, "orange"), false);
+termine.addEventListener("mouseout", handleMenuEvent(dates, "orange"), false);
 
 var gruppen = document.getElementById("gruppen");
-gruppen.addEventListener("click", handleClosure(groups, "yellow"), false);
-gruppen.addEventListener("mouseover", handleClosure(groups, "yellow"), false);
-gruppen.addEventListener("mouseout", handleClosure(groups, "yellow"), false);
-
-function updateUrl() {
-  var center = map.getCenter();
-  var lat = center.lat.toFixed(4);
-  var lon = center.lng.toFixed(4);
-  var zoom = map.getZoom();
-  var view = "map=" + zoom + "/" + lat + "/" + lon;
-  document.location.hash = view;
-}
-
-map.on("move", updateUrl);
-map.on("zoom", updateUrl);
-
-function setViewFromUrl() {
-  var hash = document.location.hash;
-  if (hash.length !== 0) {
-    var splitHash = hash.split("/");
-    var zoom = splitHash[0].substring(5);
-    var lat = splitHash[1];
-    var lon = splitHash[2];
-    map.setView([lat, lon], zoom);
-  }
-}
-
-setViewFromUrl();
+gruppen.addEventListener("click", handleMenuEvent(groups, "yellow"), false);
+gruppen.addEventListener("mouseover", handleMenuEvent(groups, "yellow"), false);
+gruppen.addEventListener("mouseout", handleMenuEvent(groups, "yellow"), false);
