@@ -1,6 +1,5 @@
 /// <reference path="typings/index.d.ts" />
 
-
 document.addEventListener("DOMContentLoaded", function() {
   var tooltipped = document.querySelectorAll(".tooltipped");
   M.Tooltip.init(tooltipped, {});
@@ -13,23 +12,24 @@ document.addEventListener("DOMContentLoaded", function() {
   instances[0].open();
 });
 
-var groupsIcon =  L.divIcon({
-    html: '<i class="material-icons yellow myDivIcon">group</i>',
-    iconSize: [36,36],
-    className: ''
+var groupsIcon = L.divIcon({
+  html: '<i class="material-icons yellow myDivIcon">group</i>',
+  iconSize: [36, 36],
+  className: ""
 });
 
-var groupsIconHighlight =L.divIcon({
-    html: '<i class="material-icons yellow darken-1 pulse myDivIconHighlight">group</i>',
-    iconSize: [54,54],
-    className: ''
-})
+var groupsIconHighlight = L.divIcon({
+  html:
+    '<i class="material-icons yellow darken-1 pulse myDivIconHighlight">group</i>',
+  iconSize: [54, 54],
+  className: ""
+});
 
 var groups = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
       icon: groupsIcon,
-      riseOnHover:true
+      riseOnHover: true
     });
   },
   onEachFeature: function(feature, layer) {
@@ -37,65 +37,70 @@ var groups = L.geoJson(null, {
       offset: [18, 0],
       direction: "right"
     });
-  layer.on("mouseover",function(e){
-    e.target.setIcon(groupsIconHighlight)
-  })
-  layer.on("mouseout",function(e){
-    e.target.setIcon(groupsIcon)
-  })
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(groupsIconHighlight);
+    });
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(groupsIcon);
+    });
   }
 });
 
-var datesIcon =L.divIcon({
-    html: '<i class="material-icons orange myDivIcon">date_range</i>',
-    iconSize: [36,36],
-    className: ''
-})
+var datesIcon = L.divIcon({
+  html: '<i class="material-icons orange myDivIcon">date_range</i>',
+  iconSize: [36, 36],
+  className: ""
+});
 
-var datesIconHighlight =L.divIcon({
-    html: '<i class="material-icons orange darken-1 pulse myDivIconHighlight">date_range</i>',
-    iconSize: [54,54],
-    className: ''
-})
+var datesIconHighlight = L.divIcon({
+  html:
+    '<i class="material-icons orange darken-1 pulse myDivIconHighlight">date_range</i>',
+  iconSize: [54, 54],
+  className: ""
+});
 
 var dates = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
       icon: datesIcon,
-      riseOnHover:true
+      riseOnHover: true
     });
   },
   onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["Veranstaltung"] + "</b>"), {
-      offset: [18, 0],
-      direction: "right"
+    layer.bindTooltip(
+      String("<b>" + feature.properties["Veranstaltung"] + "</b>"),
+      {
+        offset: [18, 0],
+        direction: "right"
+      }
+    );
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(datesIconHighlight);
     });
-  layer.on("mouseover",function(e){
-    e.target.setIcon(datesIconHighlight)
-  })
-  layer.on("mouseout",function(e){
-    e.target.setIcon(datesIcon)
-  })
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(datesIcon);
+    });
   }
 });
 
-var adressenIcon =L.divIcon({
-        html: '<i class="material-icons green myDivIcon">stars</i>',
-        iconSize: [36,36],
-        className: ''
-      })
+var adressenIcon = L.divIcon({
+  html: '<i class="material-icons green myDivIcon">stars</i>',
+  iconSize: [36, 36],
+  className: ""
+});
 
-var adressenIconHighlight =L.divIcon({
-    html: '<i class="material-icons green darken-1 pulse myDivIconHighlight">stars</i>',
-    iconSize: [54,54],
-    className: ''
-})
+var adressenIconHighlight = L.divIcon({
+  html:
+    '<i class="material-icons green darken-1 pulse myDivIconHighlight">stars</i>',
+  iconSize: [54, 54],
+  className: ""
+});
 
 var adressen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
       icon: adressenIcon,
-      riseOnHover:true
+      riseOnHover: true
     });
   },
   onEachFeature: function(feature, layer) {
@@ -103,17 +108,18 @@ var adressen = L.geoJson(null, {
       offset: [18, 0],
       direction: "right"
     });
-  layer.on("mouseover",function(e){
-    e.target.setIcon(adressenIconHighlight)
-  })
-  layer.on("mouseout",function(e){
-    e.target.setIcon(adressenIcon)
-  })
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(adressenIconHighlight);
+    });
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(adressenIcon);
+    });
   }
 });
 
-
-adressen.on("click",function(){console.log("click")});
+adressen.on("click", function() {
+  console.log("click");
+});
 
 fetch("data/adressen.geojson") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
@@ -139,7 +145,7 @@ fetch("data/termine.geojson") // Call the fetch function passing the url of the 
     M.toast({ html: "Fehler beim Laden der Termine!" });
   });
 
-  fetch("data/kindergruppen.geojson") // Call the fetch function passing the url of the API as a parameter
+fetch("data/kindergruppen.geojson") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
   })
@@ -157,15 +163,16 @@ var map = L.map("map", {
   zoom: 5,
   maxZoom: 18,
   minZoom: 5,
-  maxBounds: [[ 42, -46], [ 58, 67]],
+  maxBounds: [[42, -46], [58, 67]],
   fadeAnimation: false,
   zoomControl: false
 });
 
 if (!L.Browser.mobile) {
-L.control.zoom({zoomInTitle:"hineinzoomen",zoomOutTitle:"hinauszoomen"}).addTo(map)
+  L.control
+    .zoom({ zoomInTitle: "hineinzoomen", zoomOutTitle: "hinauszoomen" })
+    .addTo(map);
 }
-
 
 L.tileLayer(
   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
@@ -224,7 +231,7 @@ function handleDates(e) {
   var menu = document.querySelector(
     "body > div.fixed-action-btn.direction-top > ul > li:nth-child(4) > a"
   );
-  console.log(menu)
+  console.log(menu);
   switch (e.type) {
     case "mouseover":
       if (!menu.className.includes("clicked")) {
@@ -264,7 +271,7 @@ function handleGroups(e) {
   var menu = document.querySelector(
     "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
   );
-  console.log(menu)
+  console.log(menu);
   switch (e.type) {
     case "mouseover":
       if (!menu.className.includes("clicked")) {
@@ -315,27 +322,26 @@ gruppen.addEventListener("click", handleGroups, false);
 gruppen.addEventListener("mouseover", handleGroups, false);
 gruppen.addEventListener("mouseout", handleGroups, false);
 
-function updateUrl(){
-  var center=map.getCenter();
-  var lat=center.lat.toFixed(4);
-  var lon=center.lng.toFixed(4);
-  var zoom=map.getZoom();
-  var view = "map="+zoom+"/"+lat + "/"+lon;
-  document.location.hash=view;
+function updateUrl() {
+  var center = map.getCenter();
+  var lat = center.lat.toFixed(4);
+  var lon = center.lng.toFixed(4);
+  var zoom = map.getZoom();
+  var view = "map=" + zoom + "/" + lat + "/" + lon;
+  document.location.hash = view;
 }
 
-map.on("move",updateUrl);
-map.on("zoom",updateUrl);
+map.on("move", updateUrl);
+map.on("zoom", updateUrl);
 
-
-function setViewFromUrl(){
-  var hash=document.location.hash;
-  if (hash.length!==0){
-    var splitHash=hash.split("/");
-    var zoom=splitHash[0].substring(5);
-    var lat=splitHash[1];
-    var lon=splitHash[2];
-    map.setView([lat,lon],zoom);
+function setViewFromUrl() {
+  var hash = document.location.hash;
+  if (hash.length !== 0) {
+    var splitHash = hash.split("/");
+    var zoom = splitHash[0].substring(5);
+    var lat = splitHash[1];
+    var lon = splitHash[2];
+    map.setView([lat, lon], zoom);
   }
 }
 
