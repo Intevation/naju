@@ -1,15 +1,15 @@
 /// <reference path="typings/index.d.ts" />
 
-document.addEventListener("DOMContentLoaded", function() {
-  var tooltipped = document.querySelectorAll(".tooltipped");
-  M.Tooltip.init(tooltipped, {});
-  var fixedactionbtn = document.querySelectorAll(".fixed-action-btn");
-  M.FloatingActionButton.init(fixedactionbtn, {
-    direction: "top"
-  });
-  var taptarget = document.querySelectorAll(".tap-target");
-  var instances = M.TapTarget.init(taptarget, {});
-  instances[0].open();
+var taptarget = document.querySelectorAll(".tap-target");
+var instances = M.TapTarget.init(taptarget, {});
+instances[0].open();
+
+var tooltipped = document.querySelectorAll(".tooltipped");
+M.Tooltip.init(tooltipped, {});
+
+var fixedactionbtn = document.querySelectorAll(".fixed-action-btn");
+M.FloatingActionButton.init(fixedactionbtn, {
+  direction: "top"
 });
 
 var map = L.map("map", {
@@ -172,42 +172,6 @@ var offices = L.geoJson(null, {
   }
 });
 
-fetch("data/adressen.geojson") // Call the fetch function passing the url of the API as a parameter
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    offices.addData(json);
-  })
-  .catch(function(error) {
-    console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Landesverbände!" });
-  });
-
-fetch("data/termine.geojson") // Call the fetch function passing the url of the API as a parameter
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    dates.addData(json);
-  })
-  .catch(function(error) {
-    console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Termine!" });
-  });
-
-fetch("data/kindergruppen.geojson") // Call the fetch function passing the url of the API as a parameter
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    kindergruppen.addData(json);
-  })
-  .catch(function(error) {
-    console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Kindergruppen!" });
-  });
-
 // Closure
 function handleMenuEvent(typ, color) {
   // Anonymous function
@@ -265,6 +229,54 @@ termine.addEventListener("mouseover", handleMenuEvent(dates, "orange"), false);
 termine.addEventListener("mouseout", handleMenuEvent(dates, "orange"), false);
 
 var gruppen = document.getElementById("gruppen");
-gruppen.addEventListener("click", handleMenuEvent(kindergruppen, "yellow"), false);
-gruppen.addEventListener("mouseover", handleMenuEvent(kindergruppen, "yellow"), false);
-gruppen.addEventListener("mouseout", handleMenuEvent(kindergruppen, "yellow"), false);
+gruppen.addEventListener(
+  "click",
+  handleMenuEvent(kindergruppen, "yellow"),
+  false
+);
+gruppen.addEventListener(
+  "mouseover",
+  handleMenuEvent(kindergruppen, "yellow"),
+  false
+);
+gruppen.addEventListener(
+  "mouseout",
+  handleMenuEvent(kindergruppen, "yellow"),
+  false
+);
+
+fetch("data/adressen.geojson") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    offices.addData(json);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Landesverbände!" });
+  });
+
+fetch("data/termine.geojson") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    dates.addData(json);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Termine!" });
+  });
+
+fetch("data/kindergruppen.geojson") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    kindergruppen.addData(json);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Kindergruppen!" });
+  });
