@@ -67,23 +67,23 @@ function setViewFromUrl() {
 
 setViewFromUrl();
 
-var groupsIcon = L.divIcon({
+var kindergruppenIcon = L.divIcon({
   html: '<i class="material-icons yellow myDivIcon">group</i>',
   iconSize: [36, 36],
   className: ""
 });
 
-var groupsIconHighlight = L.divIcon({
+var kindergruppenIconHighlight = L.divIcon({
   html:
     '<i class="material-icons yellow darken-1 pulse myDivIconHighlight">group</i>',
   iconSize: [54, 54],
   className: ""
 });
 
-var groups = L.geoJson(null, {
+var kindergruppen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: groupsIcon,
+      icon: kindergruppenIcon,
       riseOnHover: true
     });
   },
@@ -93,21 +93,21 @@ var groups = L.geoJson(null, {
       direction: "right"
     });
     layer.on("mouseover", function(e) {
-      e.target.setIcon(groupsIconHighlight);
+      e.target.setIcon(kindergruppenIconHighlight);
     });
     layer.on("mouseout", function(e) {
-      e.target.setIcon(groupsIcon);
+      e.target.setIcon(kindergruppenIcon);
     });
   }
 });
 
-var datesIcon = L.divIcon({
+var dateIcon = L.divIcon({
   html: '<i class="material-icons orange myDivIcon">date_range</i>',
   iconSize: [36, 36],
   className: ""
 });
 
-var datesIconHighlight = L.divIcon({
+var dateIconHighlight = L.divIcon({
   html:
     '<i class="material-icons orange darken-1 pulse myDivIconHighlight">date_range</i>',
   iconSize: [54, 54],
@@ -117,7 +117,7 @@ var datesIconHighlight = L.divIcon({
 var dates = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: datesIcon,
+      icon: dateIcon,
       riseOnHover: true
     });
   },
@@ -130,21 +130,21 @@ var dates = L.geoJson(null, {
       }
     );
     layer.on("mouseover", function(e) {
-      e.target.setIcon(datesIconHighlight);
+      e.target.setIcon(dateIconHighlight);
     });
     layer.on("mouseout", function(e) {
-      e.target.setIcon(datesIcon);
+      e.target.setIcon(dateIcon);
     });
   }
 });
 
-var adressenIcon = L.divIcon({
+var officeIcon = L.divIcon({
   html: '<i class="material-icons green myDivIcon">stars</i>',
   iconSize: [36, 36],
   className: ""
 });
 
-var adressenIconHighlight = L.divIcon({
+var officeIconHighlight = L.divIcon({
   html:
     '<i class="material-icons green darken-1 pulse myDivIconHighlight">stars</i>',
   iconSize: [54, 54],
@@ -154,7 +154,7 @@ var adressenIconHighlight = L.divIcon({
 var offices = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: adressenIcon,
+      icon: officeIcon,
       riseOnHover: true
     });
   },
@@ -164,10 +164,10 @@ var offices = L.geoJson(null, {
       direction: "right"
     });
     layer.on("mouseover", function(e) {
-      e.target.setIcon(adressenIconHighlight);
+      e.target.setIcon(officeIconHighlight);
     });
     layer.on("mouseout", function(e) {
-      e.target.setIcon(adressenIcon);
+      e.target.setIcon(officeIcon);
     });
   }
 });
@@ -181,7 +181,7 @@ fetch("data/adressen.geojson") // Call the fetch function passing the url of the
   })
   .catch(function(error) {
     console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Adressen!" });
+    M.toast({ html: "Fehler beim Laden der Landesverbände!" });
   });
 
 fetch("data/termine.geojson") // Call the fetch function passing the url of the API as a parameter
@@ -201,7 +201,7 @@ fetch("data/kindergruppen.geojson") // Call the fetch function passing the url o
     return response.json();
   })
   .then(function(json) {
-    groups.addData(json);
+    kindergruppen.addData(json);
   })
   .catch(function(error) {
     console.log(error.message);
@@ -265,6 +265,6 @@ termine.addEventListener("mouseover", handleMenuEvent(dates, "orange"), false);
 termine.addEventListener("mouseout", handleMenuEvent(dates, "orange"), false);
 
 var gruppen = document.getElementById("gruppen");
-gruppen.addEventListener("click", handleMenuEvent(groups, "yellow"), false);
-gruppen.addEventListener("mouseover", handleMenuEvent(groups, "yellow"), false);
-gruppen.addEventListener("mouseout", handleMenuEvent(groups, "yellow"), false);
+gruppen.addEventListener("click", handleMenuEvent(kindergruppen, "yellow"), false);
+gruppen.addEventListener("mouseover", handleMenuEvent(kindergruppen, "yellow"), false);
+gruppen.addEventListener("mouseout", handleMenuEvent(kindergruppen, "yellow"), false);
