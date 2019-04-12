@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
+    <title>NAJU Karte</title>
     <!--Import Google Icon Font-->
     <link type="text/css" rel="stylesheet" href="css/font.css" />
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
     <link type="text/css" rel="stylesheet" href="css/leaflet.css" />
     <link type="text/css" rel="stylesheet" href="css/app.css" />
 
     <!--Let browser know website is optimized for mobile-->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="map"></div>
 
-
-
-
-<!-- Menu -->
+    <!-- Menu -->
     <div class="fixed-action-btn">
-  <a id="menu" class="waves-effect waves-light btn-floating btn-large red">
-    <i class="large material-icons">menu</i>
-  </a>
-  <ul>
-    <li><a class="waves-effect waves-red btn-floating tooltipped grey" data-position="left" data-tooltip="Storchenkoffer" id="storchenkoffer"><i class="material-icons">card_travel</i></a></li>
-    <li><a class="waves-effect waves-green btn-floating tooltipped grey" data-position="left" data-tooltip="Landesverbände" ><i class="lvs material-icons" id="lvs">stars</i></a></li>
-    <li><a class="waves-effect waves-yellow btn-floating tooltipped grey" data-position="left" data-tooltip="Kindergruppen" id="groups"><i class="material-icons" id="gruppen">group</i></a></li>
-    <li><a class="waves-effect waves-orange btn-floating tooltipped grey" data-position="left" data-tooltip="Termine" id="dates"><i class="material-icons" id="termine">date_range</i></a></li>
-  </ul>
-</div>
+      <a id="menu" class="waves-effect waves-light btn-floating btn-large red">
+        <i class="large material-icons">menu</i>
+      </a>
+      <ul>
+        <li>
+          <a
+            class="waves-effect waves-red btn-floating tooltipped grey"
+            data-position="left"
+            data-tooltip="Storchenkoffer"
+            id="storchenkoffer"
+          >
+            <i class="material-icons">card_travel</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="waves-effect waves-green btn-floating tooltipped grey"
+            data-position="left"
+            data-tooltip="Landesverbände"
+          >
+            <i class="lvs material-icons" id="lvs">stars</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="waves-effect waves-yellow btn-floating tooltipped grey"
+            data-position="left"
+            data-tooltip="Kindergruppen"
+            id="groups"
+          >
+            <i class="material-icons" id="gruppen">group</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="waves-effect waves-orange btn-floating tooltipped grey"
+            data-position="left"
+            data-tooltip="Termine"
+            id="dates"
+          >
+            <i class="material-icons" id="termine">date_range</i></a
+          >
+        </li>
+      </ul>
+    </div>
 
-
-<!-- Tap Target Structure -->
-<div class="tap-target" data-target="menu">
-    <div class="tap-target-content">
+    <!-- Tap Target Structure -->
+    <div class="tap-target" data-target="menu">
+      <div class="tap-target-content">
         <h4>Die NAJU vor Ort</h4>
         <h6>Finde raus wann & wo!</h6>
+      </div>
     </div>
-</div>
-
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/leaflet-src.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-</body>
-
+  </body>
 </html>
