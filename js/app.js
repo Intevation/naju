@@ -117,10 +117,6 @@ var adressen = L.geoJson(null, {
   }
 });
 
-adressen.on("click", function() {
-  console.log("click");
-});
-
 fetch("data/adressen.geojson") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
@@ -187,140 +183,64 @@ L.tileLayer(
   }
 ).addTo(map);
 
-function handleLvs(e) {
-  console.log(e);
-  var menu = document.querySelector(
-    "body > div.fixed-action-btn.direction-top > ul > li:nth-child(2) > a"
-  );
-  switch (e.type) {
-    case "mouseover":
-      if (!menu.className.includes("clicked")) {
-        if (!map.hasLayer(adressen)) {
-          adressen.addTo(map);
-          menu.classList.remove("grey");
-          menu.classList.add("green");
+function handleClosure(typ, color) {
+  return function(e) {
+    console.log(e);
+    // var menu = document.querySelector(
+    //   "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
+    // );
+    var menu = e.path[1];
+    console.log(menu);
+    switch (e.type) {
+      case "mouseover":
+        if (!menu.className.includes("clicked")) {
+          if (!map.hasLayer(typ)) {
+            typ.addTo(map);
+            menu.classList.remove("grey");
+            menu.classList.add(color);
+          }
         }
-      }
-      break;
-    case "mouseout":
-      if (!menu.className.includes("clicked")) {
-        if (map.hasLayer(adressen)) {
-          map.removeLayer(adressen);
-          menu.classList.remove("green");
+        break;
+      case "mouseout":
+        if (!menu.className.includes("clicked")) {
+          if (map.hasLayer(typ)) {
+            map.removeLayer(typ);
+            menu.classList.remove(color);
+            menu.classList.add("grey");
+          }
+        }
+        break;
+      case "click":
+        menu.classList.toggle("clicked");
+        if (!menu.className.includes("clicked")) {
+          map.removeLayer(typ);
+          menu.classList.remove(color);
           menu.classList.add("grey");
-        }
-      }
-      break;
-    case "click":
-      menu.classList.toggle("clicked");
-      if (!menu.className.includes("clicked")) {
-        map.removeLayer(adressen);
-        menu.classList.remove("green");
-        menu.classList.add("grey");
-      } else {
-        adressen.addTo(map);
-        menu.classList.remove("grey");
-        menu.classList.add("green");
-      }
-      break;
-  }
-}
-
-function handleDates(e) {
-  console.log(e);
-  var menu = document.querySelector(
-    "body > div.fixed-action-btn.direction-top > ul > li:nth-child(4) > a"
-  );
-  console.log(menu);
-  switch (e.type) {
-    case "mouseover":
-      if (!menu.className.includes("clicked")) {
-        if (!map.hasLayer(dates)) {
-          dates.addTo(map);
+        } else {
+          typ.addTo(map);
           menu.classList.remove("grey");
-          menu.classList.add("orange");
+          menu.classList.add(color);
         }
-      }
-      break;
-    case "mouseout":
-      if (!menu.className.includes("clicked")) {
-        if (map.hasLayer(dates)) {
-          map.removeLayer(dates);
-          menu.classList.remove("orange");
-          menu.classList.add("grey");
-        }
-      }
-      break;
-    case "click":
-      menu.classList.toggle("clicked");
-      if (!menu.className.includes("clicked")) {
-        map.removeLayer(dates);
-        menu.classList.remove("orange");
-        menu.classList.add("grey");
-      } else {
-        dates.addTo(map);
-        menu.classList.remove("grey");
-        menu.classList.add("orange");
-      }
-      break;
-  }
-}
-
-function handleGroups(e) {
-  console.log(e);
-  var menu = document.querySelector(
-    "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
-  );
-  console.log(menu);
-  switch (e.type) {
-    case "mouseover":
-      if (!menu.className.includes("clicked")) {
-        if (!map.hasLayer(groups)) {
-          groups.addTo(map);
-          menu.classList.remove("grey");
-          menu.classList.add("yellow");
-        }
-      }
-      break;
-    case "mouseout":
-      if (!menu.className.includes("clicked")) {
-        if (map.hasLayer(groups)) {
-          map.removeLayer(groups);
-          menu.classList.remove("yellow");
-          menu.classList.add("grey");
-        }
-      }
-      break;
-    case "click":
-      menu.classList.toggle("clicked");
-      if (!menu.className.includes("clicked")) {
-        map.removeLayer(groups);
-        menu.classList.remove("yellow");
-        menu.classList.add("grey");
-      } else {
-        groups.addTo(map);
-        menu.classList.remove("grey");
-        menu.classList.add("yellow");
-      }
-      break;
-  }
+        break;
+    }
+  };
 }
 
 // Add event listener to table
 var lvs = document.getElementById("lvs");
-lvs.addEventListener("click", handleLvs, false);
-lvs.addEventListener("mouseover", handleLvs, false);
-lvs.addEventListener("mouseout", handleLvs, false);
+lvs.addEventListener("click", handleClosure(adressen, "green"), false);
+lvs.addEventListener("mouseover", handleClosure(adressen, "green"), false);
+lvs.addEventListener("mouseout", handleClosure(adressen, "green"), false);
 
 var termine = document.getElementById("termine");
-termine.addEventListener("click", handleDates, false);
-termine.addEventListener("mouseover", handleDates, false);
-termine.addEventListener("mouseout", handleDates, false);
+termine.addEventListener("click", handleClosure(dates, "orange"), false);
+termine.addEventListener("mouseover", handleClosure(dates, "orange"), false);
+termine.addEventListener("mouseout", handleClosure(dates, "orange"), false);
 
 var gruppen = document.getElementById("gruppen");
-gruppen.addEventListener("click", handleGroups, false);
-gruppen.addEventListener("mouseover", handleGroups, false);
-gruppen.addEventListener("mouseout", handleGroups, false);
+gruppen.addEventListener("click", handleClosure(groups, "yellow"), false);
+gruppen.addEventListener("mouseover", handleClosure(groups, "yellow"), false);
+gruppen.addEventListener("mouseout", handleClosure(groups, "yellow"), false);
 
 function updateUrl() {
   var center = map.getCenter();
