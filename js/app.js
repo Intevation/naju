@@ -151,7 +151,7 @@ var adressenIconHighlight = L.divIcon({
   className: ""
 });
 
-var adressen = L.geoJson(null, {
+var offices = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
       icon: adressenIcon,
@@ -177,7 +177,7 @@ fetch("data/adressen.geojson") // Call the fetch function passing the url of the
     return response.json();
   })
   .then(function(json) {
-    adressen.addData(json);
+    offices.addData(json);
   })
   .catch(function(error) {
     console.log(error.message);
@@ -255,9 +255,9 @@ function handleMenuEvent(typ, color) {
 
 // Add event listener to table
 var lvs = document.getElementById("lvs");
-lvs.addEventListener("click", handleMenuEvent(adressen, "green"), false);
-lvs.addEventListener("mouseover", handleMenuEvent(adressen, "green"), false);
-lvs.addEventListener("mouseout", handleMenuEvent(adressen, "green"), false);
+lvs.addEventListener("click", handleMenuEvent(offices, "green"), false);
+lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
+lvs.addEventListener("mouseout", handleMenuEvent(offices, "green"), false);
 
 var termine = document.getElementById("termine");
 termine.addEventListener("click", handleMenuEvent(dates, "orange"), false);
