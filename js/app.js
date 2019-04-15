@@ -176,12 +176,17 @@ var offices = L.geoJson(null, {
 function handleMenuEvent(typ, color) {
   // Anonymous function
   return function(e) {
-    // console.log(e);
+    console.log(e);
     // var menu = document.querySelector(
     //   "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
     // );
-    var menu = e.path[1];
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath
+    // var path = e.path || (e.composedPath && e.composedPath());
+    // var menu=path[1];
+    var menu = e.target.parentNode; // for ie11 and edge compatibility
     // console.log(menu);
+
     switch (e.type) {
       case "mouseover":
         if (!menu.className.includes("clicked")) {
