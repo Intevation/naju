@@ -77,7 +77,21 @@ async function getTemplate(url) {
   }
 }
 
-let tmpl = getTemplate("tmpl/termine.html");
+let tmplTermine = getTemplate("tmpl/termine.html");
+let tmplGruppen = getTemplate("tmpl/gruppen.html");
+
+function renderPopUP(template,feature){
+      template.then(function(t) {
+        Mustache.parse(t);
+        var rendered = Mustache.render(t, feature.properties);
+        document.all.modal1.innerHTML = rendered;
+        var elems = document.querySelectorAll(".modal");
+        //var instances = M.Modal.init(elems, options);
+        var modals = M.Modal.init(elems,{opacity: 0.25});
+        console.log(modals);
+        modals[0].open();
+      });
+}
 
 var kindergruppenIcon = L.divIcon({
   html: '<i class="material-icons yellow myDivIcon">group</i>',
@@ -109,6 +123,10 @@ var kindergruppen = L.geoJson(null, {
     });
     layer.on("mouseout", function(e) {
       e.target.setIcon(kindergruppenIcon);
+    });
+    layer.on("click", function(e) {
+      console.log(e.sourceTarget.feature);
+      renderPopUP(tmplGruppen,e.sourceTarget.feature);
     });
   }
 });
@@ -149,17 +167,7 @@ var dates = L.geoJson(null, {
       e.target.setIcon(dateIcon);
     });
     layer.on("click", function(e) {
-      console.log(e.sourceTarget.feature);
-      tmpl.then(function(t) {
-        Mustache.parse(t);
-        var rendered = Mustache.render(t, e.sourceTarget.feature.properties);
-        document.all.modal.innerHTML = rendered;
-        var elems = document.querySelectorAll(".modal");
-        //var instances = M.Modal.init(elems, options);
-        var modals = M.Modal.init(elems);
-        console.log(modals);
-        modals[0].open();
-      });
+      renderPopUP(tmplTermine,e.sourceTarget.feature);
     });
   }
 });
