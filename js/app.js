@@ -142,15 +142,24 @@ var dates = L.geoJson(null, {
       }
     );
 
-    tmpl.then(function(t) {
-      Mustache.parse(t);
-      layer.bindPopup(Mustache.render(t, feature.properties));
-    });
     layer.on("mouseover", function(e) {
       e.target.setIcon(dateIconHighlight);
     });
     layer.on("mouseout", function(e) {
       e.target.setIcon(dateIcon);
+    });
+    layer.on("click", function(e) {
+      console.log(e.sourceTarget.feature);
+      tmpl.then(function(t) {
+        Mustache.parse(t);
+        var rendered = Mustache.render(t, e.sourceTarget.feature.properties);
+        document.all.modal.innerHTML = rendered;
+        var elems = document.querySelectorAll(".modal");
+        //var instances = M.Modal.init(elems, options);
+        var modals = M.Modal.init(elems);
+        console.log(modals);
+        modals[0].open();
+      });
     });
   }
 });
