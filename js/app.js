@@ -67,6 +67,19 @@ function setViewFromUrl() {
 
 setViewFromUrl();
 
+async function getTemplate(url) {
+  try {
+    let response = await fetch(url);
+    let template = await response.text();
+    return template;
+  }
+  catch(e) {
+    console.log('Error!', e);
+  }
+}
+
+let tmpl= getTemplate("tmpl/termine.html");
+
 var kindergruppenIcon = L.divIcon({
   html: '<i class="material-icons yellow myDivIcon">group</i>',
   iconSize: [36, 36],
@@ -129,6 +142,11 @@ var dates = L.geoJson(null, {
         direction: "right"
       }
     );
+
+    tmpl.then(function(t){
+    Mustache.parse(t);
+    layer.bindPopup(Mustache.render(t, feature.properties));
+    });
     layer.on("mouseover", function(e) {
       e.target.setIcon(dateIconHighlight);
     });
