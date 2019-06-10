@@ -72,13 +72,12 @@ async function getTemplate(url) {
     let response = await fetch(url);
     let template = await response.text();
     return template;
-  }
-  catch(e) {
-    console.log('Error!', e);
+  } catch (e) {
+    console.log("Error!", e);
   }
 }
 
-let tmpl= getTemplate("tmpl/termine.html");
+let tmpl = getTemplate("tmpl/termine.html");
 
 var kindergruppenIcon = L.divIcon({
   html: '<i class="material-icons yellow myDivIcon">group</i>',
@@ -143,9 +142,9 @@ var dates = L.geoJson(null, {
       }
     );
 
-    tmpl.then(function(t){
-    Mustache.parse(t);
-    layer.bindPopup(Mustache.render(t, feature.properties));
+    tmpl.then(function(t) {
+      Mustache.parse(t);
+      layer.bindPopup(Mustache.render(t, feature.properties));
     });
     layer.on("mouseover", function(e) {
       e.target.setIcon(dateIconHighlight);
