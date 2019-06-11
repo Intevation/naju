@@ -5,12 +5,16 @@ var instances = M.TapTarget.init(taptarget, {});
 instances[0].open();
 
 var tooltipped = document.querySelectorAll(".tooltipped");
-M.Tooltip.init(tooltipped, {});
+var tooltip = M.Tooltip.init(tooltipped, {});
 
 var fixedactionbtn = document.querySelectorAll(".fixed-action-btn");
-M.FloatingActionButton.init(fixedactionbtn, {
+var floatActionButton = M.FloatingActionButton.init(fixedactionbtn, {
   direction: "top"
 });
+
+function sleep(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 
 var map = L.map("map", {
   attributionControl: false,
@@ -81,17 +85,17 @@ let tmplTermine = getTemplate("tmpl/termine.html");
 let tmplGruppen = getTemplate("tmpl/gruppen.html");
 let tmplLandesverbaende = getTemplate("tmpl/landesverbaende.html");
 
-function renderPopUP(template,feature){
-      template.then(function(t) {
-        Mustache.parse(t);
-        var rendered = Mustache.render(t, feature.properties);
-        document.all.modal1.innerHTML = rendered;
-        var elems = document.querySelectorAll(".modal");
-        //var instances = M.Modal.init(elems, options);
-        var modals = M.Modal.init(elems,{opacity: 0.5});
-        console.log(modals);
-        modals[0].open();
-      });
+function renderPopUP(template, feature) {
+  template.then(function(t) {
+    Mustache.parse(t);
+    var rendered = Mustache.render(t, feature.properties);
+    document.all.modal1.innerHTML = rendered;
+    var elems = document.querySelectorAll(".modal");
+    //var instances = M.Modal.init(elems, options);
+    var modals = M.Modal.init(elems, { opacity: 0.5 });
+    console.log(modals);
+    modals[0].open();
+  });
 }
 
 var kindergruppenIcon = L.divIcon({
@@ -127,7 +131,7 @@ var kindergruppen = L.geoJson(null, {
     });
     layer.on("click", function(e) {
       console.log(e.sourceTarget.feature);
-      renderPopUP(tmplGruppen,e.sourceTarget.feature);
+      renderPopUP(tmplGruppen, e.sourceTarget.feature);
     });
   }
 });
@@ -168,7 +172,7 @@ var dates = L.geoJson(null, {
       e.target.setIcon(dateIcon);
     });
     layer.on("click", function(e) {
-      renderPopUP(tmplTermine,e.sourceTarget.feature);
+      renderPopUP(tmplTermine, e.sourceTarget.feature);
     });
   }
 });
@@ -205,7 +209,7 @@ var offices = L.geoJson(null, {
       e.target.setIcon(officeIcon);
     });
     layer.on("click", function(e) {
-      renderPopUP(tmplLandesverbaende,e.sourceTarget.feature);
+      renderPopUP(tmplLandesverbaende, e.sourceTarget.feature);
     });
   }
 });
@@ -214,6 +218,9 @@ var offices = L.geoJson(null, {
 function handleMenuEvent(typ, color) {
   // Anonymous function
   return function(e) {
+    if (L.Browser.mobile) {
+      floatActionButton[0].open();
+    }
     console.log(e);
     // var menu = document.querySelector(
     //   "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
@@ -255,6 +262,15 @@ function handleMenuEvent(typ, color) {
           menu.classList.remove("grey");
           menu.classList.add(color);
         }
+        if (L.Browser.mobile) {
+          sleep(500).then(() => {
+            floatActionButton[0].close();
+            tooltip.forEach(function(element) {
+              element.close();
+            });
+          });
+        }
+
         break;
     }
   };
