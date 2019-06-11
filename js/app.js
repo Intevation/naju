@@ -79,6 +79,7 @@ async function getTemplate(url) {
 
 let tmplTermine = getTemplate("tmpl/termine.html");
 let tmplGruppen = getTemplate("tmpl/gruppen.html");
+let tmplLandesverbaende = getTemplate("tmpl/landesverbaende.html");
 
 function renderPopUP(template,feature){
       template.then(function(t) {
@@ -87,7 +88,7 @@ function renderPopUP(template,feature){
         document.all.modal1.innerHTML = rendered;
         var elems = document.querySelectorAll(".modal");
         //var instances = M.Modal.init(elems, options);
-        var modals = M.Modal.init(elems,{opacity: 0.25});
+        var modals = M.Modal.init(elems,{opacity: 0.5});
         console.log(modals);
         modals[0].open();
       });
@@ -202,6 +203,9 @@ var offices = L.geoJson(null, {
     });
     layer.on("mouseout", function(e) {
       e.target.setIcon(officeIcon);
+    });
+    layer.on("click", function(e) {
+      renderPopUP(tmplLandesverbaende,e.sourceTarget.feature);
     });
   }
 });
