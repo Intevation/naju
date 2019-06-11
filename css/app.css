@@ -8,20 +8,20 @@ body,
     color: white;
 }
 
-div.material-tooltip:nth-child(8) {
+div.material-tooltip:nth-child(10) {
     background-color: #4CAF50;
 }
 
-div.material-tooltip:nth-child(9) {
+div.material-tooltip:nth-child(11) {
     background-color: #ffeb3b;
 }
 
-div.material-tooltip:nth-child(10) {
+div.material-tooltip:nth-child(12) {
     background-color: #ff9800;
 }
 
 .myDivIcon {
-    pointer-events:none;
+    pointer-events: none;
     color: white;
     border-radius: 50%;
     line-height: 36px;
