@@ -1,0 +1,31 @@
+<!-- Modal Structure -->
+<div class="modal-content">
+  <a
+    class="modal-close btn-floating btn-large waves-effect waves-light red"
+    style="float:right"
+    ><i class="material-icons">close</i></a
+  >
+  <div class="container">
+    <h4>{{ LV }}</h4>
+    {{#E-Mail}}
+    <a
+      class="waves-effect waves-light btn"
+      href="mailto:{{ E-Mail }}"
+      target="_blank"
+    >
+      <i class="material-icons left">email</i>{{ E-Mail }}</a
+    >
+    {{/E-Mail}}
+    {{#Tel}}
+    <p>
+      <a
+        class="waves-effect waves-light btn"
+        href="tel:{{ Tel }}"
+        target="_blank"
+      >
+        <i class="material-icons left">phone</i>{{ Tel }}</a
+      >
+    </p>
+    {{/Tel}}
+  </div>
+</div>
