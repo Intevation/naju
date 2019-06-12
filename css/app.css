@@ -37,3 +37,10 @@ div.material-tooltip:nth-child(12) {
     padding: 0 0 0 10px;
     font-size: xx-large;
 }
+
+.myMarkerCluster {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    font-weight: bold;
+}

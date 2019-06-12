@@ -111,6 +111,18 @@ var kindergruppenIconHighlight = L.divIcon({
   className: ""
 });
 
+var markers = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 25,
+  iconCreateFunction: function(cluster) {
+    return L.divIcon({
+      html: '<div class="myMarkerCluster">'+cluster.getChildCount()+'</div><i class="material-icons yellow myDivIcon">group</i>',
+      iconSize: [36, 36],
+      className: ""
+    });
+  }
+});
+
 var kindergruppen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
@@ -135,6 +147,9 @@ var kindergruppen = L.geoJson(null, {
     });
   }
 });
+
+markers.addLayer(kindergruppen);
+markers.addTo(map);
 
 var dateIcon = L.divIcon({
   html: '<i class="material-icons orange myDivIcon">date_range</i>',
