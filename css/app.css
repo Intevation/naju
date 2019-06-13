@@ -8,15 +8,15 @@ body,
     color: white;
 }
 
-div.material-tooltip:nth-child(10) {
+div.material-tooltip:nth-child(11) {
     background-color: #4CAF50;
 }
 
-div.material-tooltip:nth-child(11) {
+div.material-tooltip:nth-child(12) {
     background-color: #ffeb3b;
 }
 
-div.material-tooltip:nth-child(12) {
+div.material-tooltip:nth-child(13) {
     background-color: #ff9800;
 }
 
@@ -39,8 +39,14 @@ div.material-tooltip:nth-child(12) {
 }
 
 .myMarkerCluster {
+    border-radius: 50%;
+    width:1.5em;
+    height:1.5em;
+    background-color:darkslategrey;
+    color:white;
     position: absolute;
     top: 50%;
     left: 70%;
     font-weight: bold;
+    text-align:center;
 }

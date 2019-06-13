@@ -111,7 +111,7 @@ var kindergruppenIconHighlight = L.divIcon({
   className: ""
 });
 
-var markers = L.markerClusterGroup({
+var markersKindergruppen = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   iconCreateFunction: function(cluster) {
@@ -147,9 +147,6 @@ var kindergruppen = L.geoJson(null, {
     });
   }
 });
-
-markers.addLayer(kindergruppen);
-markers.addTo(map);
 
 var dateIcon = L.divIcon({
   html: '<i class="material-icons orange myDivIcon">date_range</i>',
@@ -305,17 +302,17 @@ termine.addEventListener("mouseout", handleMenuEvent(dates, "orange"), false);
 var gruppen = document.getElementById("gruppen");
 gruppen.addEventListener(
   "click",
-  handleMenuEvent(kindergruppen, "yellow"),
+  handleMenuEvent(markersKindergruppen, "yellow"),
   false
 );
 gruppen.addEventListener(
   "mouseover",
-  handleMenuEvent(kindergruppen, "yellow"),
+  handleMenuEvent(markersKindergruppen, "yellow"),
   false
 );
 gruppen.addEventListener(
   "mouseout",
-  handleMenuEvent(kindergruppen, "yellow"),
+  handleMenuEvent(markersKindergruppen, "yellow"),
   false
 );
 
@@ -349,6 +346,7 @@ fetch("data/kindergruppen.geojson") // Call the fetch function passing the url o
   })
   .then(function(json) {
     kindergruppen.addData(json);
+    markersKindergruppen.addLayer(kindergruppen);
   })
   .catch(function(error) {
     console.log(error.message);
