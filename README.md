@@ -1,24 +1,17 @@
-# README
+# Über die NAJU
 
-## Intellisense support for Leaflet in Visual Studio Code
+Hunderte Jugendgruppen vor Ort, Naturschutzeinsätze im Grünen,
+öffentlichkeitswirksame Aufklärungsaktionen oder Camps mit gleichgesinnten
+aus ganz Deutschland – das alles bietet die Naturschutzjugend (NAJU).
 
-With Visual Studio code, if you have TypeScript definitions files for certain
-libraries, /// <reference-ing such a definition file will light up
-intellisense for that particular library in any JS/TypeScript file that has
-that reference tag.
+Die NAJU ist die unabhängige, gemeinnützige Jugendorganisation des NABU und
+mit über 80.000 Mitgliedern deutschlandweit der größte Kinder- und
+Jugendverband im Natur- und Umweltschutz. Sie wurde 1982 gegründet und hat es
+sich zum Ziel gesetzt, durch aktiven Natur-und Umweltschutz die natürlichen
+Lebensgrundlagen des Menschen und die biologische Vielfalt zu erhalten.
 
-For this to work in the case of leaflet, you need node.js installed and then.
+Sie ist mit über 1.000 Kinder- und Jugendgruppen in ganz Deutschland aktiv.
+Mit Projekten und durch Kooperationen im In- und Ausland pflegt die NAJU ein
+großes Netzwerk.
 
-1. Make sure typings is installed  `yarn add typings`
-2. From the command line in your project directory, install the TypeScript
-   definition file for leaflet `typings install dt~leaflet --global --save`
-3. Then in whatever JavaScript you require leaflet intellisense, just add a
-reference tag at the top of the file that points to
-`$PROJECT_DIR/typings/index.d.ts`
-
-https://gis.stackexchange.com/questions/197764/is-there-an-editor-for-leaflet-javascript-that-has-intellisense-functionality
-
-## LINKS
-
-https://developers.google.com/fonts/docs/getting_started
-https://fonts.google.com/
+Mehr über die NAJU erfährst du unter <https://www.naju.de>.
