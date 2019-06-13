@@ -132,6 +132,7 @@ var kindergruppen = L.geoJson(null, {
     layer.on("click", function(e) {
       console.log(e.sourceTarget.feature);
       renderPopUP(tmplGruppen, e.sourceTarget.feature);
+      map.flyTo(e.latlng, 13);
     });
   }
 });
@@ -178,6 +179,7 @@ var dates = L.geoJson(null, {
     );
 
     layer.on("mouseover", function(e) {
+      //map.panTo(e.latlng);
       e.target.setIcon(dateIconHighlight);
     });
     layer.on("mouseout", function(e) {
@@ -185,6 +187,7 @@ var dates = L.geoJson(null, {
     });
     layer.on("click", function(e) {
       renderPopUP(tmplTermine, e.sourceTarget.feature);
+      map.flyTo(e.latlng, 13);
     });
   }
 });
@@ -261,9 +264,14 @@ function handleMenuEvent(typ, color) {
         if (!menu.className.includes("clicked")) {
           if (!map.hasLayer(typ)) {
             typ.addTo(map);
+            // map.fitBounds(typ.getBounds());
+            map.flyToBounds(typ.getBounds());
             menu.classList.remove("grey");
             menu.classList.add(color);
           }
+        }else{
+            //map.fitBounds(typ.getBounds());
+            map.flyToBounds(typ.getBounds());
         }
         break;
       case "mouseout":
@@ -283,6 +291,8 @@ function handleMenuEvent(typ, color) {
           menu.classList.add("grey");
         } else {
           typ.addTo(map);
+          //map.fitBounds(typ.getBounds());
+          map.flyToBounds(typ.getBounds());
           menu.classList.remove("grey");
           menu.classList.add(color);
         }
