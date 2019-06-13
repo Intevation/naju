@@ -111,18 +111,6 @@ var kindergruppenIconHighlight = L.divIcon({
   className: ""
 });
 
-var markersKindergruppen = L.markerClusterGroup({
-  showCoverageOnHover: false,
-  maxClusterRadius: 25,
-  iconCreateFunction: function(cluster) {
-    return L.divIcon({
-      html: '<div class="myMarkerCluster">'+cluster.getChildCount()+'</div><i class="material-icons yellow myDivIcon">group</i>',
-      iconSize: [36, 36],
-      className: ""
-    });
-  }
-});
-
 var kindergruppen = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
@@ -144,6 +132,18 @@ var kindergruppen = L.geoJson(null, {
     layer.on("click", function(e) {
       console.log(e.sourceTarget.feature);
       renderPopUP(tmplGruppen, e.sourceTarget.feature);
+    });
+  }
+});
+
+var markersKindergruppen = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 25,
+  iconCreateFunction: function(cluster) {
+    return L.divIcon({
+      html: '<div class="myMarkerCluster">'+cluster.getChildCount()+'</div><i class="material-icons yellow myDivIcon">group</i>',
+      iconSize: [36, 36],
+      className: ""
     });
   }
 });
@@ -170,7 +170,7 @@ var dates = L.geoJson(null, {
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(
-      String("<b>" + feature.properties["Veranstaltung"] + "</b>"),
+      String("<b>" + feature.properties["thema"] + "</b>"),
       {
         offset: [18, 0],
         direction: "right"
@@ -185,6 +185,18 @@ var dates = L.geoJson(null, {
     });
     layer.on("click", function(e) {
       renderPopUP(tmplTermine, e.sourceTarget.feature);
+    });
+  }
+});
+
+var markersDates = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 25,
+  iconCreateFunction: function(cluster) {
+    return L.divIcon({
+      html: '<div class="myMarkerCluster">'+cluster.getChildCount()+'</div><i class="material-icons orange myDivIcon">date_range</i>',
+      iconSize: [36, 36],
+      className: ""
     });
   }
 });
@@ -295,9 +307,9 @@ lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
 lvs.addEventListener("mouseout", handleMenuEvent(offices, "green"), false);
 
 var termine = document.getElementById("termine");
-termine.addEventListener("click", handleMenuEvent(dates, "orange"), false);
-termine.addEventListener("mouseover", handleMenuEvent(dates, "orange"), false);
-termine.addEventListener("mouseout", handleMenuEvent(dates, "orange"), false);
+termine.addEventListener("click", handleMenuEvent(markersDates, "orange"), false);
+termine.addEventListener("mouseover", handleMenuEvent(markersDates, "orange"), false);
+termine.addEventListener("mouseout", handleMenuEvent(markersDates, "orange"), false);
 
 var gruppen = document.getElementById("gruppen");
 gruppen.addEventListener(
@@ -334,6 +346,7 @@ fetch("data/termine.geojson") // Call the fetch function passing the url of the 
   })
   .then(function(json) {
     dates.addData(json);
+    markersDates.addLayer(dates);
   })
   .catch(function(error) {
     console.log(error.message);

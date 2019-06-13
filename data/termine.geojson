@@ -1,1 +1,1333 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Datum":"12.-14.04.2019","Veranstaltung":"AK Jugendmagazin","Ort":"Berlin"},"geometry":{"type":"Point","coordinates":[13.403320312499998,52.522905940278065]}},{"type":"Feature","properties":{"Datum":"26.-28.04.2019","Veranstaltung":"Aktionsplattform \"Mensch und Wildnis“","Ort":"Gaggenau/ Nordschwarzwald"},"geometry":{"type":"Point","coordinates":[8.318367004394531,48.8048284105919]}},{"type":"Feature","properties":{"Datum":"05/08/2019","Veranstaltung":"Klima-Kita-Netzwerk: Fortbildung für pädagogische Fachkräfte Modul II","Ort":"Havelsee OT Fohrde"},"geometry":{"type":"Point","coordinates":[12.471456527709961,52.482152967102564]}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "01099",
+        "ort": "Dresden",
+        "thema": "Aktionswoche \u201eWald\u201c ",
+        "beschreibung": "Mit fast 500.000 Hektar Wald ist rund ein Drittel Sachsens bewaldet. Achtlos weggeworfene Verpackungen und mutwillig entsorgter M\u00fcll gef\u00e4hrden die Tier- und Pflanzenwelt und vergiften Boden und Grundwasser mit Schadstoffen. Vom Leipziger Auwald bis zum Erzgebirge \u2013 in den bewaldeten Landschaftsschutzgebieten liegt unz\u00e4hliger Unrat verstreut. Die NAJU ruft ihre Ortsgruppen und interessierte Aktive dazu auf, eigene Aktionen zu planen, um Sachsens W\u00e4lder vom M\u00fcll zu befreien. Meldet eure Ideen und Aktionen bei uns an \u2013 wir unterst\u00fctzen und vernetzen euch gern: info@naju-sachsen.de. ",
+        "von": "16.06.2019 00:00",
+        "bis": "23.06.2019 23:59",
+        "bundesland": [
+          "Sachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Sachsen",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Kamenzer Stra\u00dfe 7\r<br>PLZ Ort: 01099 Dresden\r<br>Telefon: 0351 4716566\r<br>Telefax: \r<br>E-Mail:  info@naju-sachsen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.831992,
+          51.092953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "01099",
+        "ort": "Dresden",
+        "thema": "Kindercamp \u201eMusik der Natur\u201d",
+        "beschreibung": "Melodien und Rhythmen aus Jazz, Rock und Pop sind uns allen bekannt \u2013 doch woher kommen eigentlich die Kl\u00e4nge, aus denen unsere Musik entsteht? Entdecke mit uns die Stimmen der Tiere und die Ger\u00e4usche des Waldes, die schon seit langer Zeit Musiker*innen als Inspiration dienen. Erforsche, wie man V\u00f6gel an ihrem Gesang erkennen kann, welches Ger\u00e4usch der Fuchs macht und wie Tiere miteinander kommunizieren. Baue mit uns Instrumente aus Naturmaterialien und erlebe an diesem Wochenende die wunderbar vielf\u00e4ltige Musik der Natur.",
+        "von": "14.06.2019 18:00",
+        "bis": "16.06.2019 15:00",
+        "bundesland": [
+          "Sachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Dresden",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Kamenzer Stra\u00dfe 7<br>PLZ Ort: 01099 Dresden<br>Telefon: 0351 4716566<br>Telefax: <br>E-Mail:  foe.dresden@naju-sachsen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.831992,
+          51.092953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "07751",
+        "ort": "P\u00f6sen",
+        "thema": "H\u00fcttenfest Naturerlebnishaus Leutratal",
+        "beschreibung": "NAJU und NABU Th\u00fcringen laden zum Tag der offenen T\u00fcr in das NaturErlebnisHaus Leutratal ein. \r<br>\r<br>Von 11 bis 18 Uhr erhalten Interessierte einen Einblick in die rustikale Gruppenunterkunft und im Au\u00dfenbereich gibt es Infost\u00e4nde und Mitmachangebote. Besonders auf naturbegeisterte Familien und Jugendliche warten Aktionsst\u00e4nde, ein kleiner Flohmarkt, ein Spielbereich f\u00fcr Kinder, ein Imkerstand mit Honigverkauf und Lagerfeuer mit Stockbrot. Au\u00dferdem werden Naturentdeckertouren angeboten, ein Vortrag informiert \u00fcber die Wildkatze und die Ausstellung \u201eKobolde der Nacht\u201c zeigt spannendes \u00fcber unsere heimischen Flederm\u00e4use. F\u00fcr einen kleinen Imbiss ist gesorgt: Getr\u00e4nke, Kuchen und Bio-Bratw\u00fcrste.\r<br>\r<br>Das Fachwerkhaus liegt s\u00fcdwestlich von Jena direkt am Wanderweg zwischen P\u00f6sen und Leutra. Der Veranstalter freut sich, wenn Sie das Fest umweltfreundlich zu Fu\u00df oder mit dem Fahrrad besuchen. So kann die Anreise mit einer kleinen Wanderung oder Fahrradtour durch das Leutratal verbunden werden. Wer mit dem Auto anreist, parkt in P\u00f6sen und l\u00e4uft die restlichen 999 Meter bis zum Haus. Direkt bis zum Haus kann mit dem Auto nicht gefahren werden.\r<br>\r<br>Mehr erfahren Sie im Internet unter www.naturerlebnishaus-leutratal.de.",
+        "von": "23.06.2019 11:00",
+        "bis": "23.06.2019 18:00",
+        "bundesland": [
+          "Th\u00fcringen"
+        ],
+        "typ": [
+          "Fest",
+          "NAJU"
+        ],
+        "eingetragen_von": "Naturschutzjugend Th\u00fcringen",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Leutra 15\r<br>PLZ Ort: 07751 Jena\r<br>Telefon: 03641-215410\r<br>Telefax: \r<br>E-Mail:  info@naju-thueringen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.561467,
+          50.866371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "09114",
+        "ort": "Chemnitz",
+        "thema": "Insektensommer im Botanischen Garten",
+        "beschreibung": "Gemeinsam mit interessierten Familien und Naturfreunden m\u00f6chten wir auf einer Wiese im Botanischen Garten die Insekten sammeln und bestimmen. Dazu nutzen wir Bestimmungsliteratur und die NABU Insektensommer-App.\r<br>\r<br>Veranstaltung von RV Erzgebirge e. V. + NAJU Chemnitz\r<br>\r<br>Treffpunkt: NABU-Naturschutzzentrum im Botanischen Garten, Leipziger Stra\u00dfe 147, 09114 Chemnitz\r<br>\r<br>Anmeldung bis 27.05.19 unter 0371/3364850\r<br>",
+        "von": "03.06.2019 18:30",
+        "bis": "03.06.2019 23:59",
+        "bundesland": [
+          "Sachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Regionalverband Erzgebirge e. V.",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 0371 3364850\r<br>Telefax: \r<br>E-Mail:  rv.erzgebirge@NABU-Sachsen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.911976,
+          50.871056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "15913",
+        "ort": "Alt-Schadow",
+        "thema": "Pfingsttreffen und Kanutour",
+        "beschreibung": "Die NAJU Brandenburg betreibt im Spreewald ein 10 Hektra gro\u00dfes Wasser- und Waldgrundst\u00fcck mit neuem Bootssteg und Paddelbooten. Der Bootsschuppen wurde zum Gruppenraum ausgebaut und ein \u00fcberdachter Lehmofen errichtet. Beim j\u00e4hrlichen Pfingsttreffen kannst du die Aktiven der NAJU Brandenburg kennenlernen, mit ihnen schnippeln und schnattern und anschlie\u00dfend mit ihnen im angrenzenden Kanal direkt in See stechen, um den unteren Spreewald von der Wasserseite aus zu erkunden. \r<br>\r<br>Gemeinsame Anreise mit dem Zug ab Dresden, zzgl. Fahrtkosten. 40 Euro\u00a0bzw. 30 Euro f\u00fcr NABU-Mitglieder.",
+        "von": "07.06.2019 00:00",
+        "bis": "10.06.2019 23:59",
+        "bundesland": [
+          "Brandenburg"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Sachsen",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Kamenzer Stra\u00dfe 7\r<br>PLZ Ort: 01099 Dresden\r<br>Telefon: 0351 4716566\r<br>Telefax: \r<br>E-Mail:  info@naju-sachsen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.133301,
+          51.960754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "18055",
+        "ort": "Rostock",
+        "thema": "Greifv\u00f6gel-K\u00fckenkucken",
+        "beschreibung": "Wo nisten die Greifv\u00f6gel? Wie viele Junge sind geschl\u00fcpft und wie geht es ihnen?  Das sind die Fragen, denen die NAJU Rostock auch in diesem Fr\u00fchling wieder  nachgeht. Im April \u2013 bevor die B\u00e4ume Laub trugen \u2013 richtete sich ihr Blick bei einer  Waldexkursion nach oben in die Kronen, um die Brutpl\u00e4tze ausfindig zu machen. Im Juni kommt sie nun wieder, um zu schauen, ob die kleinen Greifv\u00f6gel  geschl\u00fcpft sind.\r<br>Junge Naturforscher ab 8 Jahre, die gern NABU-Ornithologen beim  Greifvogelmonitoring begleiten m\u00f6chten, sind herzlich zu einem Ausflug in einen  Wald bei Bad Doberan eingeladen. F\u00fcr die Anreise wollen wir Fahrgemeinschaften  bilden. Weitere Informationen \u00fcber den Treffpunkt erhaltet ihr nach eurer  Anmeldung.\r<br>Bitte meldet euch bis zum 19.06.2019 an unter der E-Mail: info@naju-rostock.de\r<br>",
+        "von": "22.06.2019 09:00",
+        "bis": "22.06.2019 16:00",
+        "bundesland": [
+          "Mecklenburg-Vorpommern"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Rostock",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort: 18055 Rostock\r<br>Telefon: 0381/490 31 62\r<br>Telefax: \r<br>E-Mail:  info@naju-rostock.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.162622,
+          54.083469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "18059",
+        "ort": "Rostock",
+        "thema": "Der Wert von Stadtgr\u00fcn \u2013 eine bessere Welt ist pflanzbar",
+        "beschreibung": "Workshop und gemeinsames Abendprogramm\r<br>\r<br>Treffpunkt: NAJU-Garten, Erich-Schlesinger-Str. 21a\r<br>\r<br>Sie sind Lebensraum, bieten Nahrung, sorgen f\u00fcr ein gesundes Klima, spenden uns den Sauerstoff, den wir zum Atmen brauchen und haben positiven Einfluss auf unser Wohlbefinden \u2013 Pflanzen. Ihr Wert ist unsch\u00e4tzbar. Die industrielle Landwirtschaft und Fl\u00e4chenversiegelung sind mitverantwortlich f\u00fcr den R\u00fcckgang der Biodiversit\u00e4t. Auch in Rostock verschwinden immer mehr Gr\u00fcnfl\u00e4chen. Doch schon einfache Mittel k\u00f6nnen helfen. Zusammen mit euch wollen wir unsere Stadt gr\u00fcner \u00admachen und einen Nachmittag lang das Thema \u00bbUrban Gardening\u00ab angehen. Theoretisch und praktisch. Ausklingen lassen wir dies am Lagerfeuer mit Live-Musik. Seid dabei!\r<br>\r<br>Anmeldung und Infos: info@naju-rostock.de\r<br>\r<br>Unsere Veranstaltung ist Teil der Nachhaltigkeitswoche der Universit\u00e4t Rostock. Ab dem 16. Juni gibt es eine Reihe von spannenden Aktionen und Vortr\u00e4gen, die sich mit dem Thema nachhaltige Lebensweise befassen. Wir m\u00f6chten sie euch sehr ans Herz legen. Das Programm findet ihr hier: http://nachhaltigkeitswoche-rostock.de/",
+        "von": "22.06.2019 15:00",
+        "bis": "22.06.2019 22:00",
+        "bundesland": [
+          "Mecklenburg-Vorpommern"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Rostock",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort: 18055 Rostock\r<br>Telefon: 0381/490 31 62\r<br>Telefax: \r<br>E-Mail:  info@naju-rostock.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.071759,
+          54.026867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "18059",
+        "ort": "Rostock",
+        "thema": "NAJU-Treffen",
+        "beschreibung": "Wenn du Lust hast die NAJU Rostock bei ihren Aktionen zu unterst\u00fctzen, dann komm zum monatlichen Treffen, diesmal im NAJU-Garten (Erich-Schlesinger-Str. 21a). Hier spinnen wir neue Ideen, wie wir den Naturschutzgedanken verbreiten k\u00f6nnen und planen ganz konkrete Aktionen dazu. \u00dcber deine Hilfe freuen wir uns!",
+        "von": "12.06.2019 18:00",
+        "bis": "12.06.2019 20:00",
+        "bundesland": [
+          "Mecklenburg-Vorpommern"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Rostock",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  <br>PLZ Ort: 18055 Rostock<br>Telefon: 0381/490 31 62<br>Telefax: <br>E-Mail:  info@naju-rostock.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.071759,
+          54.026867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "27472",
+        "ort": "Cuxhaven",
+        "thema": "Kindergruppentreff",
+        "beschreibung": "Was h\u00f6ren wir da? Ger\u00e4uschelandkarte erstellen mit der Biologin Insa Haunroth. \r<br>Schlossgarten Cuxhaven.\r<br>\r<br>Anmeldung & Infos f\u00fcr Neueinsteiger*innen unter 0172-877 65 20",
+        "von": "15.06.2019 10:00",
+        "bis": "15.06.2019 12:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Dr. Ropers, Hans-J.",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Spiekaer Kirchweg 2a\r<br>PLZ Ort: 27638 Wurster Nordseek\u00fcste\r<br>Telefon: 04741/1596\r<br>Telefax: \r<br>E-Mail:  "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.710721,
+          53.856808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "27628",
+        "ort": "Wulsb\u00fcttel",
+        "thema": "Nachtfalter & Flederm\u00e4use",
+        "beschreibung": "Wir locken Nachtfalter mit einer speziellen Lichtfalle an und belauschen  Flederm\u00e4use  mit  Bat-Detektoren.  \r<br>\r<br>F\u00fcr Kinder ab 10 Jahre, gef\u00f6rdert vom Umweltsenator\r<br>\r<br>Ort: Schullandheim Dreptefarm, Paschberg 9, Wulsb\u00fcttel\r<br>\r<br>Mitglieder frei, sonst 3\u20ac",
+        "von": "08.06.2019 22:00",
+        "bis": "08.06.2019 00:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  Annette.Siegert@NABU-Bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.635426,
+          53.344757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "27628",
+        "ort": "Wulsb\u00fcttel",
+        "thema": "Pfingstfreizeit Dreptefarm",
+        "beschreibung": "\u201eKurzurlaub\u201c f\u00fcr Kinder von 8 bis 14 Jahren, ideal f\u00fcr Einsteiger. Nat\u00fcrlich mit Farmtieren, Abenteuern, Lagerfeuer, neuen Freunden, Basteln sowie jede Menge Spa\u00df! \r<br>\r<br>Infos & Anmeldung 04 21/ 48 44 48 70 oder www.NABU-Bremen.de\r<br>\r<br>Ort: Schullandheim Dreptefarm \r<br>\r<br>Familienmitglieder 129\u20ac\r<br>Nicht-Mitglieder 179 \u20ac",
+        "von": "07.06.2019 10:00",
+        "bis": "11.06.2019 18:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.635426,
+          53.344757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "27628",
+        "ort": "Wulsb\u00fcttel",
+        "thema": "Mittsommer-Camping",
+        "beschreibung": "Die erste Nacht testen wir unsere Zelte auf dem Gel\u00e4nde der Dreptefarm, danach fahren wir mit NABU-Bus und Booten zum NABU-Grundst\u00fcck am Fl\u00f6gelner See. F\u00fcr Jugendliche ab 12 Jahre.\r<br>\r<br>Anmeldung & Infos 04 21 / 48 44 48 70.\r<br>\r<br>Schullandheim Dreptefarm Wulsb\u00fcttel\r<br>\r<br>Familienmitglieder 69\u20ac\r<br>Nicht-Mitglieder 119 \u20ac\r<br>",
+        "von": "21.06.2019 17:00",
+        "bis": "23.06.2019 11:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.635426,
+          53.344757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "NAJU-Kindergruppe",
+        "beschreibung": "Die w\u00f6chentliche Kindergruppe f\u00fcr Kids von 8 bis 12 Jahren. Von Basteleien bis Lagerfeuer ist alles dabei. Anmeldung und Infos unter 04 21 / 48 44 48 70\r<br>Vahrer Feldweg 185",
+        "von": "03.06.2019 17:00",
+        "bis": "03.06.2019 18:30",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  <br>PLZ Ort:  <br>Telefon: <br>Telefax: <br>E-Mail:  Annette.Siegert@NABU-Bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "NAJU-Kindergruppe",
+        "beschreibung": "Die w\u00f6chentliche Kindergruppe f\u00fcr Kids von 8 bis 12 Jahren. Von Basteleien bis Lagerfeuer ist alles dabei. \r<br>\r<br>Anmeldung und Infos unter 04 21 / 48 44 48 70\r<br>\r<br>Ort: Vahrer Feldweg 185",
+        "von": "17.06.2019 17:00",
+        "bis": "17.06.2019 18:30",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  Annette.Siegert@NABU-Bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "NAJU-Jugendgruppe",
+        "beschreibung": "F\u00fcr Naturbegeisterte von 12 bis 15 Jahren. Lehmofen-Projekt und Arbeitseinsatz Umweltbildungsfl\u00e4che. \r<br>\r<br>Infos unter 04 21 / 48 44 48 70\r<br>\r<br>Ort: Vahrer Feldweg 185",
+        "von": "06.06.2019 18:00",
+        "bis": "06.06.2019 19:30",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "NAJU-Jugendgruppe",
+        "beschreibung": "F\u00fcr Naturbegeisterte von 12 bis 15 Jahren. Lehmofen-Projekt und Arbeitseinsatz Umweltbildungsfl\u00e4che. Infos unter 04 21 / 48 44 48 70\r<br>Vahrer Feldweg 185",
+        "von": "20.06.2019 18:00",
+        "bis": "20.06.2019 19:30",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  <br>PLZ Ort:  <br>Telefon: <br>Telefax: <br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "Pfingst-Ferientag",
+        "beschreibung": "Spiele, Schatzsuche und Bastelaktionen, dazu wollen die Osterk\u00fcken versorgt und geh\u00e4tschelt werden. Inklusive Verpflegung von der \u00d6kokiste.\r<br>\r<br>Infos & Anmeldung 04 21 / 48 44 48 70\r<br>\r<br>Ort: Vahrer Feldweg 185\r<br>\r<br>Familien-Mitglieder 14\u20ac, sonst 18 Euro",
+        "von": "11.06.2019 08:00",
+        "bis": "11.06.2019 16:00",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "F\u00fcr Kinder: T\u00e4uschen und Tarnen",
+        "beschreibung": "In der Tierwelt sind T\u00e4uschen und Tarnen \u00fcberlebenswichtig. Welche Tiere sind darin besonders gut? Und welches Kind tarnt sich am besten? \r<br>\r<br>F\u00fcr Kinder ab 8 Jahre, Anmeldung 04 21 / 48 44 48 70\r<br>\r<br>Vahrer Feldweg 185\r<br>\r<br>Mitglieder frei, sonst 3 Euro\r<br>",
+        "von": "18.06.2019 16:00",
+        "bis": "18.06.2019 17:30",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "Sommerlager-Vortreffen",
+        "beschreibung": "F\u00fcr alle, die den Leiter und Teamer des gro\u00dfen Sommerlagers kennenlernen wollen und noch akute Fragen haben, die pers\u00f6nlich besprochen geh\u00f6ren. Die Kinder k\u00f6nnen gerne mitkommen.\r<br>\r<br>Ort: Vahrer Feldweg 185\r<br>",
+        "von": "20.06.2019 18:30",
+        "bis": "20.06.2019 20:00",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28309",
+        "ort": "Bremen",
+        "thema": "Rund um Schmetterlinge",
+        "beschreibung": "Wie ist das mit den Schmetterlingen und ihrer Entwicklung? Gibt es nur Raupen oder auch Larven? Und welche Schmetterlinge finden wir?\r<br>\r<br>Mit vielen Spielen f\u00fcr Schmetterlings-Entdecker ab 8 Jahren, unterst\u00fctzt vom Senator f\u00fcr Umwelt.\r<br>\r<br>Anmeldung 04 21 / 48 44 48 70\r<br>\r<br>Vahrer Feldweg 185\r<br>\r<br>Mitglieder frei, sonst 3 Euro",
+        "von": "21.06.2019 16:30",
+        "bis": "21.06.2019 18:00",
+        "bundesland": [
+          "Bremen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Annette Siegert",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  annette.siegert@nabu-bremen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.889092,
+          53.04763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "28832",
+        "ort": "Achim",
+        "thema": "NAJU Treffen in Achim",
+        "beschreibung": "Liebe Eltern, das vierte NAJU Treffen steht vor der T\u00fcr und wir m\u00f6chten euch und die Kinder \u00fcber unsere geplante Aktion informieren:\r<br> \r<br>Was? Mit Lupengl\u00e4sern, Ferngl\u00e4sern und Spielen im Gep\u00e4ck geht es wieder auf die Alte Streuobstwiese. Au\u00dferdem m\u00f6chten wir die ersten Minuten daf\u00fcr nutzen, gemeinsam mit den Kindern kurze NAJU Regeln aufzustellen. Diese helfen den Kindern und uns, die Treffen strukturiert zu gestalten und eine ruhigere Forscheratmosph\u00e4re zu schaffen.\r<br> \r<br>Wo? Alte Streuobstwiese, am Ende der Stra\u00dfe \"Zur Achimer Marsch\"\r<br> \r<br>Wann? 14. Juni, 16.30 Uhr bis 18.00 Uhr\r<br> \r<br>Was wird ben\u00f6tigt? Kleidung dem Wetter entsprechend\r<br> \r<br>Bitte meldet eure Kinder wie gewohnt per Mail an.\r<br>Wir freuen uns auf das n\u00e4chste Treffen!\r<br>",
+        "von": "14.06.2019 16:30",
+        "bis": "14.06.2019 18:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Achim",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  NAJU-Achim@web.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.03188,
+          53.027508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "30880",
+        "ort": "Laatzen",
+        "thema": "Walderkundungstour mit dem Rad",
+        "beschreibung": "Wir erkunden gemeinsam das Koldinger Holz. Bei einer Totholzuntersuchung schauen wir vor allem auf die kleinsten Bewohner des Waldes und lernen welche Bedeutung sie haben.\r<br>\r<br>Treffpunkt: \"Alte Feuerwache\". Ein Fahrrad ist notwendig.\r<br>\r<br>F\u00fcr Kinder ab 8 Jahren",
+        "von": "07.06.2019 15:00",
+        "bis": "07.06.2019 17:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Corinna John",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Ohestra\u00dfe 14\r<br>PLZ Ort: 30880 Laatzen\r<br>Telefon: 05 11 / 87 90 110\r<br>Telefax: \r<br>E-Mail:  info@nabu-laatzen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.834411,
+          52.2938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "31139",
+        "ort": "Hildesheim",
+        "thema": "Bootsbau am Bach",
+        "beschreibung": "Aktion der NAJU Hildesheim f\u00fcr Kinder zwischen 5 und 12 Jahren. Wir bauen aus selbst gesammelten Naturmaterialien und anderen Utensilien kleine Boote\r<br>und lassen sie schwimmen. Nebenbei erkunden wir den Bach und seine Ufer als Lebensraum f\u00fcr Pflanzen und Tiere. Bitte einen Mittagsimbiss und gerne auch\r<br>Bastelmaterialien mitbringen!\r<br>Treffpunkt: Parkplatz des Cafe \u201eNOAH\u201c, Hohnsen 28, Hildesheim.",
+        "von": "08.06.2019 11:00",
+        "bis": "08.06.2019 14:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "",
+        "eingetragen_von_kontakt": "Anmeldung erforderlich unter naju-hildesheim@web.de."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.906678,
+          52.126984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "31737",
+        "ort": "Rinteln",
+        "thema": "Gl\u00fchw\u00fcrmchennacht",
+        "beschreibung": "Zusatztermin\r<br>\r<br>bei gutem Wetter evtl. mit \u00dcbernachtung / Infos folgen\r<br>\r<br>Wir hoffen auf warmes und trockenes Sommerwetter! Dann wollen wir nur auf der Isomatte und im Schlafsack die Nacht verbringen. Wir pennen in den Klamotten und vergessen das Z\u00e4hneputzen, wenn wir in die Sterne schauen und uns im Kreis liegend auf eine \u201eopen Air\u201c Nacht einrichten...\r<br>\r<br>Treffpunkt: Auf der Streuobstwiese Hohenrode, Am Schweinegraben, Hohenrode",
+        "von": "26.06.2019 22:30",
+        "bis": "26.06.2019 23:59",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Raabe, Britta",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Kerschensteinerweg 3\r<br>PLZ Ort: 31737 Rinteln\r<br>Telefon: 05751/5237\r<br>Telefax: \r<br>E-Mail:  naju@nabu-rinteln.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.101433,
+          52.183907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "31737",
+        "ort": "Rinteln",
+        "thema": "Patensteig gehen mit Kr\u00e4uterwanderung",
+        "beschreibung": "Bitte festes Schuhwerk und wetterangepasste Kleidung anziehen. Trinkflasche nicht vergessen!\r<br>\r<br>Es wird einen kleinen Imbiss mit Kr\u00e4uterquark und selbstgebackenem Kr\u00e4uterbrot sowie echter Waldmeister- und/oder Holunderbl\u00fctenbrause geben.\r<br>\r<br>Eine kleine Umlage sowie eine Anmeldung w\u00fcrde uns sehr freuen.\r<br>\r<br>Treffpunkt: wird noch bekannt gegeben ",
+        "von": "28.06.2019 16:00",
+        "bis": "28.06.2019 17:30",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Raabe, Britta",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Kerschensteinerweg 3\r<br>PLZ Ort: 31737 Rinteln\r<br>Telefon: 05751/5237\r<br>Telefax: \r<br>E-Mail:  naju@nabu-rinteln.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.101433,
+          52.183907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "31832",
+        "ort": "Springe",
+        "thema": "Rudeltag im Wisentgehege",
+        "beschreibung": "Nistkastenbau mit Kindern am NABU-Schuppen",
+        "von": "30.06.2019 11:00",
+        "bis": "30.06.2019 15:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU Springe, Adler, Ilsemarie 05041 971792, info@nabu-springe.de",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.601309,
+          52.19635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "35094",
+        "ort": "Lahntal",
+        "thema": "Treffen Naturforscher ",
+        "beschreibung": "Treffpunkt der Kindergruppe: Alte Br\u00fccke in Lahntal Go\u00dffelden",
+        "von": "08.06.2019 10:00",
+        "bis": "08.06.2019 12:00",
+        "bundesland": [
+          "Hessen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU Lahntal",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: \r<br>Telefax: \r<br>E-Mail:  huels@mailer.uni-marburg.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.697678,
+          50.866432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "37603",
+        "ort": "Holzminden",
+        "thema": "NAJU-Treffen",
+        "beschreibung": "Die NAJU Holzminden trifft sich in der Natur-Erfahrungs-St\u00e4tte (NEST) auf dem Horstberg am Stadtrand von Holzminden. ",
+        "von": "04.06.2019 15:00",
+        "bis": "04.06.2019 17:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Titze, Nicole",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Oberbachstr. 47<br>PLZ Ort: 37603 Holzminden<br>Telefon: 05531 - 700 432<br>Telefax: <br>E-Mail:  NAJU@NABU-Holzminden.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.503894,
+          51.786865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "37603",
+        "ort": "Holzminden",
+        "thema": "NAJU-Treffen",
+        "beschreibung": "Die NAJU Holzminden trifft sich in der Natur-Erfahrungs-St\u00e4tte (NEST) auf dem Horstberg am Stadtrand von Holzminden. ",
+        "von": "18.06.2019 15:00",
+        "bis": "18.06.2019 17:00",
+        "bundesland": [
+          "Niedersachsen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Titze, Nicole",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Oberbachstr. 47<br>PLZ Ort: 37603 Holzminden<br>Telefon: 05531 - 700 432<br>Telefax: <br>E-Mail:  NAJU@NABU-Holzminden.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.503894,
+          51.786865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "45329",
+        "ort": "Essen",
+        "thema": "Wildes Farmleben",
+        "beschreibung": "Workshop f\u00fcr V\u00e4ter und S\u00f6hne ab 10 Jahren\r<br>\r<br>Wir schalten alle digitalen Medien aus und nehmen uns ganz viel Zeit f\u00fcreinander und die einfachen Dinge im Leben. Mittelpunkt wird unser Lagerfeuer sein. Dort \u00fcben wir uns im Feuer machen ohne Feuerzeug, schnitzen unser eigenes Besteck und kochen gemeinsam \u00fcber dem offenen Feuer. Abends ist Zeit f\u00fcr Gespr\u00e4che und Geschichten unter dem Sternenhimmel bis wir f\u00fcr die Nacht in Bauwagen und Zelten einkehren.\r<br>\r<br>Kosten: Kinder 15 Euro, 12 Euro Mitglieder / Erwachsene 20 Euro, 17 Euro Mitglieder\r<br>Veranstaltungsort: Jugendfarm Altenessen\r<br>Leitung: Vanessa Burneleit / Jennifer Redmann\r<br>Veranstalter: NAJU Essen/M\u00fclheim e.V. in Kooperation mit der Jugendfarm Altenessen\r<br>Anmeldung nur unter www.vossgaetters-muehle.de m\u00f6glich\r<br>Hinweis: F\u00fcr die Anmeldung das Formular nur einmal ausf\u00fcllen: Zuerst den Vater nennen, im entsprechenden Feld, darunter den Sohn/die S\u00f6hne.\r<br>",
+        "von": "20.06.2019 11:00",
+        "bis": "21.06.2019 17:00",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Jacinta Kellermann",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  M\u00f6llhoven 62\r<br>PLZ Ort: 45355 Essen - Essen-Borbeck\r<br>Telefon: 0201671888\r<br>Telefax: \r<br>E-Mail:  anmeldung@vossgaetters-muehle.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.014198,
+          51.511631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "45355",
+        "ort": "Essen",
+        "thema": "Heimische Kr\u00e4uter mit allen Sinnen",
+        "beschreibung": "Pflanzenwissen macht Kindern und Jugendlichen vor allem Spa\u00df, wenn es mit allen Sinnen erlebbar ist. Die Kr\u00e4fte der Pflanzenwelt k\u00f6nnen wir f\u00fcr K\u00fcche und Haushalt sowie zur Heilung und Gesundheitsvorsorge nutzen. Bei einem Streifzug durch Wald, Wiese und Garten lernen wir heimische Kr\u00e4uter vor der eigenen Haust\u00fcr kennen. Aus den gesammelten Pflanzen stellen wir kleine Leckereien, Heilmittelchen sowie Naturkosmetik her und nutzen sie f\u00fcr kreative Angebote. \r<br>\r<br>Mit dem Seminar Naturfarben kombinierbar (\u00dcbernachtung inkl.). \r<br>\r<br>Das Seminar wird im Rahmen der Juleica-Ausbildung als Modul III anerkannt.",
+        "von": "01.06.2019 00:00",
+        "bis": "01.06.2019 23:59",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Anastasia Przibylla",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 0211 / 159 251 30\r<br>Telefax: \r<br>E-Mail:  mail@naju-nrw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.950988,
+          51.47168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "45355",
+        "ort": "Essen",
+        "thema": "Naturfarben-Seminar",
+        "beschreibung": "Die Herstellung von Naturfarben ist eine kreative M\u00f6glichkeit, sich Pflanzenkenntnisse anzueignen. Das kann ganzj\u00e4hrig mit Kinder- und Jugendgruppen durchgef\u00fchrt werden. Wir gehen auf Farbenjagd und stellen aus Bl\u00fcten, Bl\u00e4ttern, Fr\u00fcchten, Wurzeln und Rinden nat\u00fcrliche und wundersch\u00f6ne Farbt\u00f6ne her. Dabei lernen wir, wie man aus Pflanzenbestandteilen Farben gewinnen kann. Wir stellen einen Farbkasten her und probieren uns in verschiedenen Techniken mit Naturfarben aus, auch das nat\u00fcrliche F\u00e4rben von Wolle und Stoffen. Das Seminar wird im Rahmen der Juleica-Ausbildung als Modul III anerkannt.",
+        "von": "02.06.2019 00:00",
+        "bis": "02.06.2019 23:59",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Anastasia Przibylla",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 0211 / 159 251 30\r<br>Telefax: \r<br>E-Mail:  mail@naju-nrw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.950988,
+          51.47168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "45355",
+        "ort": "Essen-Borbeck",
+        "thema": "Heimische Kr\u00e4uter",
+        "beschreibung": "Juleica-Seminar f\u00fcr Jugendliche ab 15 Jahren\r<br>\r<br>Pflanzenwissen macht Kindern und Jugendlichen vor allem Spa\u00df, wenn es mit allen Sinnen erlebbar ist. Die Kr\u00e4fte der heimischen Pflanzenwelt k\u00f6nnen wir vielfach f\u00fcr K\u00fcche und Haushalt sowie zur Heilung und Gesundheitsvorsorge einsetzen. Bei einem Streifzug durch Wald, Wiese und Garten lernen wir heimische Kr\u00e4uter vor der eigenen Haust\u00fcr kennen. Aus den gesammelten Pflanzen stellen wir kleine Leckereien, Heilmittelchen und Naturkosmetik her. Au\u00dferdem nutzen wir sie f\u00fcr kreative Angebote. Durch eine \u00dcbernachtungsm\u00f6glichkeit mit dem Seminar Naturfarben kombinierbar. Anmeldung nur unter www.naju-nrw.de m\u00f6glich.\r<br>\r<br>Kosten: 25 Euro/20 Euro f\u00fcr Mitglieder\r<br>Veranstaltungsort: Natur- und Jugendzentrum Vo\u00dfg\u00e4tters M\u00fchle\r<br>Leitung: Vanessa Burneleit\r<br>Veranstalter: NAJU NRW\r<br>    \r<br>",
+        "von": "01.06.2019 10:00",
+        "bis": "01.06.2019 16:00",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU",
+          "Seminar"
+        ],
+        "eingetragen_von": "Anastasia Przibylla",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  V\u00f6lklinger Str. 7-9\r<br>PLZ Ort: 40219  D\u00fcsseldorf\r<br>Telefon:  021115925130\r<br>Telefax: 021115925139\r<br>E-Mail:  mail@naju-nrw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.950988,
+          51.47168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "45355",
+        "ort": "Essen",
+        "thema": "Wildkr\u00e4uter-Seminar",
+        "beschreibung": "Heimische Kr\u00e4uter mit allen Sinnen (m\u00f6glich als Juleica-Modul III) \r<br>\r<br>Pflanzenwissen macht Kindern und Jugendlichen vor allem Spa\u00df, wenn es mit allen Sinnen erlebbar ist. Die Kr\u00e4fte der Pflanzenwelt k\u00f6nnen wir f\u00fcr K\u00fcche und Haushalt sowie zur Heilung und Gesundheitsvorsorge nutzen. Bei einem Streifzug durch Wald, Wiese und Garten lernen wir heimische Kr\u00e4uter vor der eigenen Haust\u00fcr kennen. Aus den gesammelten Pflanzen stellen wir kleine Leckereien, Heilmittelchen sowie Naturkosmetik her und nutzen sie f\u00fcr kreative Angebote. Mit dem Seminar Naturfarben kombinierbar (\u00dcbernachtung inkl.). Das Seminar wird im Rahmen der Juleica-Ausbildung als Modul III anerkannt.",
+        "von": "01.06.2019 00:00",
+        "bis": "01.06.2019 23:59",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Anastasia",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  V\u00f6lklingerstra\u00dfe 7-9\r<br>PLZ Ort: 40219 D\u00fcsseldorf\r<br>Telefon: 0211 159 251 30\r<br>Telefax: \r<br>E-Mail:  mail@naju-nrw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.950988,
+          51.47168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "45355",
+        "ort": "Essen",
+        "thema": "Naturfarben herstellen",
+        "beschreibung": "Die Herstellung von Naturfarben ist eine kreative M\u00f6glichkeit, sich Pflanzenkenntnisse anzueignen. Das kann ganzj\u00e4hrig mit Kinder- und Jugendgruppen durchgef\u00fchrt werden. Wir gehen auf Farbenjagd und stellen aus Bl\u00fcten, Bl\u00e4ttern, Fr\u00fcchten, Wurzeln und Rinden nat\u00fcrliche und wundersch\u00f6ne Farbt\u00f6ne her. Dabei lernen wir, wie man aus Pflanzenbestandteilen Farben gewinnen kann. Wir stellen einen Farbkasten her und probieren uns in verschiedenen Techniken mit Naturfarben aus, auch das nat\u00fcrliche F\u00e4rben von Wolle und Stoffen. Das Seminar wird im Rahmen der Juleica-Ausbildung als Modul III anerkannt.",
+        "von": "02.06.2019 00:00",
+        "bis": "02.06.2019 23:59",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Anastasia",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  V\u00f6lklingerstra\u00dfe 7-9\r<br>PLZ Ort: 40219 D\u00fcsseldorf\r<br>Telefon: 0211 159 251 30\r<br>Telefax: \r<br>E-Mail:  mail@naju-nrw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.950988,
+          51.47168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "47559",
+        "ort": "Kranenburg ",
+        "thema": "Natur-Erlebnistag: Zauberunterricht in Hogwarts",
+        "beschreibung": "Trete ein in eine Welt voller Magie\u2026 und Geheimnisse. Lerne deine Mitsch\u00fcler kennen nd begib dich auf eine abenteuerliche Reise durch den Zauberwald. Eigne dir magisches Wissen in Hogwarts an und hilf den Tieren des Waldes. Bist du bereit in eine andere Welt einzutauchen? Dann mache dich bereit auf eine verzauberte Reise durch Hogwarts.",
+        "von": "01.06.2019 10:00",
+        "bis": "01.06.2019 16:30",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU-Naturschutzstation Niederrhein e.V., Im Hammereisen 27 E, D-47559 Kranenburg, Tel: +49 (2826) 91876-00",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.028646,
+          51.795643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "47559",
+        "ort": "Bedburg-Hau",
+        "thema": "Natur-Erlebnistag: Detektiv Brumm",
+        "beschreibung": "Die Stadt ist ratlos: Wer hat unsere Biene Berry und ihre Freunde entf\u00fchrt? Anwohner wissen nicht mehr weiter, G\u00e4rtner sind verzweifelt. Aber du kannst helfen, Berry und die anderen zu finden! Hast du einen Verdacht, wo sie sind? Hast du eine Idee, wie wir sie finden k\u00f6nnen? Aber pass auf! Selbst im Garten lauern einige Gefahren!",
+        "von": "22.06.2019 10:00",
+        "bis": "22.06.2019 16:30",
+        "bundesland": [
+          "Nordrhein-Westfalen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU-Naturschutzstation Niederrhein e.V., Im Hammereisen 27 E, D-47559 Kranenburg, Tel: +49 (2826) 91876-00",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.028646,
+          51.795643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "53501",
+        "ort": "Grafschaft-Eckendorf",
+        "thema": "Geo-Tag der Artenvielfalt",
+        "beschreibung": "Seit vielen Jahren unterst\u00fctzt der NAJU Kreis Ahrweiler die Durchf\u00fchrung des Geo\u2013Tags der Artenvielfalt. Dabei suchen wir uns jedes Jahr einen anderen interessanten, m\u00f6glichst vielseitigen Lebensraum aus. Damit helfen wir bei der Inventur der heimischen Flora und Fauna in unserer Region! Die Kinder und Jugendlichen packen bei der Bestandsaufnahme unserer Umwelt tatkr\u00e4ftig mit an. Alles was in unsere Netze und Fangboxen kommt, wird gesammelt, bestimmt, gez\u00e4hlt und sp\u00e4ter dokumentiert. Nat\u00fcrlich lassen wir alle eingefangenen Tier unmittelbar nach ihrer Bestimmung wieder frei! Der heutige Tag steht unter dem Motto \u201e Was kreucht und fleucht vor unserer Haust\u00fcr!\u201c Nur was wir kennen und verstehen werden wir auch achten und sch\u00fctzen! Zwischendurch st\u00e4rken wir uns mit W\u00fcrstchen vom Grill und verschiedenen Getr\u00e4nken.\r<br>\r<br>Ausschilderung ab:\r<br>Getreide-Silo am Ortsrand von Eckendorf in Richtung Adendorf\r<br>53501 Grafschaft-Eckendorf",
+        "von": "15.06.2019 10:00",
+        "bis": "15.06.2019 15:00",
+        "bundesland": [
+          "Rheinland-Pfalz"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU Ahrweiler (Jens Woitol), Fauviller Ring 28, 53501 Grafschaft, Tel.: 02641 / 206780, info@nabu-aw.de",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.088742,
+          50.575291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "55411",
+        "ort": "Bingen-Gaulsheim",
+        "thema": "NAJU-Kindergruppe",
+        "beschreibung": "Treffen der Kindergruppe des NABU. Bitte angepasste Kleidung f\u00fcr draussen anziehen.",
+        "von": "01.06.2019 14:00",
+        "bis": "01.06.2019 17:00",
+        "bundesland": [
+          "Rheinland-Pfalz"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "",
+        "eingetragen_von_kontakt": "NABU-Naturschutzzentrum Rheinauen, An den Rheinwiesen 5, 55411 Bingen,<br> Tel: 06721-14367, Fax: 06721-10004"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.936635,
+          49.958645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "55411",
+        "ort": "Bingen-Gaulsheim",
+        "thema": "NAJU-Kindergruppe",
+        "beschreibung": "Treffen der Kindergruppe des NABU. Bitte angepasste Kleidung f\u00fcr draussen anziehen.",
+        "von": "15.06.2019 14:00",
+        "bis": "15.06.2019 17:00",
+        "bundesland": [
+          "Rheinland-Pfalz"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "",
+        "eingetragen_von_kontakt": "NABU-Naturschutzzentrum Rheinauen, An den Rheinwiesen 5, 55411 Bingen,<br> Tel: 06721-14367, Fax: 06721-10004"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.936635,
+          49.958645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "56727",
+        "ort": "Mayen",
+        "thema": "NAJU-Kindergruppe",
+        "beschreibung": "Alle Kinder im Alter zwischen sechs und zehn sind herzlich eingeladen die Natur zu erleben. Wer drau\u00dfen in der Natur Spa\u00df haben, Tiere und Pflanzen hautnah erleben und auch noch etwas f\u00fcr ihren Schutz tun m\u00f6chte, ist in unserer Kindergruppe genau richtig.<br><br>Bitte meldet euch zur ersten Teilnahme an der Veranstaltung vorab per Email bei Claudia Drefs-Olszewski (naju@nabu-mayen.de).<br><br>Treffpunkt: 10 Uhr, B\u00fcrgerhaus Hausen, Am B\u00fcrgerhaus 1, Mayen-Hausen",
+        "von": "29.06.2019 10:00",
+        "bis": "29.06.2019 14:00",
+        "bundesland": [
+          "Rheinland-Pfalz"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "",
+        "eingetragen_von_kontakt": "NAJU@NABU-Mayen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.203528,
+          50.330719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "57644",
+        "ort": "Welkenbach",
+        "thema": "Guinessbuch der Rekorde im Wald",
+        "beschreibung": "Veranstalter: NAJU Kroppacher Schweiz// Leitung: Ariane Werner, Naturp\u00e4dagogin, und Kim Thomae// Treffpunkt: 57644 Welkenbach, Dorfgemeinschaftshaus, Gartenstra\u00dfe// Zielgruppe: Kinder von 8 bis 12 Jahren// Teilnahmebeitrag: kostenfrei, Spenden willkommen// Bitte mitbringen: Rucksack mit Verpflegung f\u00fcr unterwegs, Notizbuch und Stift, Zollstock oder Ma\u00dfband, Briefwaage/K\u00fcchenwaage (wenn vorhanden)// Info und Anmeldung: NABU.Kroppacher-Schweiz@NABU-RLP.de, 02680/8077 (Ariane Werner)// Gemeinsam gehen wir auf die Suche nach \"rekordverd\u00e4chtigen\" Dingen. Der gr\u00f6\u00dfte Zapfen, das kleinste Schneckenhaus, der dickste Baumstamm ... Es wird gesucht, gemessen, gewogen und dokumentiert. Anmeldung erforderlich.",
+        "von": "08.06.2019 10:00",
+        "bis": "08.06.2019 13:00",
+        "bundesland": [
+          "Rheinland-Pfalz"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU.Kroppacher-Schweiz@NABU-RLP.de, 02680/8077 (Ariane Werner)",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.766603,
+          50.653507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "61381",
+        "ort": "Friedrichsdorf",
+        "thema": "NAJU-Treffen",
+        "beschreibung": "NAJU-Treffen am NABU-Gel\u00e4nde",
+        "von": "01.06.2019 10:00",
+        "bis": "01.06.2019 12:00",
+        "bundesland": [
+          "Hessen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU Friedrichsdorf, kontakt@nabu-friedrichsdorf.de",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.633074,
+          50.260876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "61381",
+        "ort": "Friedrichsdorf",
+        "thema": "NAJU-Treffen",
+        "beschreibung": "NAJU-Treffen am NABU-Gel\u00e4nde",
+        "von": "15.06.2019 10:00",
+        "bis": "15.06.2019 12:00",
+        "bundesland": [
+          "Hessen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU Friedrichsdorf, kontakt@nabu-friedrichsdorf.de",
+        "eingetragen_von_kontakt": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.633074,
+          50.260876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "63589",
+        "ort": "Linsengericht-Gro\u00dfenhausen",
+        "thema": "Besuch der Fasanerie Klein-Auheim",
+        "beschreibung": "gilt f\u00fcr beide NAJU-Gruppen !\r<br>Wir bilden Fahrgemeinschaften, um die Alte Fasanerie in Klein-Auheim zu besuchen.\r<br>Info auch bei N. M\u00f6ller Tel. 06051/68584\r<br>Treffpunkt: Alte Schule in Gro\u00dfenhausen, Im Vorderdorf 12 ",
+        "von": "12.06.2019 15:30",
+        "bis": "12.06.2019 18:00",
+        "bundesland": [
+          "Hessen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Staib, Elke",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 06051/969236\r<br>Telefax: \r<br>E-Mail:  elke.staib@gmx.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.217785,
+          50.169636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "63589",
+        "ort": "Linsengericht-Gro\u00dfenhausen",
+        "thema": "Brennesseln und Schmetterlinge",
+        "beschreibung": "Wir gehen hinaus in die Feldgemarkung, erfahren etwas \u00fcber die Bedeutung der Brennessel und beobachten Schmetterlinge (NAJU-Gruppe I).\r<br>Treffpunkt: Alte Schule in Gro\u00dfenhausen, Im Vorderdorf 12\r<br>Infos auch bei N. M\u00f6ller Tel. 06051/68584",
+        "von": "26.06.2019 15:30",
+        "bis": "26.06.2019 17:00",
+        "bundesland": [
+          "Hessen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Staib, Elke",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 06051/969236\r<br>Telefax: \r<br>E-Mail:  elke.staib@gmx.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.217785,
+          50.169636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "63589",
+        "ort": "Linsengericht-Gro\u00dfenhausen",
+        "thema": "Hochbeetbau",
+        "beschreibung": "Wir bauen weiter an den Kr\u00e4uterhochbeeten (NAJU-Gruppe II)\r<br>Infos auch bei N. M\u00f6ller Tel. 06051/68584 \r<br>Treffpunkt: Alte Schule in Gro\u00dfenhausen, Im Vorderdorf 12",
+        "von": "26.06.2019 17:30",
+        "bis": "26.06.2019 19:00",
+        "bundesland": [
+          "Hessen"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Staib, Elke",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 06051/969236\r<br>Telefax: \r<br>E-Mail:  elke.staib@gmx.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.217785,
+          50.169636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "67227",
+        "ort": "Frankenthal",
+        "thema": "NAJU-Treff",
+        "beschreibung": "Treffpunkt: NABU-Garagen im Kleinen Wald",
+        "von": "24.06.2019 16:15",
+        "bis": "24.06.2019 17:45",
+        "bundesland": [
+          "Rheinland-Pfalz"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NABU Frankenthal",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  \r<br>PLZ Ort:  \r<br>Telefon: 06233-65676 \r<br>Telefax: \r<br>E-Mail:  Elias.Bentz@NABU-FT.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.347014,
+          49.533451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "69168",
+        "ort": "Wiesloch",
+        "thema": "K\u00fckentreffen: Wildkr\u00e4uter",
+        "beschreibung": "F\u00fcr Kinder von 3 - 7 Jahren (zusammen mit WiWa Familie) \r<br>\r<br>Wildkr\u00e4uter sehen, f\u00fchlen, riechen und schmecken\r<br>\r<br>Leitung: Team WiWa Familie + NABU Wiesloch. \r<br>\r<br>Bitte Anmeldung unter kuekentreffen@gmx.de wegen begrenzter Teilnehmerzahl. \r<br>\r<br>Treffpunkt: Wird bei Anmeldung bekanntgegeben",
+        "von": "08.06.2019 15:00",
+        "bis": "08.06.2019 16:30",
+        "bundesland": [
+          "Baden-W\u00fcrttemberg"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Treffer, Angelika",
+        "eingetragen_von_kontakt": "Treffer, Angelika,  0176-53547938, webmaster@nabu-wiesloch.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.714898,
+          49.297745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "69412",
+        "ort": "Eberbach",
+        "thema": "Geo-Tag der Natur",
+        "beschreibung": "Inventur der heimischen Tierwelt\r<br>\r<br>Eberbach, Parkplatz am Breitenstein",
+        "von": "15.06.2019 10:00",
+        "bis": "15.06.2019 13:00",
+        "bundesland": [
+          "Baden-W\u00fcrttemberg"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "Dr. Schulz, Max",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Baumgartenweg 3\r<br>PLZ Ort: 69429 Waldbrunn-Oberdielbach\r<br>Telefon: 06274 / 6944\r<br>Telefax: \r<br>E-Mail:  www.nabu-eberbach.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.007108,
+          49.482708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "plz": "71111",
+        "ort": "Waldenburch",
+        "thema": "Aufstand-Festival der NAJU",
+        "beschreibung": "Sei dabei, wenn die NAJU Sachsen mit einer Gruppe Aktiver nach Waldenbuch an den Rand des Naturparks Sch\u00f6nbuch f\u00e4hrt. Hier findet schon zum 22. Mal das f\u00fcnft\u00e4gige \u201eAufstand-Festival\u201c der NAJU Baden-W\u00fcrttemberg statt. Umsonst und drau\u00dfen treffen sich junge Menschen bei Workshops zu sozial- und umweltpolitischen Themen, Exkursionen, Open Stage und Bandauftritten sowie nat\u00fcrlich zum allabendlichen Lagerfeuer. Melde dich bei uns an und wir vermitteln dir weitere s\u00e4chsische NAJU-Aktive, mit denen du gemeinsam an- reisen kannst. N\u00e4here Infos unter: www.aufstand.naju-bw.de",
+        "von": "18.06.2019 00:00",
+        "bis": "23.06.2019 23:59",
+        "bundesland": [
+          "Baden-W\u00fcrttemberg"
+        ],
+        "typ": [
+          "NAJU"
+        ],
+        "eingetragen_von": "NAJU Sachsen",
+        "eingetragen_von_kontakt": "Stra\u00dfe:  Kamenzer Stra\u00dfe 7\r<br>PLZ Ort: 01099 Dresden\r<br>Telefon: 0351 4716566\r<br>Telefax: \r<br>E-Mail:  info@naju-sachsen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.13237,
+          48.629086
+        ]
+      }
+    }
+  ]
+}
