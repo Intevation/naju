@@ -22,3 +22,7 @@ reference tag at the top of the file that points to
 
 - <https://developers.google.com/fonts/docs/getting_started>
 - <https://fonts.google.com>
+
+## Generate CRC-32 checksum
+
+crc32 js/app.js
