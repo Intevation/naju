@@ -242,12 +242,7 @@ function handleMenuEvent(typ, color) {
         if (!menu.className.includes("clicked")) {
           if (!map.hasLayer(typ)) {
             typ.addTo(map);
-            // map.fitBounds(typ.getBounds());
-            map.flyToBounds(typ.getBounds());
           }
-        } else {
-          //map.fitBounds(typ.getBounds());
-          map.flyToBounds(typ.getBounds());
         }
         break;
       case "mouseout":
@@ -261,14 +256,8 @@ function handleMenuEvent(typ, color) {
         menu.classList.toggle("clicked");
         if (!menu.className.includes("clicked")) {
           map.removeLayer(typ);
-          menu.classList.remove(color);
-          menu.classList.add("grey");
         } else {
           typ.addTo(map);
-          //map.fitBounds(typ.getBounds());
-          map.flyToBounds(typ.getBounds());
-          menu.classList.remove("grey");
-          menu.classList.add(color);
         }
         if (L.Browser.mobile) {
           sleep(500).then(() => {

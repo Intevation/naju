@@ -10,17 +10,21 @@ body,
 
 div.material-tooltip:nth-child(10) {
     background-color: #a3b707;
-    transform: translateY(-10px) !important;
 }
 
 div.material-tooltip:nth-child(11) {
     background-color: #7abcb3;
-    transform: translateY(-10px) !important;
 }
 
 div.material-tooltip:nth-child(12) {
     background-color: #f39700;
-    transform: translateY(-10px) !important;
+}
+
+a#dates,a#groups,a#lvs{
+    background-color: transparent !important;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 .myDivIcon {
