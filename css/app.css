@@ -9,15 +9,18 @@ body,
 }
 
 div.material-tooltip:nth-child(10) {
-    background-color: #4CAF50;
+    background-color: #a3b707;
+    transform: translateY(-10px) !important;
 }
 
 div.material-tooltip:nth-child(11) {
-    background-color: #ffeb3b;
+    background-color: #7abcb3;
+    transform: translateY(-10px) !important;
 }
 
 div.material-tooltip:nth-child(12) {
-    background-color: #ff9800;
+    background-color: #f39700;
+    transform: translateY(-10px) !important;
 }
 
 .myDivIcon {

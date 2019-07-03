@@ -244,8 +244,6 @@ function handleMenuEvent(typ, color) {
             typ.addTo(map);
             // map.fitBounds(typ.getBounds());
             map.flyToBounds(typ.getBounds());
-            menu.classList.remove("grey");
-            menu.classList.add(color);
           }
         } else {
           //map.fitBounds(typ.getBounds());
@@ -256,8 +254,6 @@ function handleMenuEvent(typ, color) {
         if (!menu.className.includes("clicked")) {
           if (map.hasLayer(typ)) {
             map.removeLayer(typ);
-            menu.classList.remove(color);
-            menu.classList.add("grey");
           }
         }
         break;
