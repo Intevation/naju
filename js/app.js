@@ -127,7 +127,7 @@ var kindergruppen = L.geoJson(null, {
     layer.on("click", function(e) {
       console.log(e.sourceTarget.feature);
       renderPopUP(tmplGruppen, e.sourceTarget.feature);
-      map.flyTo(e.latlng, 13);
+      map.fitBounds(e.latlng, 13);
     });
   }
 });
