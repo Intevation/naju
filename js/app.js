@@ -98,17 +98,12 @@ function renderPopUP(template, feature) {
   });
 }
 
-var kindergruppenIcon = L.divIcon({
-  html: '<i class="material-icons yellow myDivIcon">group</i>',
-  iconSize: [36, 36],
-  className: ""
+var kindergruppenIcon = L.icon({
+  iconUrl: "icons/gruppe.png"
 });
 
-var kindergruppenIconHighlight = L.divIcon({
-  html:
-    '<i class="material-icons yellow darken-1 pulse myDivIconHighlight">group</i>',
-  iconSize: [54, 54],
-  className: ""
+var kindergruppenIconHighlight = L.icon({
+  iconUrl: "icons/gruppe.png"
 });
 
 var kindergruppen = L.geoJson(null, {
@@ -120,7 +115,7 @@ var kindergruppen = L.geoJson(null, {
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["NAJU"] + "</b>"), {
-      offset: [18, 0],
+      offset: [32, 18],
       direction: "right"
     });
     layer.on("mouseover", function(e) {
@@ -141,25 +136,18 @@ var markersKindergruppen = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   iconCreateFunction: function(cluster) {
-    return L.divIcon({
-      html: '<div class="myMarkerCluster">'+cluster.getChildCount()+'</div><i class="material-icons yellow myDivIcon">group</i>',
-      iconSize: [36, 36],
-      className: ""
+    return L.icon({
+      iconUrl: "icons/gruppe.png"
     });
   }
 });
 
-var dateIcon = L.divIcon({
-  html: '<i class="material-icons orange myDivIcon">date_range</i>',
-  iconSize: [36, 36],
-  className: ""
+var dateIcon = L.icon({
+  iconUrl: "icons/termine.png"
 });
 
-var dateIconHighlight = L.divIcon({
-  html:
-    '<i class="material-icons orange darken-1 pulse myDivIconHighlight">date_range</i>',
-  iconSize: [54, 54],
-  className: ""
+var dateIconHighlight = L.icon({
+  iconUrl: "icons/termine.png"
 });
 
 var dates = L.geoJson(null, {
@@ -170,13 +158,10 @@ var dates = L.geoJson(null, {
     });
   },
   onEachFeature: function(feature, layer) {
-    layer.bindTooltip(
-      String("<b>" + feature.properties["thema"] + "</b>"),
-      {
-        offset: [18, 0],
-        direction: "right"
-      }
-    );
+    layer.bindTooltip(String("<b>" + feature.properties["thema"] + "</b>"), {
+      offset: [32, 18],
+      direction: "right"
+    });
 
     layer.on("mouseover", function(e) {
       //map.panTo(e.latlng);
@@ -196,25 +181,18 @@ var markersDates = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   iconCreateFunction: function(cluster) {
-    return L.divIcon({
-      html: '<div class="myMarkerCluster">'+cluster.getChildCount()+'</div><i class="material-icons orange myDivIcon">date_range</i>',
-      iconSize: [36, 36],
-      className: ""
+    return L.icon({
+      iconUrl: "icons/termine.png"
     });
   }
 });
 
-var officeIcon = L.divIcon({
-  html: '<i class="material-icons green myDivIcon">stars</i>',
-  iconSize: [36, 36],
-  className: ""
+var officeIcon = L.icon({
+  iconUrl: "icons/geschaeftsstellen.png"
 });
 
-var officeIconHighlight = L.divIcon({
-  html:
-    '<i class="material-icons green darken-1 pulse myDivIconHighlight">stars</i>',
-  iconSize: [54, 54],
-  className: ""
+var officeIconHighlight = L.icon({
+  iconUrl: "icons/geschaeftsstellen.png"
 });
 
 var offices = L.geoJson(null, {
@@ -226,7 +204,7 @@ var offices = L.geoJson(null, {
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(String("<b>" + feature.properties["LV"] + "</b>"), {
-      offset: [18, 0],
+      offset: [32, 18],
       direction: "right"
     });
     layer.on("mouseover", function(e) {
@@ -269,9 +247,9 @@ function handleMenuEvent(typ, color) {
             menu.classList.remove("grey");
             menu.classList.add(color);
           }
-        }else{
-            //map.fitBounds(typ.getBounds());
-            map.flyToBounds(typ.getBounds());
+        } else {
+          //map.fitBounds(typ.getBounds());
+          map.flyToBounds(typ.getBounds());
         }
         break;
       case "mouseout":
@@ -317,9 +295,21 @@ lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
 lvs.addEventListener("mouseout", handleMenuEvent(offices, "green"), false);
 
 var termine = document.getElementById("termine");
-termine.addEventListener("click", handleMenuEvent(markersDates, "orange"), false);
-termine.addEventListener("mouseover", handleMenuEvent(markersDates, "orange"), false);
-termine.addEventListener("mouseout", handleMenuEvent(markersDates, "orange"), false);
+termine.addEventListener(
+  "click",
+  handleMenuEvent(markersDates, "orange"),
+  false
+);
+termine.addEventListener(
+  "mouseover",
+  handleMenuEvent(markersDates, "orange"),
+  false
+);
+termine.addEventListener(
+  "mouseout",
+  handleMenuEvent(markersDates, "orange"),
+  false
+);
 
 var gruppen = document.getElementById("gruppen");
 gruppen.addEventListener(
