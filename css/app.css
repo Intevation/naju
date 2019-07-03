@@ -8,15 +8,15 @@ body,
     color: white;
 }
 
-div.material-tooltip:nth-child(11) {
+div.material-tooltip:nth-child(10) {
     background-color: #4CAF50;
 }
 
-div.material-tooltip:nth-child(12) {
+div.material-tooltip:nth-child(11) {
     background-color: #ffeb3b;
 }
 
-div.material-tooltip:nth-child(13) {
+div.material-tooltip:nth-child(12) {
     background-color: #ff9800;
 }
 
