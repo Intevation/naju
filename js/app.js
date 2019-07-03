@@ -93,7 +93,6 @@ function renderPopUP(template, feature) {
     var elems = document.querySelectorAll(".modal");
     //var instances = M.Modal.init(elems, options);
     var modals = M.Modal.init(elems, { opacity: 0.5 });
-    console.log(modals);
     modals[0].open();
   });
 }
@@ -125,9 +124,8 @@ var kindergruppen = L.geoJson(null, {
       e.target.setIcon(kindergruppenIcon);
     });
     layer.on("click", function(e) {
-      console.log(e.sourceTarget.feature);
       renderPopUP(tmplGruppen, e.sourceTarget.feature);
-      map.fitBounds(e.latlng, 13);
+      map.setView(e.latlng, 13);
     });
   }
 });
@@ -177,7 +175,7 @@ var dates = L.geoJson(null, {
     });
     layer.on("click", function(e) {
       renderPopUP(tmplTermine, e.sourceTarget.feature);
-      map.flyTo(e.latlng, 13);
+      map.setView(e.latlng, 13);
     });
   }
 });
@@ -236,7 +234,6 @@ function handleMenuEvent(typ, color) {
     if (L.Browser.mobile) {
       floatActionButton[0].open();
     }
-    console.log(e);
     // var menu = document.querySelector(
     //   "body > div.fixed-action-btn.direction-top > ul > li:nth-child(3) > a"
     // );
