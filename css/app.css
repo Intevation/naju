@@ -27,24 +27,6 @@ a#dates,a#groups,a#lvs{
 	box-shadow: none;
 }
 
-.myDivIcon {
-    pointer-events: none;
-    color: white;
-    border-radius: 50%;
-    line-height: 36px;
-    padding: 0 0 0 5px;
-    display: block;
-}
-
-.myDivIconHighlight {
-    color: white;
-    border-radius: 50%;
-    line-height: 54px;
-    display: block;
-    padding: 0 0 0 10px;
-    font-size: xx-large;
-}
-
 .myMarkerCluster {
     border-radius: 50%;
     width:1.5em;
@@ -57,6 +39,23 @@ a#dates,a#groups,a#lvs{
     font-weight: bold;
     text-align:center;
 }
+
+.divIconGruppe{
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    background-image: url('../icons/gruppe.png');
+    text-align: center;
+}
+
+.divIconTermin{
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    background-image: url('../icons/termine.png');
+    text-align: center;
+}
+
 
 /* mobile phone */
 @media all and (max-width: 768px) {

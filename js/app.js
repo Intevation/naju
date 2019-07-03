@@ -136,8 +136,13 @@ var markersKindergruppen = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   iconCreateFunction: function(cluster) {
-    return L.icon({
-      iconUrl: "icons/gruppe.png"
+    return L.divIcon({
+      html:
+        '<div class="divIconGruppe"></div><div class="myMarkerCluster">' +
+        cluster.getChildCount() +
+        "</div>",
+      iconSize: [32, 37],
+      className: ""
     });
   }
 });
@@ -181,8 +186,13 @@ var markersDates = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   iconCreateFunction: function(cluster) {
-    return L.icon({
-      iconUrl: "icons/termine.png"
+    return L.divIcon({
+      html:
+        '<div class="divIconTermin"></div><div class="myMarkerCluster">' +
+        cluster.getChildCount() +
+        "</div>",
+      iconSize: [32, 37],
+      className: ""
     });
   }
 });
