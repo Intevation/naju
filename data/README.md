@@ -26,17 +26,10 @@ HEREAPPID=XXXXXXXXXXXXXXXXXXXX HEREAPPCODE=XXXXXXXXXXXXXXXXXXXXXX /opt/geocodify
 ogr2ogr -f "GeoJSON" kindergruppen.geojson Kindergruppen_Daten\ Website_05-2017-geocodify.csv -oo X_POSSIBLE_NAMES=lon -oo Y_POSSIBLE_NAMES=lat -oo KEEP_GEOM_COLUMNS=NO
 ```
 
-## Links
+## Daten 
 
-### Neu (Mai)
-
-- Öffne »Jugend«: https://cloud.naju.de/index.php/s/WENPMbmAkWHNxsW
 - Öffne »NAJU.de«: https://cloud.naju.de/index.php/s/HeAYwXkpz8skNnj
 - https://cloud.naju.de/index.php/s/HeAYwXkpz8skNnj/download
 - https://cloud.naju.de/index.php/s/HeAYwXkpz8skNnj/download?path=%2FNAJU_Gruppen_aktualisieren&files=Kindergruppen_Daten%20Website_05-2017.xlsx&downloadStartSecret=ldpuu0flwmj
 - https://cloud.naju.de/index.php/s/HeAYwXkpz8skNnj/download?path=%2FNAJU_Termine_aktualisieren&files=NAJU.de_Termine.xlsx&downloadStartSecret=hmas3anapdh
 
-### Alt
-
-- Öffne »NAJU.de_Termine.xlsx«: https://cloud.naju.de/index.php/s/brKycoTCqXMoRKH
-- Öffne »Kindergruppen_Daten Website_05-2017.xlsx«: https://cloud.naju.de/index.php/s/tYoiwCF7P3k3A4S
