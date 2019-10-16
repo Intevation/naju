@@ -146,7 +146,9 @@ var markersKindergruppen = L.markerClusterGroup({
 });
 
 var dateIcon = L.icon({
-  iconUrl: "icons/termine.png"
+  iconUrl: "icons/termine.png",
+  iconSize: [32, 37],
+  iconAnchor: [16,37],
 });
 
 var dateIconHighlight = L.icon({
@@ -183,6 +185,7 @@ var dates = L.geoJson(null, {
 var markersDates = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
+  spiderLegPolylineOptions: { weight: 1.5, color: '#222', opacity: 0.5 },
   iconCreateFunction: function(cluster) {
     return L.divIcon({
       html:
@@ -190,10 +193,20 @@ var markersDates = L.markerClusterGroup({
         cluster.getChildCount() +
         "</div>",
       iconSize: [32, 37],
+      iconAnchor: [16,37],
       className: ""
     });
   }
 });
+
+markersDates.on("spiderfied", event => {
+  event.cluster.setOpacity(0);
+});
+
+markersDates.on("unspiderfied", event => {
+  event.cluster.setOpacity(1);
+});
+
 
 var officeIcon = L.icon({
   iconUrl: "icons/geschaeftsstellen.png"
