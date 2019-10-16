@@ -345,7 +345,7 @@ fetch("data/adressen.geojson") // Call the fetch function passing the url of the
     M.toast({ html: "Fehler beim Laden der Landesverbände!" });
   });
 
-fetch("data/termine.geojson") // Call the fetch function passing the url of the API as a parameter
+fetch("https://mapserver.nabu.de/fcgi-bin/terminkoffer/next_6month") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
   })
