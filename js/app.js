@@ -98,11 +98,15 @@ function renderPopUP(template, feature) {
 }
 
 var kindergruppenIcon = L.icon({
-  iconUrl: "icons/gruppe.png"
+  iconUrl: "icons/gruppe.png",
+  iconSize: [32, 37],
+  iconAnchor: [16,37],
 });
 
 var kindergruppenIconHighlight = L.icon({
-  iconUrl: "icons/gruppe.png"
+  iconUrl: "icons/gruppe.png",
+  iconSize: [32, 37],
+  iconAnchor: [16,37],
 });
 
 var kindergruppen = L.geoJson(null, {
@@ -207,6 +211,13 @@ markersDates.on("unspiderfied", event => {
   event.cluster.setOpacity(1);
 });
 
+markersKindergruppen.on("spiderfied", event => {
+  event.cluster.setOpacity(0);
+});
+
+markersKindergruppen.on("unspiderfied", event => {
+  event.cluster.setOpacity(1);
+});
 
 var officeIcon = L.icon({
   iconUrl: "icons/geschaeftsstellen.png"
