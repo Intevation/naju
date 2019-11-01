@@ -5,6 +5,8 @@
 Import from UTF-8, Language German, Comma separated, Text delimiter ", Quoted
 field as text:
 
+IMPORTANT! : --convert-to converts only the first sheet!!!
+
 ```shell
 libreoffice --headless --unaccept=accept-string --convert-to csv:"Text - txt - csv (StarCalc)":44,34,76,1,,1031,true,true Kindergruppen_Daten\ Website_05-2017.xlsx
 ```
@@ -13,6 +15,9 @@ libreoffice --headless --unaccept=accept-string --convert-to csv:"Text - txt - c
 - 34 the double quote character ASCII value.
 - 76 is the number of the UTF-8 encoding
 - For details of the filter options see: <https://wiki.openoffice.org/wiki/Documentation/DevGuide/Spreadsheets/Filter_Options#Filter_Options_for_the_CSV_Filter>
+
+## Alternative 
+https://github.com/dilshod/xlsx2csv
 
 ## Geocodierung
 
@@ -25,6 +30,12 @@ HEREAPPID=XXXXXXXXXXXXXXXXXXXX HEREAPPCODE=XXXXXXXXXXXXXXXXXXXXXX /opt/geocodify
 ```shell
 ogr2ogr -f "GeoJSON" kindergruppen.geojson Kindergruppen_Daten\ Website_05-2017-geocodify.csv -oo X_POSSIBLE_NAMES=lon -oo Y_POSSIBLE_NAMES=lat -oo KEEP_GEOM_COLUMNS=NO
 ```
+
+## Storchenkoffer
+
+libreoffice --headless --unaccept=accept-string --convert-to csv:"Text - txt - csv (StarCalc)":44,34,76,1,,1031,true,true Storchenkoffer_Ausleihstationen.xlsx 
+
+HEREAPPID=TG4UcWVKDpwsnVYeTN1P HEREAPPCODE=6kTLfjLDay5H2epKE0oSbw /opt/geocodify/geocodify.js --source=here --addressfields [Straße Postleitzahl Ort] Storchenkoffer_Ausleihstationen.csv > Storchenkoffer_Ausleihstationen-geocodify.csv
 
 ## Daten 
 
