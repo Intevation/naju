@@ -117,7 +117,7 @@ var kindergruppen = L.geoJson(null, {
     });
   },
   onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["NAJU"] + "</b>"), {
+    layer.bindTooltip(String("<b>" + feature.properties["gruppenname"] + "</b>"), {
       offset: [32, 18],
       direction: "right"
     });
@@ -344,7 +344,7 @@ gruppen.addEventListener(
   false
 );
 
-fetch("data/adressen.geojson") // Call the fetch function passing the url of the API as a parameter
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/landesverbaende") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
   })
@@ -356,7 +356,7 @@ fetch("data/adressen.geojson") // Call the fetch function passing the url of the
     M.toast({ html: "Fehler beim Laden der Landesverbände!" });
   });
 
-fetch("https://mapserver.nabu.de/fcgi-bin/terminkoffer/next_6month") // Call the fetch function passing the url of the API as a parameter
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/next_6month") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
   })
@@ -369,7 +369,7 @@ fetch("https://mapserver.nabu.de/fcgi-bin/terminkoffer/next_6month") // Call the
     M.toast({ html: "Fehler beim Laden der Termine!" });
   });
 
-fetch("data/kindergruppen.geojson") // Call the fetch function passing the url of the API as a parameter
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/kindergruppen") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
     return response.json();
   })
