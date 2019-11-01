@@ -84,6 +84,7 @@ async function getTemplate(url) {
 let tmplTermine = getTemplate("tmpl/termine.html");
 let tmplGruppen = getTemplate("tmpl/gruppen.html");
 let tmplLandesverbaende = getTemplate("tmpl/landesverbaende.html");
+let tmplStorchenkoffer = getTemplate("tmpl/storchenkoffer.html");
 
 function renderPopUP(template, feature) {
   template.then(function(t) {
@@ -96,6 +97,42 @@ function renderPopUP(template, feature) {
     modals[0].open();
   });
 }
+var storchenkofferIcon= L.icon({
+  iconUrl: "icons/storchenkoffer.png",
+  iconSize: [32, 37],
+  iconAnchor: [16,37],
+});
+
+var storchenkofferIconHighlight = L.icon({
+  iconUrl: "icons/storchenkoffer.png",
+  iconSize: [32, 37],
+  iconAnchor: [16,37],
+});
+
+var storchenkoffer = L.geoJson(null, {
+  pointToLayer: function(feature, latlng) {
+    return L.marker(latlng, {
+      icon: storchenkofferIcon,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(String("<b>" + feature.properties["name"] + "</b>"), {
+      offset: [32, 18],
+      direction: "right"
+    });
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(storchenkofferIconHighlight);
+    });
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(storchenkofferIcon);
+    });
+    layer.on("click", function(e) {
+      renderPopUP(tmplStorchenkoffer, e.sourceTarget.feature);
+      map.setView(e.latlng, 13);
+    });
+  }
+});
 
 var kindergruppenIcon = L.icon({
   iconUrl: "icons/gruppe.png",
@@ -305,6 +342,11 @@ function handleMenuEvent(typ, color) {
 }
 
 // Add event listener to table
+var sk= document.getElementById("sk");
+sk.addEventListener("click", handleMenuEvent(storchenkoffer, "red"), false);
+sk.addEventListener("mouseover", handleMenuEvent(storchenkoffer, "red"), false);
+sk.addEventListener("mouseout", handleMenuEvent(storchenkoffer, "red"), false);
+
 var lvs = document.getElementById("lvs");
 lvs.addEventListener("click", handleMenuEvent(offices, "green"), false);
 lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
@@ -343,6 +385,18 @@ gruppen.addEventListener(
   handleMenuEvent(markersKindergruppen, "yellow"),
   false
 );
+
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/storchenkoffer") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    storchenkoffer.addData(json);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Storchenkoffer!" });
+  });
 
 fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/landesverbaende") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {

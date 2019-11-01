@@ -13,14 +13,18 @@ div.material-tooltip:nth-child(10) {
 }
 
 div.material-tooltip:nth-child(11) {
-    background-color: #7abcb3;
+    background-color: #cd071e;
 }
 
 div.material-tooltip:nth-child(12) {
+    background-color: #7abcb3;
+}
+
+div.material-tooltip:nth-child(13) {
     background-color: #f39700;
 }
 
-a#dates,a#groups,a#lvs{
+a#dates,a#groups,a#lvs,a#sk{
     background-color: transparent !important;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
