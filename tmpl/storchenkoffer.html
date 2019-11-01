@@ -1,0 +1,25 @@
+<!-- Modal Structure -->
+<div class="modal-content">
+  <a
+    class="modal-close btn-floating btn-large waves-effect waves-light red"
+    style="float:right"
+    ><i class="material-icons">close</i></a
+  >
+  <div class="container">
+    <h4>Storchenkoffer ausleihbar bei {{ name }}</h4>
+    {{#telefon}}
+    <p>
+      <a
+        class="waves-effect waves-light btn"
+        href="tel:{{ telefon }}"
+        target="_blank"
+      >
+        <i class="material-icons left">phone</i>{{ telefon }}</a
+      >
+    </p>
+    {{/telefon}}
+        {{#url}}
+        <a class="waves-effect waves-light btn" href="{{url}}" target="_blank"><i class="material-icons left">link</i>Zur Webseite</a>
+        {{/url}}
+  </div>
+</div>
