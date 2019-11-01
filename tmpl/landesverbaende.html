@@ -6,26 +6,26 @@
     ><i class="material-icons">close</i></a
   >
   <div class="container">
-    <h4>{{ LV }}</h4>
-    {{#E-Mail}}
+    <h4>{{ landesverband }}</h4>
+    {{#mail}}
     <a
       class="waves-effect waves-light btn"
-      href="mailto:{{ E-Mail }}"
+      href="mailto:{{ mail }}"
       target="_blank"
     >
-      <i class="material-icons left">email</i>{{ E-Mail }}</a
+      <i class="material-icons left">email</i>{{ mail }}</a
     >
-    {{/E-Mail}}
-    {{#Tel}}
+    {{/mail}}
+    {{#telefon}}
     <p>
       <a
         class="waves-effect waves-light btn"
-        href="tel:{{ Tel }}"
+        href="tel:{{ telefon }}"
         target="_blank"
       >
-        <i class="material-icons left">phone</i>{{ Tel }}</a
+        <i class="material-icons left">phone</i>{{ telefon }}</a
       >
     </p>
-    {{/Tel}}
+    {{/telefon}}
   </div>
 </div>
