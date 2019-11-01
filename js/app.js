@@ -235,7 +235,7 @@ var offices = L.geoJson(null, {
     });
   },
   onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["LV"] + "</b>"), {
+    layer.bindTooltip(String("<b>" + feature.properties["landesverband"] + "</b>"), {
       offset: [32, 18],
       direction: "right"
     });
