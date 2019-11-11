@@ -19,9 +19,9 @@ function sleep(time) {
 var map = L.map("map", {
   attributionControl: false,
   center: [50.15, 10.66],
-  zoom: 5,
+  zoom: 6,
   maxZoom: 18,
-  minZoom: 5,
+  minZoom: 6,
   maxBounds: [[42, -46], [58, 67]],
   fadeAnimation: false,
   zoomControl: false
@@ -39,7 +39,8 @@ L.Mask = L.Polygon.extend({
     color: "#333",
     fillOpacity: 0.5,
     clickable: true,
-
+    smoothFactor:8,
+    renderer: L.svg(),
     outerBounds: new L.LatLngBounds([-90, -360], [90, 360])
   },
 
