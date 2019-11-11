@@ -33,6 +33,38 @@ if (!L.Browser.mobile) {
     .addTo(map);
 }
 
+L.Mask = L.Polygon.extend({
+  options: {
+    stroke: false,
+    color: "#333",
+    fillOpacity: 0.5,
+    clickable: true,
+
+    outerBounds: new L.LatLngBounds([-90, -360], [90, 360])
+  },
+
+  initialize: function(latLngs, options) {
+    var outerBoundsLatLngs = [
+      this.options.outerBounds.getSouthWest(),
+      this.options.outerBounds.getNorthWest(),
+      this.options.outerBounds.getNorthEast(),
+      this.options.outerBounds.getSouthEast()
+    ];
+    L.Polygon.prototype.initialize.call(
+      this,
+      [outerBoundsLatLngs, latLngs],
+      options
+    );
+  }
+});
+
+L.mask = function(latLngs, options) {
+  return new L.Mask(latLngs, options);
+};
+
+    var tk25 = [{ "lat": 47.3992, "lng": 12.8318 }, { "lat": 47.4991, "lng": 12.8318 }, { "lat": 47.4991, "lng": 12.6651 }, { "lat": 47.5991, "lng": 12.6651 }, { "lat": 47.5991, "lng": 12.4985 }, { "lat": 47.5991, "lng": 12.3319 }, { "lat": 47.5991, "lng": 12.1652 }, { "lat": 47.5991, "lng": 11.9986 }, { "lat": 47.5991, "lng": 11.8319 }, { "lat": 47.5991, "lng": 11.6653 }, { "lat": 47.4991, "lng": 11.6653 }, { "lat": 47.4991, "lng": 11.4986 }, { "lat": 47.3992, "lng": 11.4986 }, { "lat": 47.3991, "lng": 11.332 }, { "lat": 47.3991, "lng": 11.1653 }, { "lat": 47.3991, "lng": 10.9987 }, { "lat": 47.3991, "lng": 10.8321 }, { "lat": 47.4991, "lng": 10.8321 }, { "lat": 47.4991, "lng": 10.6654 }, { "lat": 47.4991, "lng": 10.4988 }, { "lat": 47.3991, "lng": 10.4988 }, { "lat": 47.2992, "lng": 10.4988 }, { "lat": 47.2992, "lng": 10.3321 }, { "lat": 47.1992, "lng": 10.3321 }, { "lat": 47.1992, "lng": 10.1655 }, { "lat": 47.2992, "lng": 10.1655 }, { "lat": 47.2992, "lng": 9.9988 }, { "lat": 47.3991, "lng": 9.9988 }, { "lat": 47.4991, "lng": 9.9988 }, { "lat": 47.4991, "lng": 9.8322 }, { "lat": 47.4991, "lng": 9.6655 }, { "lat": 47.4991, "lng": 9.4989 }, { "lat": 47.5991, "lng": 9.4989 }, { "lat": 47.5991, "lng": 9.3323 }, { "lat": 47.5991, "lng": 9.1656 }, { "lat": 47.5991, "lng": 8.999 }, { "lat": 47.5991, "lng": 8.8323 }, { "lat": 47.5991, "lng": 8.6657 }, { "lat": 47.4991, "lng": 8.6657 }, { "lat": 47.4991, "lng": 8.499 }, { "lat": 47.4991, "lng": 8.3324 }, { "lat": 47.4991, "lng": 8.1658 }, { "lat": 47.4991, "lng": 7.9991 }, { "lat": 47.4991, "lng": 7.8325 }, { "lat": 47.4991, "lng": 7.6658 }, { "lat": 47.4991, "lng": 7.4992 }, { "lat": 47.5991, "lng": 7.4992 }, { "lat": 47.6991, "lng": 7.4992 }, { "lat": 47.7991, "lng": 7.4992 }, { "lat": 47.8991, "lng": 7.4992 }, { "lat": 47.9991, "lng": 7.4992 }, { "lat": 48.0991, "lng": 7.4992 }, { "lat": 48.199, "lng": 7.4992 }, { "lat": 48.299, "lng": 7.4992 }, { "lat": 48.299, "lng": 7.6658 }, { "lat": 48.399, "lng": 7.6658 }, { "lat": 48.499, "lng": 7.6658 }, { "lat": 48.599, "lng": 7.6658 }, { "lat": 48.699, "lng": 7.6658 }, { "lat": 48.699, "lng": 7.8325 }, { "lat": 48.799, "lng": 7.8325 }, { "lat": 48.799, "lng": 7.9991 }, { "lat": 48.899, "lng": 7.9991 }, { "lat": 48.999, "lng": 7.9991 }, { "lat": 48.999, "lng": 7.8325 }, { "lat": 48.999, "lng": 7.6658 }, { "lat": 48.999, "lng": 7.4992 }, { "lat": 49.0989, "lng": 7.4992 }, { "lat": 49.0989, "lng": 7.3325 }, { "lat": 49.0989, "lng": 7.1659 }, { "lat": 49.0989, "lng": 6.9992 }, { "lat": 49.0989, "lng": 6.8326 }, { "lat": 49.0989, "lng": 6.666 }, { "lat": 49.1989, "lng": 6.666 }, { "lat": 49.1989, "lng": 6.4993 }, { "lat": 49.2989, "lng": 6.4993 }, { "lat": 49.3989, "lng": 6.4993 }, { "lat": 49.3989, "lng": 6.3327 }, { "lat": 49.4989, "lng": 6.3327 }, { "lat": 49.5989, "lng": 6.3327 }, { "lat": 49.6989, "lng": 6.3327 }, { "lat": 49.7989, "lng": 6.3327 }, { "lat": 49.7989, "lng": 6.166 }, { "lat": 49.8989, "lng": 6.166 }, { "lat": 49.8989, "lng": 5.9994 }, { "lat": 49.9988, "lng": 5.9994 }, { "lat": 50.0988, "lng": 5.9994 }, { "lat": 50.1988, "lng": 5.9994 }, { "lat": 50.1988, "lng": 6.166 }, { "lat": 50.2988, "lng": 6.166 }, { "lat": 50.3988, "lng": 6.166 }, { "lat": 50.3988, "lng": 6.3327 }, { "lat": 50.4988, "lng": 6.3327 }, { "lat": 50.4988, "lng": 6.166 }, { "lat": 50.5988, "lng": 6.166 }, { "lat": 50.6988, "lng": 6.166 }, { "lat": 50.6988, "lng": 5.9994 }, { "lat": 50.7988, "lng": 5.9994 }, { "lat": 50.8987, "lng": 5.9994 }, { "lat": 50.8987, "lng": 5.8327 }, { "lat": 50.9987, "lng": 5.8327 }, { "lat": 51.0987, "lng": 5.8327 }, { "lat": 51.0987, "lng": 5.9994 }, { "lat": 51.1987, "lng": 5.9994 }, { "lat": 51.2987, "lng": 5.9994 }, { "lat": 51.2987, "lng": 6.166 }, { "lat": 51.3987, "lng": 6.166 }, { "lat": 51.4987, "lng": 6.166 }, { "lat": 51.4987, "lng": 5.9994 }, { "lat": 51.5987, "lng": 5.9994 }, { "lat": 51.6987, "lng": 5.9994 }, { "lat": 51.6987, "lng": 5.8327 }, { "lat": 51.7986, "lng": 5.8327 }, { "lat": 51.8986, "lng": 5.8327 }, { "lat": 51.8986, "lng": 5.9994 }, { "lat": 51.8986, "lng": 6.166 }, { "lat": 51.8986, "lng": 6.3327 }, { "lat": 51.8986, "lng": 6.4993 }, { "lat": 51.8986, "lng": 6.6659 }, { "lat": 51.9986, "lng": 6.6659 }, { "lat": 52.0986, "lng": 6.6659 }, { "lat": 52.0986, "lng": 6.8326 }, { "lat": 52.1986, "lng": 6.8326 }, { "lat": 52.1986, "lng": 6.9992 }, { "lat": 52.2986, "lng": 6.9992 }, { "lat": 52.3986, "lng": 6.9992 }, { "lat": 52.3986, "lng": 6.8326 }, { "lat": 52.3986, "lng": 6.6659 }, { "lat": 52.4986, "lng": 6.6659 }, { "lat": 52.5986, "lng": 6.6659 }, { "lat": 52.6985, "lng": 6.6659 }, { "lat": 52.6985, "lng": 6.8326 }, { "lat": 52.6985, "lng": 6.9992 }, { "lat": 52.7985, "lng": 6.9992 }, { "lat": 52.8985, "lng": 6.9992 }, { "lat": 52.8985, "lng": 7.1659 }, { "lat": 52.9985, "lng": 7.1659 }, { "lat": 53.0985, "lng": 7.1659 }, { "lat": 53.1985, "lng": 7.1659 }, { "lat": 53.2985, "lng": 7.1659 }, { "lat": 53.2985, "lng": 6.9992 }, { "lat": 53.3985, "lng": 6.9992 }, { "lat": 53.4985, "lng": 6.9992 }, { "lat": 53.4985, "lng": 6.8326 }, { "lat": 53.4985, "lng": 6.6659 }, { "lat": 53.5984, "lng": 6.6659 }, { "lat": 53.6984, "lng": 6.6659 }, { "lat": 53.6984, "lng": 6.8326 }, { "lat": 53.6984, "lng": 6.9992 }, { "lat": 53.7984, "lng": 6.9992 }, { "lat": 53.7984, "lng": 7.1659 }, { "lat": 53.7984, "lng": 7.3325 }, { "lat": 53.7984, "lng": 7.4991 }, { "lat": 53.7984, "lng": 7.6658 }, { "lat": 53.7984, "lng": 7.8324 }, { "lat": 53.7984, "lng": 7.9991 }, { "lat": 53.7984, "lng": 8.1657 }, { "lat": 53.6984, "lng": 8.1657 }, { "lat": 53.6984, "lng": 8.3324 }, { "lat": 53.7984, "lng": 8.3324 }, { "lat": 53.8984, "lng": 8.3324 }, { "lat": 53.9984, "lng": 8.3324 }, { "lat": 53.9984, "lng": 8.499 }, { "lat": 53.9984, "lng": 8.6656 }, { "lat": 54.0984, "lng": 8.6656 }, { "lat": 54.1984, "lng": 8.6656 }, { "lat": 54.1984, "lng": 8.499 }, { "lat": 54.2984, "lng": 8.499 }, { "lat": 54.3984, "lng": 8.499 }, { "lat": 54.3984, "lng": 8.3323 }, { "lat": 54.4983, "lng": 8.3323 }, { "lat": 54.5983, "lng": 8.3323 }, { "lat": 54.5983, "lng": 8.1657 }, { "lat": 54.6983, "lng": 8.1657 }, { "lat": 54.7983, "lng": 8.1657 }, { "lat": 54.8983, "lng": 8.1657 }, { "lat": 54.9983, "lng": 8.1657 }, { "lat": 54.9983, "lng": 8.3323 }, { "lat": 55.0983, "lng": 8.3323 }, { "lat": 55.0983, "lng": 8.499 }, { "lat": 54.9983, "lng": 8.499 }, { "lat": 54.9983, "lng": 8.6656 }, { "lat": 54.9983, "lng": 8.8323 }, { "lat": 54.9983, "lng": 8.9989 }, { "lat": 54.8983, "lng": 8.9989 }, { "lat": 54.8983, "lng": 9.1655 }, { "lat": 54.8983, "lng": 9.3322 }, { "lat": 54.8983, "lng": 9.4988 }, { "lat": 54.8983, "lng": 9.6655 }, { "lat": 54.8983, "lng": 9.8321 }, { "lat": 54.7983, "lng": 9.8321 }, { "lat": 54.7983, "lng": 9.9987 }, { "lat": 54.6983, "lng": 9.9987 }, { "lat": 54.6983, "lng": 10.1654 }, { "lat": 54.5983, "lng": 10.1654 }, { "lat": 54.4984, "lng": 10.1654 }, { "lat": 54.4984, "lng": 10.332 }, { "lat": 54.4984, "lng": 10.4987 }, { "lat": 54.3984, "lng": 10.4987 }, { "lat": 54.3984, "lng": 10.6653 }, { "lat": 54.3984, "lng": 10.832 }, { "lat": 54.3984, "lng": 10.9986 }, { "lat": 54.4984, "lng": 10.9986 }, { "lat": 54.5984, "lng": 10.9986 }, { "lat": 54.5984, "lng": 11.1652 }, { "lat": 54.5984, "lng": 11.3319 }, { "lat": 54.4984, "lng": 11.3319 }, { "lat": 54.3984, "lng": 11.3319 }, { "lat": 54.3984, "lng": 11.1652 }, { "lat": 54.2984, "lng": 11.1652 }, { "lat": 54.1984, "lng": 11.1652 }, { "lat": 54.0984, "lng": 11.1652 }, { "lat": 54.0984, "lng": 11.3319 }, { "lat": 54.0984, "lng": 11.4985 }, { "lat": 54.1984, "lng": 11.4985 }, { "lat": 54.1984, "lng": 11.6652 }, { "lat": 54.1984, "lng": 11.8318 }, { "lat": 54.1984, "lng": 11.9984 }, { "lat": 54.1984, "lng": 12.1651 }, { "lat": 54.2984, "lng": 12.1651 }, { "lat": 54.2984, "lng": 12.3317 }, { "lat": 54.3984, "lng": 12.3317 }, { "lat": 54.4984, "lng": 12.3317 }, { "lat": 54.4984, "lng": 12.4984 }, { "lat": 54.4984, "lng": 12.665 }, { "lat": 54.4984, "lng": 12.8316 }, { "lat": 54.4984, "lng": 12.9983 }, { "lat": 54.5984, "lng": 12.9983 }, { "lat": 54.5984, "lng": 13.1649 }, { "lat": 54.6984, "lng": 13.1649 }, { "lat": 54.6984, "lng": 13.3316 }, { "lat": 54.6984, "lng": 13.4982 }, { "lat": 54.5984, "lng": 13.4982 }, { "lat": 54.5984, "lng": 13.6648 }, { "lat": 54.4984, "lng": 13.6648 }, { "lat": 54.3984, "lng": 13.6648 }, { "lat": 54.3984, "lng": 13.8315 }, { "lat": 54.2984, "lng": 13.8315 }, { "lat": 54.2984, "lng": 13.9981 }, { "lat": 54.1984, "lng": 13.9981 }, { "lat": 54.0984, "lng": 13.9981 }, { "lat": 54.0984, "lng": 14.1648 }, { "lat": 53.9984, "lng": 14.1648 }, { "lat": 53.9984, "lng": 14.3314 }, { "lat": 53.8985, "lng": 14.3314 }, { "lat": 53.7985, "lng": 14.3314 }, { "lat": 53.6985, "lng": 14.3314 }, { "lat": 53.5985, "lng": 14.3314 }, { "lat": 53.4985, "lng": 14.3314 }, { "lat": 53.4985, "lng": 14.4981 }, { "lat": 53.3985, "lng": 14.4981 }, { "lat": 53.2985, "lng": 14.4981 }, { "lat": 53.1985, "lng": 14.4981 }, { "lat": 53.0985, "lng": 14.4981 }, { "lat": 52.9986, "lng": 14.4981 }, { "lat": 52.9986, "lng": 14.3314 }, { "lat": 52.8986, "lng": 14.3314 }, { "lat": 52.7986, "lng": 14.3315 }, { "lat": 52.7986, "lng": 14.4981 }, { "lat": 52.6986, "lng": 14.4981 }, { "lat": 52.6986, "lng": 14.6647 }, { "lat": 52.5986, "lng": 14.6647 }, { "lat": 52.4986, "lng": 14.6647 }, { "lat": 52.3986, "lng": 14.6647 }, { "lat": 52.2986, "lng": 14.6647 }, { "lat": 52.2986, "lng": 14.8314 }, { "lat": 52.1987, "lng": 14.8314 }, { "lat": 52.0987, "lng": 14.8314 }, { "lat": 51.9987, "lng": 14.8314 }, { "lat": 51.8987, "lng": 14.8314 }, { "lat": 51.8987, "lng": 14.6648 }, { "lat": 51.7987, "lng": 14.6648 }, { "lat": 51.7987, "lng": 14.8314 }, { "lat": 51.6987, "lng": 14.8314 }, { "lat": 51.5987, "lng": 14.8314 }, { "lat": 51.4987, "lng": 14.8314 }, { "lat": 51.4987, "lng": 14.9981 }, { "lat": 51.3987, "lng": 14.9981 }, { "lat": 51.3987, "lng": 15.1647 }, { "lat": 51.2988, "lng": 15.1647 }, { "lat": 51.1988, "lng": 15.1647 }, { "lat": 51.0988, "lng": 15.1647 }, { "lat": 51.0988, "lng": 14.9981 }, { "lat": 50.9988, "lng": 14.9981 }, { "lat": 50.8988, "lng": 14.9981 }, { "lat": 50.8988, "lng": 14.8314 }, { "lat": 50.7988, "lng": 14.8314 }, { "lat": 50.7988, "lng": 14.6648 }, { "lat": 50.7988, "lng": 14.4981 }, { "lat": 50.7988, "lng": 14.3315 }, { "lat": 50.7988, "lng": 14.1649 }, { "lat": 50.7988, "lng": 13.9982 }, { "lat": 50.6988, "lng": 13.9982 }, { "lat": 50.6988, "lng": 13.8316 }, { "lat": 50.6988, "lng": 13.6649 }, { "lat": 50.5988, "lng": 13.6649 }, { "lat": 50.5988, "lng": 13.4983 }, { "lat": 50.5988, "lng": 13.3317 }, { "lat": 50.4988, "lng": 13.3317 }, { "lat": 50.4988, "lng": 13.165 }, { "lat": 50.3988, "lng": 13.165 }, { "lat": 50.3988, "lng": 12.9984 }, { "lat": 50.3988, "lng": 12.8317 }, { "lat": 50.3988, "lng": 12.6651 }, { "lat": 50.2988, "lng": 12.6651 }, { "lat": 50.2988, "lng": 12.4984 }, { "lat": 50.1988, "lng": 12.4984 }, { "lat": 50.1988, "lng": 12.3318 }, { "lat": 50.0989, "lng": 12.3318 }, { "lat": 50.0989, "lng": 12.4984 }, { "lat": 49.9989, "lng": 12.4985 }, { "lat": 49.9989, "lng": 12.6651 }, { "lat": 49.8989, "lng": 12.6651 }, { "lat": 49.7989, "lng": 12.6651 }, { "lat": 49.7989, "lng": 12.4985 }, { "lat": 49.6989, "lng": 12.4985 }, { "lat": 49.6989, "lng": 12.6651 }, { "lat": 49.5989, "lng": 12.6651 }, { "lat": 49.4989, "lng": 12.6651 }, { "lat": 49.4989, "lng": 12.8317 }, { "lat": 49.3989, "lng": 12.8317 }, { "lat": 49.3989, "lng": 12.9984 }, { "lat": 49.299, "lng": 12.9984 }, { "lat": 49.299, "lng": 13.165 }, { "lat": 49.199, "lng": 13.165 }, { "lat": 49.199, "lng": 13.3317 }, { "lat": 49.099, "lng": 13.3317 }, { "lat": 49.099, "lng": 13.4983 }, { "lat": 48.999, "lng": 13.4983 }, { "lat": 48.999, "lng": 13.665 }, { "lat": 48.899, "lng": 13.665 }, { "lat": 48.899, "lng": 13.8316 }, { "lat": 48.799, "lng": 13.8316 }, { "lat": 48.699, "lng": 13.8316 }, { "lat": 48.599, "lng": 13.8316 }, { "lat": 48.499, "lng": 13.8316 }, { "lat": 48.499, "lng": 13.665 }, { "lat": 48.499, "lng": 13.4983 }, { "lat": 48.3991, "lng": 13.4983 }, { "lat": 48.2991, "lng": 13.4983 }, { "lat": 48.2991, "lng": 13.3317 }, { "lat": 48.2991, "lng": 13.1651 }, { "lat": 48.1991, "lng": 13.1651 }, { "lat": 48.1991, "lng": 12.9984 }, { "lat": 48.1991, "lng": 12.8318 }, { "lat": 48.0991, "lng": 12.8318 }, { "lat": 47.9991, "lng": 12.8318 }, { "lat": 47.9991, "lng": 12.9984 }, { "lat": 47.8991, "lng": 12.9984 }, { "lat": 47.7991, "lng": 12.9984 }, { "lat": 47.6991, "lng": 12.9984 }, { "lat": 47.6991, "lng": 13.1651 }, { "lat": 47.5991, "lng": 13.1651 }, { "lat": 47.4992, "lng": 13.1651 }, { "lat": 47.3992, "lng": 13.1651 }, { "lat": 47.3992, "lng": 12.9984 }, { "lat": 47.3992, "lng": 12.8318 }, { "lat": 54.0984, "lng": 7.8324 }, { "lat": 54.1984, "lng": 7.8324 }, { "lat": 54.1984, "lng": 7.9991 }, { "lat": 54.0984, "lng": 7.9991 }, { "lat": 54.0984, "lng": 7.8324 }]
+    L.mask(tk25).addTo(map);
+
 L.tileLayer(
   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
   {
@@ -97,16 +129,16 @@ function renderPopUP(template, feature) {
     modals[0].open();
   });
 }
-var storchenkofferIcon= L.icon({
+var storchenkofferIcon = L.icon({
   iconUrl: "icons/storchenkoffer.png",
   iconSize: [32, 37],
-  iconAnchor: [16,37],
+  iconAnchor: [16, 37]
 });
 
 var storchenkofferIconHighlight = L.icon({
   iconUrl: "icons/storchenkoffer.png",
   iconSize: [32, 37],
-  iconAnchor: [16,37],
+  iconAnchor: [16, 37]
 });
 
 var storchenkoffer = L.geoJson(null, {
@@ -137,13 +169,13 @@ var storchenkoffer = L.geoJson(null, {
 var kindergruppenIcon = L.icon({
   iconUrl: "icons/gruppe.png",
   iconSize: [32, 37],
-  iconAnchor: [16,37],
+  iconAnchor: [16, 37]
 });
 
 var kindergruppenIconHighlight = L.icon({
   iconUrl: "icons/gruppe.png",
   iconSize: [32, 37],
-  iconAnchor: [16,37],
+  iconAnchor: [16, 37]
 });
 
 var kindergruppen = L.geoJson(null, {
@@ -154,10 +186,13 @@ var kindergruppen = L.geoJson(null, {
     });
   },
   onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["gruppenname"] + "</b>"), {
-      offset: [32, 18],
-      direction: "right"
-    });
+    layer.bindTooltip(
+      String("<b>" + feature.properties["gruppenname"] + "</b>"),
+      {
+        offset: [32, 18],
+        direction: "right"
+      }
+    );
     layer.on("mouseover", function(e) {
       e.target.setIcon(kindergruppenIconHighlight);
     });
@@ -189,7 +224,7 @@ var markersKindergruppen = L.markerClusterGroup({
 var dateIcon = L.icon({
   iconUrl: "icons/termine.png",
   iconSize: [32, 37],
-  iconAnchor: [16,37],
+  iconAnchor: [16, 37]
 });
 
 var dateIconHighlight = L.icon({
@@ -226,7 +261,7 @@ var dates = L.geoJson(null, {
 var markersDates = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
-  spiderLegPolylineOptions: { weight: 1.5, color: '#222', opacity: 0.5 },
+  spiderLegPolylineOptions: { weight: 1.5, color: "#222", opacity: 0.5 },
   iconCreateFunction: function(cluster) {
     return L.divIcon({
       html:
@@ -234,7 +269,7 @@ var markersDates = L.markerClusterGroup({
         cluster.getChildCount() +
         "</div>",
       iconSize: [32, 37],
-      iconAnchor: [16,37],
+      iconAnchor: [16, 37],
       className: ""
     });
   }
@@ -272,10 +307,13 @@ var offices = L.geoJson(null, {
     });
   },
   onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["landesverband"] + "</b>"), {
-      offset: [32, 18],
-      direction: "right"
-    });
+    layer.bindTooltip(
+      String("<b>" + feature.properties["landesverband"] + "</b>"),
+      {
+        offset: [32, 18],
+        direction: "right"
+      }
+    );
     layer.on("mouseover", function(e) {
       e.target.setIcon(officeIconHighlight);
     });
@@ -342,7 +380,7 @@ function handleMenuEvent(typ, color) {
 }
 
 // Add event listener to table
-var sk= document.getElementById("sk");
+var sk = document.getElementById("sk");
 sk.addEventListener("click", handleMenuEvent(storchenkoffer, "red"), false);
 sk.addEventListener("mouseover", handleMenuEvent(storchenkoffer, "red"), false);
 sk.addEventListener("mouseout", handleMenuEvent(storchenkoffer, "red"), false);
