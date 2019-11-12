@@ -8,19 +8,19 @@ body,
     color: white;
 }
 
-div.material-tooltip:nth-child(10) {
+div.material-tooltip:nth-child(11) {
     background-color: #a3b707;
 }
 
-div.material-tooltip:nth-child(11) {
+div.material-tooltip:nth-child(12) {
     background-color: #cd071e;
 }
 
-div.material-tooltip:nth-child(12) {
+div.material-tooltip:nth-child(13) {
     background-color: #7abcb3;
 }
 
-div.material-tooltip:nth-child(13) {
+div.material-tooltip:nth-child(14) {
     background-color: #f39700;
 }
 
