@@ -21,7 +21,7 @@ var map = L.map("map", {
   center: [50.15, 10.66],
   zoom: (L.Browser.mobile? 5 : 6),
   maxZoom: 18,
-  minZoom: 5,
+  minZoom: (L.Browser.mobile? 5 : 6),
   maxBounds: [[42, -46], [58, 67]],
   fadeAnimation: false,
   zoomControl: false
@@ -338,24 +338,23 @@ function handleMenuEvent(typ, color) {
     // https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath
     // var path = e.path || (e.composedPath && e.composedPath());
     // var menu=path[1];
-    var menu = e.target.parentNode; // for ie11 and edge compatibility
-    // console.log(menu);
+    var menu = e.target; // for ie11 and edge compatibility
 
     switch (e.type) {
-      case "mouseover":
-        if (!menu.className.includes("clicked")) {
-          if (!map.hasLayer(typ)) {
-            typ.addTo(map);
-          }
-        }
-        break;
-      case "mouseout":
-        if (!menu.className.includes("clicked")) {
-          if (map.hasLayer(typ)) {
-            map.removeLayer(typ);
-          }
-        }
-        break;
+      //case "mouseover":
+      //  if (!menu.className.includes("clicked")) {
+      //    if (!map.hasLayer(typ)) {
+      //      typ.addTo(map);
+      //    }
+      //  }
+      //  break;
+      //case "mouseout":
+      //  if (!menu.className.includes("clicked")) {
+      //    if (map.hasLayer(typ)) {
+      //      map.removeLayer(typ);
+      //    }
+      //  }
+      //  break;
       case "click":
         menu.classList.toggle("clicked");
         if (!menu.className.includes("clicked")) {
@@ -388,7 +387,7 @@ lvs.addEventListener("click", handleMenuEvent(offices, "green"), false);
 lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
 lvs.addEventListener("mouseout", handleMenuEvent(offices, "green"), false);
 
-var termine = document.getElementById("termine");
+var termine = document.getElementById("dates");
 termine.addEventListener(
   "click",
   handleMenuEvent(markersDates, "orange"),
@@ -405,7 +404,7 @@ termine.addEventListener(
   false
 );
 
-var gruppen = document.getElementById("gruppen");
+var gruppen = document.getElementById("groups");
 gruppen.addEventListener(
   "click",
   handleMenuEvent(markersKindergruppen, "yellow"),
