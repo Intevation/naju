@@ -18,7 +18,7 @@ function sleep(time) {
 
 var map = L.map("map", {
   attributionControl: false,
-  center: [50.15, 10.66],
+  center: [51.20, 9.62],
   zoom: (L.Browser.mobile? 5 : 6),
   maxZoom: 18,
   minZoom: (L.Browser.mobile? 5 : 6),
