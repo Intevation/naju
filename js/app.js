@@ -66,15 +66,12 @@ L.mask = function(latLngs, options) {
 L.mask(germany).addTo(map);
 
 L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   {
-    attribution:
-    '© <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+    minZoom: 5,
     maxZoom: 18,
-    id: "mapbox.streets",
-    accessToken:
-      "pk.eyJ1IjoiYmpvZXJuc2NoaWxiZXJnIiwiYSI6InRzOVZKeWsifQ.y20mr9o3MolFOUdTQekhUA",
-    noWrap: true
+    attribution:
+      'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
   }
 ).addTo(map);
 
