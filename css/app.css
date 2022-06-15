@@ -24,6 +24,10 @@ div.material-tooltip:nth-child(14) {
     background-color: #f39700;
 }
 
+div.material-tooltip:nth-child(15) {
+    background-color: #3448d0;
+}
+
 a#lvs:not(.clicked){
 
     content: url('../icons/geschaeftsstellen_gray.png');
@@ -130,7 +134,34 @@ a#dates:hover{
     text-align: center;
 }
 
-a#dates,a#groups,a#lvs,a#sk{
+a#insektenrucksaecke:not(.clicked){
+
+    content: url('../icons/insektenrucksack_gray.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#insektenrucksaecke.clicked{
+
+    content: url('../icons/insektenrucksack.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#insektenrucksaecke:hover{
+
+    content: url('../icons/insektenrucksack.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#dates,a#groups,a#lvs,a#sk,a#insektenrucksaecke{
     background-color: transparent !important;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -163,6 +194,14 @@ a#dates,a#groups,a#lvs,a#sk{
     height: 37px;
     line-height: 37px;
     background-image: url('../icons/termine.png');
+    text-align: center;
+}
+
+.divIconInsektenrucksack{
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    background-image: url('../icons/insektenrucksack.png');
     text-align: center;
 }
 

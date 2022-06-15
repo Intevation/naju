@@ -114,6 +114,7 @@ let tmplTermine = getTemplate("tmpl/termine.html");
 let tmplGruppen = getTemplate("tmpl/gruppen.html");
 let tmplLandesverbaende = getTemplate("tmpl/landesverbaende.html");
 let tmplStorchenkoffer = getTemplate("tmpl/storchenkoffer.html");
+let tmplInsektenrucksaecke = getTemplate("tmpl/insektenrucksaecke.html");
 
 function renderPopUP(template, feature) {
   template.then(function(t) {
@@ -218,6 +219,63 @@ var markersKindergruppen = L.markerClusterGroup({
   }
 });
 
+var insektenrucksaeckeIcon = L.icon({
+  iconUrl: "icons/insektenrucksack.png",
+  iconSize: [32, 37],
+  iconAnchor: [16, 37]
+});
+
+var insektenrucksaeckeIconHighlight = L.icon({
+  iconUrl: "icons/insektenrucksack.png",
+  iconSize: [32, 37],
+  iconAnchor: [16, 37]
+});
+
+var insektenrucksaeckeData = L.geoJson(null, {
+  pointToLayer: function(feature, latlng) {
+    return L.marker(latlng, {
+      icon: insektenrucksaeckeIcon,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(
+      String("<b>" + feature.properties["landesverband"] + "</b>"),
+      {
+        offset: [32, 18],
+        direction: "right"
+      }
+    );
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(insektenrucksaeckeIconHighlight);
+    });
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(insektenrucksaeckeIcon);
+    });
+    layer.on("click", function(e) {
+      renderPopUP(tmplInsektenrucksaecke, e.sourceTarget.feature);
+      map.setView(e.latlng, 13);
+    });
+  }
+});
+
+var markersInsektenrucksaecke = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 25,
+  spiderLegPolylineOptions: { weight: 1.5, color: "#222", opacity: 0.5 },
+  iconCreateFunction: function(cluster) {
+    return L.divIcon({
+      html:
+        '<div class="divIconInsektenrucksack"></div><div class="myMarkerCluster">' +
+        cluster.getChildCount() +
+        "</div>",
+      iconSize: [32, 37],
+      iconAnchor: [16, 37],
+      className: ""
+    });
+  }
+});
+
 var dateIcon = L.icon({
   iconUrl: "icons/termine.png",
   iconSize: [32, 37],
@@ -285,6 +343,14 @@ markersKindergruppen.on("spiderfied", event => {
 });
 
 markersKindergruppen.on("unspiderfied", event => {
+  event.cluster.setOpacity(1);
+});
+
+markersInsektenrucksaecke.on("spiderfied", event => {
+  event.cluster.setOpacity(0);
+});
+
+markersInsektenrucksaecke.on("unspiderfied", event => {
   event.cluster.setOpacity(1);
 });
 
@@ -387,38 +453,19 @@ lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
 lvs.addEventListener("mouseout", handleMenuEvent(offices, "green"), false);
 
 var termine = document.getElementById("dates");
-termine.addEventListener(
-  "click",
-  handleMenuEvent(markersDates, "orange"),
-  false
-);
-termine.addEventListener(
-  "mouseover",
-  handleMenuEvent(markersDates, "orange"),
-  false
-);
-termine.addEventListener(
-  "mouseout",
-  handleMenuEvent(markersDates, "orange"),
-  false
-);
+termine.addEventListener( "click", handleMenuEvent(markersDates, "orange"), false);
+termine.addEventListener( "mouseover", handleMenuEvent(markersDates, "orange"), false);
+termine.addEventListener( "mouseout", handleMenuEvent(markersDates, "orange"), false);
 
 var gruppen = document.getElementById("groups");
-gruppen.addEventListener(
-  "click",
-  handleMenuEvent(markersKindergruppen, "yellow"),
-  false
-);
-gruppen.addEventListener(
-  "mouseover",
-  handleMenuEvent(markersKindergruppen, "yellow"),
-  false
-);
-gruppen.addEventListener(
-  "mouseout",
-  handleMenuEvent(markersKindergruppen, "yellow"),
-  false
-);
+gruppen.addEventListener( "click", handleMenuEvent(markersKindergruppen, "yellow"), false);
+gruppen.addEventListener( "mouseover", handleMenuEvent(markersKindergruppen, "yellow"), false);
+gruppen.addEventListener( "mouseout", handleMenuEvent(markersKindergruppen, "yellow"), false);
+
+var insektenrucksaecke = document.getElementById("insektenrucksaecke");
+insektenrucksaecke.addEventListener( "click", handleMenuEvent(markersInsektenrucksaecke, "blue"), false);
+insektenrucksaecke.addEventListener( "mouseover", handleMenuEvent(markersInsektenrucksaecke, "blue"), false);
+insektenrucksaecke.addEventListener( "mouseout", handleMenuEvent(markersInsektenrucksaecke, "blue"), false);
 
 fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/storchenkoffer") // Call the fetch function passing the url of the API as a parameter
   .then(function(response) {
@@ -468,4 +515,17 @@ fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/kindergruppen") // Call the
   .catch(function(error) {
     console.log(error.message);
     M.toast({ html: "Fehler beim Laden der Kindergruppen!" });
+  });
+
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/insektenrucksaecke") // Call the fetch function passing the url of the API as a parameter
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    insektenrucksaeckeData.addData(json);
+    markersInsektenrucksaecke.addLayer(insektenrucksaeckeData);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Insektenrucksäcke!" });
   });
