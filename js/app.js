@@ -110,11 +110,9 @@ async function getTemplate(url) {
   }
 }
 
-let tmplTermine = getTemplate("tmpl/termine.html");
-let tmplGruppen = getTemplate("tmpl/gruppen.html");
-let tmplLandesverbaende = getTemplate("tmpl/landesverbaende.html");
-let tmplStorchenkoffer = getTemplate("tmpl/storchenkoffer.html");
-let tmplInsektenrucksaecke = getTemplate("tmpl/insektenrucksaecke.html");
+let tmplProjektpartner = getTemplate("tmpl/projektpartner.html");
+let tmplKonsultationskitas = getTemplate("tmpl/konsultationskitas.html");
+// let tmplTODO = getTemplate("tmpl/TODO.html");
 
 function renderPopUP(template, feature) {
   template.then(function(t) {
@@ -127,90 +125,56 @@ function renderPopUP(template, feature) {
     modals[0].open();
   });
 }
-var storchenkofferIcon = L.icon({
-  iconUrl: "icons/storchenkoffer.png",
+
+// Projektpartner
+
+var projektpartnerIcon = L.icon({
+  iconUrl: "icons/projektpartner.png",
   iconSize: [32, 37],
   iconAnchor: [16, 37]
 });
 
-var storchenkofferIconHighlight = L.icon({
-  iconUrl: "icons/storchenkoffer.png",
+var projektpartnerIconHighlight = L.icon({
+  iconUrl: "icons/projektpartner.png",
   iconSize: [32, 37],
   iconAnchor: [16, 37]
 });
 
-var storchenkoffer = L.geoJson(null, {
+var projektpartnerData = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: storchenkofferIcon,
-      riseOnHover: true
-    });
-  },
-  onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["name"] + "</b>"), {
-      offset: [32, 18],
-      direction: "right"
-    });
-    layer.on("mouseover", function(e) {
-      e.target.setIcon(storchenkofferIconHighlight);
-    });
-    layer.on("mouseout", function(e) {
-      e.target.setIcon(storchenkofferIcon);
-    });
-    layer.on("click", function(e) {
-      renderPopUP(tmplStorchenkoffer, e.sourceTarget.feature);
-      map.setView(e.latlng, 13);
-    });
-  }
-});
-
-var kindergruppenIcon = L.icon({
-  iconUrl: "icons/gruppe.png",
-  iconSize: [32, 37],
-  iconAnchor: [16, 37]
-});
-
-var kindergruppenIconHighlight = L.icon({
-  iconUrl: "icons/gruppe.png",
-  iconSize: [32, 37],
-  iconAnchor: [16, 37]
-});
-
-var kindergruppen = L.geoJson(null, {
-  pointToLayer: function(feature, latlng) {
-    return L.marker(latlng, {
-      icon: kindergruppenIcon,
+      icon: projektpartnerIcon,
       riseOnHover: true
     });
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(
-      String("<b>" + feature.properties["gruppenname"] + "</b>"),
+      String("<b>" + feature.properties["projektpartner"] + "</b>"), // TODO
       {
         offset: [32, 18],
         direction: "right"
       }
     );
     layer.on("mouseover", function(e) {
-      e.target.setIcon(kindergruppenIconHighlight);
+      e.target.setIcon(projektpartnerIconHighlight);
     });
     layer.on("mouseout", function(e) {
-      e.target.setIcon(kindergruppenIcon);
+      e.target.setIcon(projektpartnerIcon);
     });
     layer.on("click", function(e) {
-      renderPopUP(tmplGruppen, e.sourceTarget.feature);
+      renderPopUP(tmplProjektpartner, e.sourceTarget.feature);
       map.setView(e.latlng, 13);
     });
   }
 });
 
-var markersKindergruppen = L.markerClusterGroup({
+var markersProjektpartner = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   iconCreateFunction: function(cluster) {
     return L.divIcon({
       html:
-        '<div class="divIconGruppe"></div><div class="myMarkerCluster">' +
+        '<div class="divIconProjektpartner"></div><div class="myMarkerCluster">' +
         cluster.getChildCount() +
         "</div>",
       iconSize: [32, 37],
@@ -219,54 +183,56 @@ var markersKindergruppen = L.markerClusterGroup({
   }
 });
 
-var insektenrucksaeckeIcon = L.icon({
-  iconUrl: "icons/insektenrucksack.png",
+// Konsultationskitas
+
+var konsultationskitasIcon = L.icon({
+  iconUrl: "icons/konsultationskitas.png",
   iconSize: [32, 37],
   iconAnchor: [16, 37]
 });
 
-var insektenrucksaeckeIconHighlight = L.icon({
-  iconUrl: "icons/insektenrucksack.png",
+var konsultationskitasIconHighlight = L.icon({
+  iconUrl: "icons/konsultationskitas.png",
   iconSize: [32, 37],
   iconAnchor: [16, 37]
 });
 
-var insektenrucksaeckeData = L.geoJson(null, {
+var konsultationskitasData = L.geoJson(null, {
   pointToLayer: function(feature, latlng) {
     return L.marker(latlng, {
-      icon: insektenrucksaeckeIcon,
+      icon: konsultationskitasIcon,
       riseOnHover: true
     });
   },
   onEachFeature: function(feature, layer) {
     layer.bindTooltip(
-      String("<b>" + feature.properties["landesverband"] + "</b>"),
+      String("<b>" + feature.properties["name"] + "</b>"), // TODO
       {
         offset: [32, 18],
         direction: "right"
       }
     );
     layer.on("mouseover", function(e) {
-      e.target.setIcon(insektenrucksaeckeIconHighlight);
+      e.target.setIcon(konsultationskitasIconHighlight);
     });
     layer.on("mouseout", function(e) {
-      e.target.setIcon(insektenrucksaeckeIcon);
+      e.target.setIcon(konsultationskitasIcon);
     });
     layer.on("click", function(e) {
-      renderPopUP(tmplInsektenrucksaecke, e.sourceTarget.feature);
+      renderPopUP(tmplKonsultationskitas, e.sourceTarget.feature); // TODO
       map.setView(e.latlng, 13);
     });
   }
 });
 
-var markersInsektenrucksaecke = L.markerClusterGroup({
+var markersKonsultationskitas = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 25,
   spiderLegPolylineOptions: { weight: 1.5, color: "#222", opacity: 0.5 },
   iconCreateFunction: function(cluster) {
     return L.divIcon({
       html:
-        '<div class="divIconInsektenrucksack"></div><div class="myMarkerCluster">' +
+        '<div class="divIconKonsultationskitas"></div><div class="myMarkerCluster">' +
         cluster.getChildCount() +
         "</div>",
       iconSize: [32, 37],
@@ -276,117 +242,20 @@ var markersInsektenrucksaecke = L.markerClusterGroup({
   }
 });
 
-var dateIcon = L.icon({
-  iconUrl: "icons/termine.png",
-  iconSize: [32, 37],
-  iconAnchor: [16, 37]
-});
-
-var dateIconHighlight = L.icon({
-  iconUrl: "icons/termine.png"
-});
-
-var dates = L.geoJson(null, {
-  pointToLayer: function(feature, latlng) {
-    return L.marker(latlng, {
-      icon: dateIcon,
-      riseOnHover: true
-    });
-  },
-  onEachFeature: function(feature, layer) {
-    layer.bindTooltip(String("<b>" + feature.properties["thema"] + "</b>"), {
-      offset: [32, 18],
-      direction: "right"
-    });
-
-    layer.on("mouseover", function(e) {
-      //map.panTo(e.latlng);
-      e.target.setIcon(dateIconHighlight);
-    });
-    layer.on("mouseout", function(e) {
-      e.target.setIcon(dateIcon);
-    });
-    layer.on("click", function(e) {
-      renderPopUP(tmplTermine, e.sourceTarget.feature);
-      map.setView(e.latlng, 13);
-    });
-  }
-});
-
-var markersDates = L.markerClusterGroup({
-  showCoverageOnHover: false,
-  maxClusterRadius: 25,
-  spiderLegPolylineOptions: { weight: 1.5, color: "#222", opacity: 0.5 },
-  iconCreateFunction: function(cluster) {
-    return L.divIcon({
-      html:
-        '<div class="divIconTermin"></div><div class="myMarkerCluster">' +
-        cluster.getChildCount() +
-        "</div>",
-      iconSize: [32, 37],
-      iconAnchor: [16, 37],
-      className: ""
-    });
-  }
-});
-
-markersDates.on("spiderfied", event => {
+markersProjektpartner.on("spiderfied", event => {
   event.cluster.setOpacity(0);
 });
 
-markersDates.on("unspiderfied", event => {
+markersProjektpartner.on("unspiderfied", event => {
   event.cluster.setOpacity(1);
 });
 
-markersKindergruppen.on("spiderfied", event => {
+markersKonsultationskitas.on("spiderfied", event => {
   event.cluster.setOpacity(0);
 });
 
-markersKindergruppen.on("unspiderfied", event => {
+markersKonsultationskitas.on("unspiderfied", event => {
   event.cluster.setOpacity(1);
-});
-
-markersInsektenrucksaecke.on("spiderfied", event => {
-  event.cluster.setOpacity(0);
-});
-
-markersInsektenrucksaecke.on("unspiderfied", event => {
-  event.cluster.setOpacity(1);
-});
-
-var officeIcon = L.icon({
-  iconUrl: "icons/geschaeftsstellen.png"
-});
-
-var officeIconHighlight = L.icon({
-  iconUrl: "icons/geschaeftsstellen.png"
-});
-
-var offices = L.geoJson(null, {
-  pointToLayer: function(feature, latlng) {
-    return L.marker(latlng, {
-      icon: officeIcon,
-      riseOnHover: true
-    });
-  },
-  onEachFeature: function(feature, layer) {
-    layer.bindTooltip(
-      String("<b>" + feature.properties["landesverband"] + "</b>"),
-      {
-        offset: [32, 18],
-        direction: "right"
-      }
-    );
-    layer.on("mouseover", function(e) {
-      e.target.setIcon(officeIconHighlight);
-    });
-    layer.on("mouseout", function(e) {
-      e.target.setIcon(officeIcon);
-    });
-    layer.on("click", function(e) {
-      renderPopUP(tmplLandesverbaende, e.sourceTarget.feature);
-    });
-  }
 });
 
 // Closure
@@ -442,90 +311,42 @@ function handleMenuEvent(typ, color) {
 }
 
 // Add event listener to table
-var sk = document.getElementById("sk");
-sk.addEventListener("click", handleMenuEvent(storchenkoffer, "red"), false);
-sk.addEventListener("mouseover", handleMenuEvent(storchenkoffer, "red"), false);
-sk.addEventListener("mouseout", handleMenuEvent(storchenkoffer, "red"), false);
+var projektpartner = document.getElementById("projektpartner");
+projektpartner.addEventListener( "click", handleMenuEvent(markersProjektpartner, "yellow"), false);
+projektpartner.addEventListener( "mouseover", handleMenuEvent(markersProjektpartner, "yellow"), false);
+projektpartner.addEventListener( "mouseout", handleMenuEvent(markersProjektpartner, "yellow"), false);
 
-var lvs = document.getElementById("lvs");
-lvs.addEventListener("click", handleMenuEvent(offices, "green"), false);
-lvs.addEventListener("mouseover", handleMenuEvent(offices, "green"), false);
-lvs.addEventListener("mouseout", handleMenuEvent(offices, "green"), false);
+var konsultationskitas = document.getElementById("konsultationskitas");
+konsultationskitas.addEventListener( "click", handleMenuEvent(markersKonsultationskitas, "blue"), false);
+konsultationskitas.addEventListener( "mouseover", handleMenuEvent(markersKonsultationskitas, "blue"), false);
+konsultationskitas.addEventListener( "mouseout", handleMenuEvent(markersKonsultationskitas, "blue"), false);
 
-var termine = document.getElementById("dates");
-termine.addEventListener( "click", handleMenuEvent(markersDates, "orange"), false);
-termine.addEventListener( "mouseover", handleMenuEvent(markersDates, "orange"), false);
-termine.addEventListener( "mouseout", handleMenuEvent(markersDates, "orange"), false);
-
-var gruppen = document.getElementById("groups");
-gruppen.addEventListener( "click", handleMenuEvent(markersKindergruppen, "yellow"), false);
-gruppen.addEventListener( "mouseover", handleMenuEvent(markersKindergruppen, "yellow"), false);
-gruppen.addEventListener( "mouseout", handleMenuEvent(markersKindergruppen, "yellow"), false);
-
-var insektenrucksaecke = document.getElementById("insektenrucksaecke");
-insektenrucksaecke.addEventListener( "click", handleMenuEvent(markersInsektenrucksaecke, "blue"), false);
-insektenrucksaecke.addEventListener( "mouseover", handleMenuEvent(markersInsektenrucksaecke, "blue"), false);
-insektenrucksaecke.addEventListener( "mouseout", handleMenuEvent(markersInsektenrucksaecke, "blue"), false);
-
-fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/storchenkoffer") // Call the fetch function passing the url of the API as a parameter
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/projektpartner") // Call the fetch function passing the url of the API as a parameter
+// fetch("http://localhost:9000/projektpartner")
+// fetch("http://10.42.7.220:9000/projektpartner")
   .then(function(response) {
     return response.json();
   })
   .then(function(json) {
-    storchenkoffer.addData(json);
+    projektpartnerData.addData(json);
+    markersProjektpartner.addLayer(projektpartnerData);
   })
   .catch(function(error) {
     console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Storchenkoffer!" });
+    M.toast({ html: "Fehler beim Laden der Projektpartner!" });
   });
 
-fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/landesverbaende") // Call the fetch function passing the url of the API as a parameter
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/konsultationskitas") // Call the fetch function passing the url of the API as a parameter
+// fetch("http://localhost:9000/konsultationskitas")
+// fetch("http://10.42.7.220:9000/konsultationskitas")
   .then(function(response) {
     return response.json();
   })
   .then(function(json) {
-    offices.addData(json);
+    konsultationskitasData.addData(json);
+    markersKonsultationskitas.addLayer(konsultationskitasData);
   })
   .catch(function(error) {
     console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Landesverbände!" });
-  });
-
-fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/next_6month") // Call the fetch function passing the url of the API as a parameter
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    dates.addData(json);
-    markersDates.addLayer(dates);
-  })
-  .catch(function(error) {
-    console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Termine!" });
-  });
-
-fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/kindergruppen") // Call the fetch function passing the url of the API as a parameter
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    kindergruppen.addData(json);
-    markersKindergruppen.addLayer(kindergruppen);
-  })
-  .catch(function(error) {
-    console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Kindergruppen!" });
-  });
-
-fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/insektenrucksaecke") // Call the fetch function passing the url of the API as a parameter
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    insektenrucksaeckeData.addData(json);
-    markersInsektenrucksaecke.addLayer(insektenrucksaeckeData);
-  })
-  .catch(function(error) {
-    console.log(error.message);
-    M.toast({ html: "Fehler beim Laden der Insektenrucksäcke!" });
+    M.toast({ html: "Fehler beim Laden der Konsultationskitas!" });
   });

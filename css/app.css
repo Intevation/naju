@@ -8,160 +8,73 @@ body,
     color: white;
 }
 
+/* TODO extendCategories: add color for new menu child */
+
 div.material-tooltip:nth-child(11) {
-    background-color: #a3b707;
+    background-color: #66c0be;
 }
 
 div.material-tooltip:nth-child(12) {
-    background-color: #cd071e;
+    background-color: #ec6ea5;
 }
 
-div.material-tooltip:nth-child(13) {
-    background-color: #7abcb3;
-}
+/* TODO extendCategories: add css classes for menu items */
 
-div.material-tooltip:nth-child(14) {
-    background-color: #f39700;
-}
+a#projektpartner:not(.clicked){
 
-div.material-tooltip:nth-child(15) {
-    background-color: #3448d0;
-}
-
-a#lvs:not(.clicked){
-
-    content: url('../icons/geschaeftsstellen_gray.png');
+    content: url('../icons/projektpartner_gray.png');
     width: 32px;
     height: 37px;
     line-height: 37px;
     text-align: center;
 }
 
-a#lvs.clicked{
+a#projektpartner.clicked{
 
-    content: url('../icons/geschaeftsstellen.png');
+    content: url('../icons/projektpartner.png');
     width: 32px;
     height: 37px;
     line-height: 37px;
     text-align: center;
 }
 
-a#lvs:hover{
+a#projektpartner:hover{
 
-    content: url('../icons/geschaeftsstellen.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-a#groups:not(.clicked){
-
-    content: url('../icons/gruppe_gray.png');
+    content: url('../icons/projektpartner.png');
     width: 32px;
     height: 37px;
     line-height: 37px;
     text-align: center;
 }
 
-a#groups.clicked{
+a#konsultationskitas:not(.clicked){
 
-    content: url('../icons/gruppe.png');
+    content: url('../icons/konsultationskitas_gray.png');
     width: 32px;
     height: 37px;
     line-height: 37px;
     text-align: center;
 }
 
-a#groups:hover{
+a#konsultationskitas.clicked{
 
-    content: url('../icons/gruppe.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-a#dates:not(.clicked){
-
-    content: url('../icons/termine_gray.png');
+    content: url('../icons/konsultationskitas.png');
     width: 32px;
     height: 37px;
     line-height: 37px;
     text-align: center;
 }
 
-a#sk:not(.clicked){
+a#konsultationskitas:hover{
 
-    content: url('../icons/storchenkoffer_gray.png');
+    content: url('../icons/konsultationskitas.png');
     width: 32px;
     height: 37px;
     line-height: 37px;
     text-align: center;
 }
 
-a#sk.clicked{
-
-    content: url('../icons/storchenkoffer.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#sk:hover{
-
-    content: url('../icons/storchenkoffer.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#dates.clicked{
-
-    content: url('../icons/termine.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#dates:hover{
-
-    content: url('../icons/termine.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#insektenrucksaecke:not(.clicked){
-
-    content: url('../icons/insektenrucksack_gray.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#insektenrucksaecke.clicked{
-
-    content: url('../icons/insektenrucksack.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#insektenrucksaecke:hover{
-
-    content: url('../icons/insektenrucksack.png');
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    text-align: center;
-}
-
-a#dates,a#groups,a#lvs,a#sk,a#insektenrucksaecke{
+a#projektpartner,a#konsultationskitas{
     background-color: transparent !important;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -181,27 +94,21 @@ a#dates,a#groups,a#lvs,a#sk,a#insektenrucksaecke{
     text-align:center;
 }
 
-.divIconGruppe{
+/* TODO extendCategories: add divIcon for map markers */
+
+.divIconProjektpartner{
     width: 32px;
     height: 37px;
     line-height: 37px;
-    background-image: url('../icons/gruppe.png');
+    background-image: url('../icons/projektpartner.png');
     text-align: center;
 }
 
-.divIconTermin{
+.divIconKonsultationskitas{
     width: 32px;
     height: 37px;
     line-height: 37px;
-    background-image: url('../icons/termine.png');
-    text-align: center;
-}
-
-.divIconInsektenrucksack{
-    width: 32px;
-    height: 37px;
-    line-height: 37px;
-    background-image: url('../icons/insektenrucksack.png');
+    background-image: url('../icons/konsultationskitas.png');
     text-align: center;
 }
 

@@ -6,7 +6,11 @@
     ><i class="material-icons">close</i></a
   >
   <div class="container">
-    <h4>{{ landesverband }}</h4>
+    <h4>{{ name }}</h4>
+    <p style="margin-top: 0px;">({{ bundesland }} - Träger: {{ traeger }})</p>
+    {{#themenschwerpunkte}}
+    <p style="margin-top: 0px;">Themenschwerpunkte: {{ themenschwerpunkte }}</p>
+    {{/themenschwerpunkte}}
     {{#url}}
     <a
       class="waves-effect waves-light btn"
@@ -26,15 +30,14 @@
     >
     {{/mail}}
     {{#telefon}}
-    <p>
-      <a
-        class="waves-effect waves-light btn"
-        href="tel:{{ telefon }}"
-        target="_blank"
-      >
-        <i class="material-icons left">phone</i>{{ telefon }}</a
-      >
-    </p>
+    <a
+      class="waves-effect waves-light btn"
+      href="tel:{{ telefon }}"
+      target="_blank"
+    >
+      <i class="material-icons left">phone</i>{{ telefon }}</a
+    >
     {{/telefon}}
+    <p>{{ strasse }}<br>{{ postleitzahl }} {{ ort }}</p>
   </div>
 </div>
