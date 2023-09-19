@@ -330,6 +330,7 @@ fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/projektpartner") // Call th
   .then(function(json) {
     projektpartnerData.addData(json);
     markersProjektpartner.addLayer(projektpartnerData);
+    markersProjektpartner.addTo(map);
   })
   .catch(function(error) {
     console.log(error.message);
@@ -345,6 +346,7 @@ fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/konsultationskitas") // Cal
   .then(function(json) {
     konsultationskitasData.addData(json);
     markersKonsultationskitas.addLayer(konsultationskitasData);
+    markersKonsultationskitas.addTo(map);
   })
   .catch(function(error) {
     console.log(error.message);
