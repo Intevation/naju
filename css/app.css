@@ -18,6 +18,10 @@ div.material-tooltip:nth-child(12) {
     background-color: #ec6ea5;
 }
 
+div.material-tooltip:nth-child(13) {
+    background-color: #b60e0c;
+}
+
 /* TODO extendCategories: add css classes for menu items */
 
 a#projektpartner:not(.clicked){
@@ -74,7 +78,31 @@ a#konsultationskitas:hover{
     text-align: center;
 }
 
-a#projektpartner,a#konsultationskitas{
+a#gewinnerkitas:not(.clicked){
+    content: url('../icons/gewinnerkitas_gray.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#gewinnerkitas.clicked{
+    content: url('../icons/gewinnerkitas.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#gewinnerkitas:hover{
+    content: url('../icons/gewinnerkitas.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#projektpartner,a#konsultationskitas,a#gewinnerkitas{
     background-color: transparent !important;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;

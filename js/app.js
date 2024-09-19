@@ -112,7 +112,7 @@ async function getTemplate(url) {
 
 let tmplProjektpartner = getTemplate("tmpl/projektpartner.html");
 let tmplKonsultationskitas = getTemplate("tmpl/konsultationskitas.html");
-// let tmplTODO = getTemplate("tmpl/TODO.html");
+let tmplGewinnerkitas = getTemplate("tmpl/gewinnerkitas.html");
 
 function renderPopUP(template, feature) {
   template.then(function(t) {
@@ -242,6 +242,65 @@ var markersKonsultationskitas = L.markerClusterGroup({
   }
 });
 
+// Gewinnerkitas
+
+var gewinnerkitasIcon = L.icon({
+  iconUrl: "icons/gewinnerkitas.png",
+  iconSize: [32, 37],
+  iconAnchor: [16, 37]
+});
+
+var gewinnerkitasIconHighlight = L.icon({
+  iconUrl: "icons/gewinnerkitas.png",
+  iconSize: [32, 37],
+  iconAnchor: [16, 37]
+});
+
+var gewinnerkitasData = L.geoJson(null, {
+  pointToLayer: function(feature, latlng) {
+    return L.marker(latlng, {
+      icon: gewinnerkitasIcon,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(
+      String("<b>" + feature.properties["name"] + "</b>"), // TODO
+      {
+        offset: [32, 18],
+        direction: "right"
+      }
+    );
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(gewinnerkitasIconHighlight);
+    });
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(gewinnerkitasIcon);
+    });
+    layer.on("click", function(e) {
+      renderPopUP(tmplGewinnerkitas, e.sourceTarget.feature); // TODO
+      map.setView(e.latlng, 13);
+    });
+  }
+});
+
+var markersGewinnerkitas = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 25,
+  spiderLegPolylineOptions: { weight: 1.5, color: "#222", opacity: 0.5 },
+  iconCreateFunction: function(cluster) {
+    return L.divIcon({
+      html:
+        '<div class="divIconGewinnerkitas"></div><div class="myMarkerCluster">' +
+        cluster.getChildCount() +
+        "</div>",
+      iconSize: [32, 37],
+      iconAnchor: [16, 37],
+      className: ""
+    });
+  }
+});
+
 markersProjektpartner.on("spiderfied", event => {
   event.cluster.setOpacity(0);
 });
@@ -255,6 +314,14 @@ markersKonsultationskitas.on("spiderfied", event => {
 });
 
 markersKonsultationskitas.on("unspiderfied", event => {
+  event.cluster.setOpacity(1);
+});
+
+markersGewinnerkitas.on("spiderfied", event => {
+  event.cluster.setOpacity(0);
+});
+
+markersGewinnerkitas.on("unspiderfied", event => {
   event.cluster.setOpacity(1);
 });
 
@@ -321,6 +388,11 @@ konsultationskitas.addEventListener( "click", handleMenuEvent(markersKonsultatio
 konsultationskitas.addEventListener( "mouseover", handleMenuEvent(markersKonsultationskitas, "blue"), false);
 konsultationskitas.addEventListener( "mouseout", handleMenuEvent(markersKonsultationskitas, "blue"), false);
 
+var gewinnerkitas = document.getElementById("gewinnerkitas");
+gewinnerkitas.addEventListener( "click", handleMenuEvent(markersGewinnerkitas, "orange"), false);
+gewinnerkitas.addEventListener( "mouseover", handleMenuEvent(markersGewinnerkitas, "orange"), false);
+gewinnerkitas.addEventListener( "mouseout", handleMenuEvent(markersGewinnerkitas, "orange"), false);
+
 fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/projektpartner") // Call the fetch function passing the url of the API as a parameter
 // fetch("http://localhost:9000/projektpartner")
 // fetch("http://10.42.7.220:9000/projektpartner")
@@ -351,4 +423,20 @@ fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/konsultationskitas") // Cal
   .catch(function(error) {
     console.log(error.message);
     M.toast({ html: "Fehler beim Laden der Konsultationskitas!" });
+  });
+
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/gewinnerkitas") // Call the fetch function passing the url of the API as a parameter
+// fetch("http://localhost:9000/gewinnerkitas")
+// fetch("http://10.42.7.220:9000/gewinnerkitas")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    gewinnerkitasData.addData(json);
+    markersGewinnerkitas.addLayer(gewinnerkitasData);
+    markersGewinnerkitas.addTo(map);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Gewinnerkitas!" });
   });
