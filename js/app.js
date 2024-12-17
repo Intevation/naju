@@ -113,6 +113,7 @@ async function getTemplate(url) {
 let tmplProjektpartner = getTemplate("tmpl/projektpartner.html");
 let tmplKonsultationskitas = getTemplate("tmpl/konsultationskitas.html");
 let tmplGewinnerkitas = getTemplate("tmpl/gewinnerkitas.html");
+let tmplPraxisbeispiele = getTemplate("tmpl/praxisbeispiele.html");
 
 function renderPopUP(template, feature) {
   template.then(function(t) {
@@ -301,6 +302,65 @@ var markersGewinnerkitas = L.markerClusterGroup({
   }
 });
 
+// Praxisbeispiele
+
+var praxisbeispieleIcon = L.icon({
+  iconUrl: "icons/praxisbeispiele.png",
+  iconSize: [32, 37],
+  iconAnchor: [16, 37]
+});
+
+var praxisbeispieleIconHighlight = L.icon({
+  iconUrl: "icons/praxisbeispiele.png",
+  iconSize: [32, 37],
+  iconAnchor: [16, 37]
+});
+
+var praxisbeispieleData = L.geoJson(null, {
+  pointToLayer: function(feature, latlng) {
+    return L.marker(latlng, {
+      icon: praxisbeispieleIcon,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function(feature, layer) {
+    layer.bindTooltip(
+      String("<b>" + feature.properties["name"] + "</b>"), // TODO
+      {
+        offset: [32, 18],
+        direction: "right"
+      }
+    );
+    layer.on("mouseover", function(e) {
+      e.target.setIcon(praxisbeispieleIconHighlight);
+    });
+    layer.on("mouseout", function(e) {
+      e.target.setIcon(praxisbeispieleIcon);
+    });
+    layer.on("click", function(e) {
+      renderPopUP(tmplPraxisbeispiele, e.sourceTarget.feature); // TODO
+      map.setView(e.latlng, 13);
+    });
+  }
+});
+
+var markersPraxisbeispiele = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 25,
+  spiderLegPolylineOptions: { weight: 1.5, color: "#222", opacity: 0.5 },
+  iconCreateFunction: function(cluster) {
+    return L.divIcon({
+      html:
+        '<div class="divIconPraxisbeispiele"></div><div class="myMarkerCluster">' +
+        cluster.getChildCount() +
+        "</div>",
+      iconSize: [32, 37],
+      iconAnchor: [16, 37],
+      className: ""
+    });
+  }
+});
+
 markersProjektpartner.on("spiderfied", event => {
   event.cluster.setOpacity(0);
 });
@@ -322,6 +382,14 @@ markersGewinnerkitas.on("spiderfied", event => {
 });
 
 markersGewinnerkitas.on("unspiderfied", event => {
+  event.cluster.setOpacity(1);
+});
+
+markersPraxisbeispiele.on("spiderfied", event => {
+  event.cluster.setOpacity(0);
+});
+
+markersPraxisbeispiele.on("unspiderfied", event => {
   event.cluster.setOpacity(1);
 });
 
@@ -393,6 +461,11 @@ gewinnerkitas.addEventListener( "click", handleMenuEvent(markersGewinnerkitas, "
 gewinnerkitas.addEventListener( "mouseover", handleMenuEvent(markersGewinnerkitas, "orange"), false);
 gewinnerkitas.addEventListener( "mouseout", handleMenuEvent(markersGewinnerkitas, "orange"), false);
 
+var praxisbeispiele = document.getElementById("praxisbeispiele");
+praxisbeispiele.addEventListener( "click", handleMenuEvent(markersPraxisbeispiele, "orange"), false);
+praxisbeispiele.addEventListener( "mouseover", handleMenuEvent(markersPraxisbeispiele, "orange"), false);
+praxisbeispiele.addEventListener( "mouseout", handleMenuEvent(markersPraxisbeispiele, "orange"), false);
+
 fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/projektpartner") // Call the fetch function passing the url of the API as a parameter
 // fetch("http://localhost:9000/projektpartner")
 // fetch("http://10.42.7.220:9000/projektpartner")
@@ -439,4 +512,20 @@ fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/gewinnerkitas") // Call the
   .catch(function(error) {
     console.log(error.message);
     M.toast({ html: "Fehler beim Laden der Gewinnerkitas!" });
+  });
+
+fetch("https://mapserver.nabu.de/fcgi-bin/najukoffer/praxisbeispiele") // Call the fetch function passing the url of the API as a parameter
+// fetch("http://localhost:9000/praxisbeispiele")
+// fetch("http://10.42.7.220:9000/praxisbeispiele")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    praxisbeispieleData.addData(json);
+    markersPraxisbeispiele.addLayer(praxisbeispieleData);
+    markersPraxisbeispiele.addTo(map);
+  })
+  .catch(function(error) {
+    console.log(error.message);
+    M.toast({ html: "Fehler beim Laden der Praxisbeispiele!" });
   });

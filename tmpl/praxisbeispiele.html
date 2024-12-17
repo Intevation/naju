@@ -1,0 +1,43 @@
+<!-- Modal Structure -->
+<div class="modal-content">
+  <a
+    class="modal-close btn-floating btn-large waves-effect waves-light red"
+    style="float:right"
+    ><i class="material-icons">close</i></a
+  >
+  <div class="container">
+    <h4>{{ name }}</h4>
+    <p style="margin-top: 0px;">({{ bundesland }} - Träger: {{ traeger }})</p>
+    {{#themenschwerpunkte}}
+    <p style="margin-top: 0px;">Themenschwerpunkte: {{ themenschwerpunkte }}</p>
+    {{/themenschwerpunkte}}
+    {{#url}}
+    <a
+      class="waves-effect waves-light btn"
+      href={{url}}
+      target="_blank"
+    >
+      <i class="material-icons left">link</i>{{ url }}</a
+    >
+    {{/url}}
+    {{#mail}}
+    <a
+      class="waves-effect waves-light btn"
+      href="mailto:{{ mail }}"
+      target="_blank"
+    >
+      <i class="material-icons left">email</i>{{ mail }}</a
+    >
+    {{/mail}}
+    {{#telefon}}
+    <a
+      class="waves-effect waves-light btn"
+      href="tel:{{ telefon }}"
+      target="_blank"
+    >
+      <i class="material-icons left">phone</i>{{ telefon }}</a
+    >
+    {{/telefon}}
+    <p>{{ strasse }}<br>{{ postleitzahl }} {{ ort }}</p>
+  </div>
+</div>

@@ -22,6 +22,10 @@ div.material-tooltip:nth-child(13) {
     background-color: #b60e0c;
 }
 
+div.material-tooltip:nth-child(14) {
+    background-color: #669ac0;
+}
+
 /* TODO extendCategories: add css classes for menu items */
 
 a#projektpartner:not(.clicked){
@@ -102,7 +106,31 @@ a#gewinnerkitas:hover{
     text-align: center;
 }
 
-a#projektpartner,a#konsultationskitas,a#gewinnerkitas{
+a#praxisbeispiele:not(.clicked){
+    content: url('../icons/praxisbeispiele_gray.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#praxisbeispiele.clicked{
+    content: url('../icons/praxisbeispiele.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#praxisbeispiele:hover{
+    content: url('../icons/praxisbeispiele.png');
+    width: 32px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+}
+
+a#projektpartner,a#konsultationskitas,a#gewinnerkitas,a#praxisbeispiele{
     background-color: transparent !important;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
